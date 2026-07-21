@@ -11,3 +11,12 @@ helix-importer-ui
 # Ensure these files are tracked
 !CLAUDE.md
 !AGENTS.md
+
+# stardust deploy hygiene (#16)
+.env
+.env.*
+qa/
+samples/
+media-staging/
+media-manifest.json
+skills/

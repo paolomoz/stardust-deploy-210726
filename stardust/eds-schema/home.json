@@ -1,0 +1,300 @@
+{
+ "source": "http://localhost:8791/home-proposed.html",
+ "width": 1280,
+ "profile": "eds",
+ "sections": [
+  {
+   "section": "founding-hero",
+   "items": [
+    {
+     "role": "body",
+     "order": 0,
+     "text": "’96"
+    },
+    {
+     "role": "eyebrow",
+     "order": 1,
+     "text": "Brewing on the east slope · Heber Valley, Utah"
+    },
+    {
+     "role": "eyebrow",
+     "order": 2,
+     "text": "Wasatch Back Beerworks"
+    },
+    {
+     "role": "heading",
+     "order": 3,
+     "text": "Brewing on the east slope since 1996."
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "Six beers, two taprooms, one range. Heber Valley since opening day. Park City since the lift line got long enough to need us."
+    },
+    {
+     "role": "eyebrow",
+     "order": 5,
+     "text": "1996"
+    },
+    {
+     "role": "eyebrow",
+     "order": 6,
+     "text": "EST."
+    },
+    {
+     "role": "eyebrow",
+     "order": 7,
+     "text": "6"
+    },
+    {
+     "role": "eyebrow",
+     "order": 8,
+     "text": "BEERS"
+    },
+    {
+     "role": "eyebrow",
+     "order": 9,
+     "text": "2"
+    },
+    {
+     "role": "eyebrow",
+     "order": 10,
+     "text": "TAPROOMS"
+    },
+    {
+     "role": "eyebrow",
+     "order": 11,
+     "text": "Wasatch Back"
+    },
+    {
+     "role": "eyebrow",
+     "order": 12,
+     "text": "RANGE"
+    },
+    {
+     "role": "eyebrow",
+     "order": 13,
+     "text": "Drink in"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": [
+    {
+     "unitSelector": "SPAN.",
+     "count": 4,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 0,
+      "textRuns": 1
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "beer-six",
+   "items": [
+    {
+     "role": "eyebrow",
+     "order": 0,
+     "text": "Six beers · two seasons · one range"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "The Lineup"
+    },
+    {
+     "role": "cta",
+     "order": 2,
+     "text": "See all six",
+     "href": "/beers/"
+    },
+    {
+     "role": "cta",
+     "order": 3,
+     "text": "No. 01 Architectural silhouette. Brewery shovels. The other Tabernacle. Tabernacle Imperial Stout6.5% ABV Year-round",
+     "href": "/beers/#tabernacle"
+    },
+    {
+     "role": "cta",
+     "order": 4,
+     "text": "No. 02 Named for the Bonneville trout, not the climbing route. We promise. Cutthroat Pale Ale5.2% ABV Year-round",
+     "href": "/beers/#cutthroat"
+    },
+    {
+     "role": "cta",
+     "order": 5,
+     "text": "No. 03 Promontory Summit, 1869. The last spike was gold. So is this lager. Goldspike Vienna Lager5.5% ABV Year-round",
+     "href": "/beers/#goldspike"
+    },
+    {
+     "role": "cta",
+     "order": 6,
+     "text": "No. 04 Named for the island in the Great Salt Lake. Drinks like the sky over it. Antelope Hefeweizen5.4% ABV Year-round",
+     "href": "/beers/#antelope"
+    },
+    {
+     "role": "cta",
+     "order": 7,
+     "text": "No. 05 For the day the resort opens the bowl and the rest of the calendar shrugs. Powder Day Hazy IPA7.0% ABV Seasonal · Winter",
+     "href": "/beers/#powder-day"
+    },
+    {
+     "role": "cta",
+     "order": 8,
+     "text": "No. 06 Wasatch winter inversion in a glass. Dark, slow, patient. Hoarfrost Winter Ale6.8% ABV Seasonal · Winter",
+     "href": "/beers/#hoarfrost"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": [
+    {
+     "unitSelector": "A.ds-beer",
+     "count": 6,
+     "unit": {
+      "headings": 1,
+      "ctas": 0,
+      "imgs": 0,
+      "textRuns": 6
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "taproom-pair",
+   "items": [
+    {
+     "role": "eyebrow",
+     "order": 0,
+     "text": "Two taprooms · one range"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "Come Drink Where We Brew"
+    },
+    {
+     "role": "cta",
+     "order": 2,
+     "text": "Hours & directions",
+     "href": "/taprooms/"
+    },
+    {
+     "role": "cta",
+     "order": 3,
+     "text": "Heber Valley The Original Est. 1996 Six taps, a wood stove, the same plank tables we built in '99. Locals on the left side of the bar; visitors on the right. The hours are placeholder; the welcome isn't. Visit Heber Valley",
+     "href": "/taprooms/#heber-valley"
+    },
+    {
+     "role": "cta",
+     "order": 4,
+     "text": "Park City The Second Pour Est. ~2014 Longer bar, twelve taps, view of the ski mountain when the windows aren't fogged. Boots welcome. Same six beers on rotation. Visit Park City",
+     "href": "/taprooms/#park-city"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": [
+    {
+     "unitSelector": "A.ds-tap-panel",
+     "count": 2,
+     "unit": {
+      "headings": 1,
+      "ctas": 0,
+      "imgs": 0,
+      "textRuns": 5
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "brewery-story",
+   "items": [
+    {
+     "role": "eyebrow",
+     "order": 0,
+     "text": "The Brewery"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "Thirty winters in. The recipe is the room."
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "We started in a Heber Valley garage in 1996, brewing for a circle of friends who knew the range better than the resort map. The first batch was a stout dark enough to argue with February."
+    },
+    {
+     "role": "body",
+     "order": 3,
+     "text": "Three decades later, the lineup is six beers wide and the rule of the house is the same one we started with. The brewers write the copy. The mountain writes the schedule."
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "Nobody who works here is in a hurry, and the beer is better for it."
+    }
+   ],
+   "imgCount": 0,
+   "repeats": []
+  },
+  {
+   "section": "founder",
+   "items": [
+    {
+     "role": "body",
+     "order": 0,
+     "text": "The founder"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "Started by a brewer. Still run by one."
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "The man in this room is the same one who brewed the first batch in 1996. He still walks the kettle every morning. He has opinions about every beer on this list and he has been overruled exactly once, by his daughter, on the matter of whether to add a hefeweizen to the lineup."
+    },
+    {
+     "role": "body",
+     "order": 3,
+     "text": "(She was right. Antelope has been on the menu since 2007.)"
+    },
+    {
+     "role": "eyebrow",
+     "order": 4,
+     "text": "Heber Valley, every winter since '96"
+    }
+   ],
+   "imgCount": 1,
+   "repeats": []
+  },
+  {
+   "section": "closer",
+   "items": [
+    {
+     "role": "eyebrow",
+     "order": 0,
+     "text": "The east slope"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "Taste what the mountain made."
+    },
+    {
+     "role": "eyebrow",
+     "order": 2,
+     "text": "Heber Valley · Park City · Utah"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": []
+  }
+ ]
+}

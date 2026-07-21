@@ -1,0 +1,16 @@
+{
+  "runtime": "vanilla-eds",
+  "vintage": "adobe/aem-boilerplate current main (2026-07 clone, trustedTypes + widget auto-block)",
+  "blockWrapperClass": "block",
+  "buttonClasses": ".button / .button.primary / .button.secondary / .button.accent, in p.button-wrapper",
+  "buttonization": "formatted-only",
+  "fragmentScriptPolicy": "inert-innerHTML",
+  "emptySectionCollapse": true,
+  "notes": {
+    "decorateButtons": "scripts.js requires a.closest('strong')/('em'); bare <a> alone in <p> is NOT buttonized; emphasis tag is replaced by the classed anchor",
+    "decorateBlock": "adds .block + data-block-name, parent gains .<name>-wrapper, section gains .<name>-container (scripts/aem.js decorateBlock)",
+    "sectionDom": "main > div -> div.section, runs of default content wrapped in div.default-content-wrapper; sections hidden via data-section-status + inline display:none until loaded",
+    "autoBlocks": "buildAutoBlocks: /fragments/ links -> fragment block; /widgets/ links -> widget block (project-specific)",
+    "fonts": "loadFonts() loads styles/fonts.css eagerly on >=900px or fonts-loaded session flag, always in loadLazy"
+  }
+}

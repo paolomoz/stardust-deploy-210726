@@ -1,20 +1,171 @@
+/* footer — Wasatch Back chrome (prototype .ds-footer). The footer element's
+   own box styles live on `footer` (#31); it sits flush against the closer
+   band, as in the prototype (no top margin). */
+
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background: var(--ink);
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+footer .ds-footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding: var(--s-64) 0 var(--s-32);
+  font-size: var(--t-16);
 }
 
-footer .footer p {
-  margin: 0;
+footer .ds-footer-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--s-32);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.5fr;
+  gap: var(--s-48);
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+footer .ds-footer .ds-h4 {
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: var(--t-12);
+  color: var(--granite-soft);
+  margin: 0 0 var(--s-16);
+}
+
+footer .ds-footer .ds-wordmark-lg {
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: var(--t-28);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+footer .ds-footer .ds-wordmark-lg .ds-spike {
+  background: var(--goldspike);
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  transform: rotate(45deg);
+}
+
+footer .ds-footer .ds-tagline {
+  margin-top: var(--s-16);
+  font-family: var(--serif);
+  font-size: var(--t-16);
+  opacity: 0.85;
+  max-width: 30ch;
+}
+
+footer .ds-footer a {
+  color: var(--paper);
+  text-decoration: none;
+}
+
+footer .ds-footer nav a {
+  display: block;
+  padding: 4px 0;
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: var(--t-13);
+  border-bottom: 1px solid transparent;
+  width: max-content;
+  transition: border-color 220ms var(--ease-out-q);
+}
+
+footer .ds-footer a:hover {
+  border-bottom-color: var(--goldspike);
+  text-decoration: none;
+}
+
+footer .ds-footer .ds-email {
+  margin-top: var(--s-24);
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: var(--t-16);
+  color: var(--goldspike);
+}
+
+footer .ds-footer .ds-email a {
+  font-size: inherit;
+  color: inherit;
+}
+
+footer .ds-footer .ds-tap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-24);
+}
+
+footer .ds-footer .ds-tap {
+  font-family: var(--serif);
+  font-size: var(--t-13);
+  line-height: 1.55;
+  opacity: 0.85;
+}
+
+footer .ds-footer .ds-tap b {
+  display: block;
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  font-size: var(--t-14);
+  color: var(--goldspike);
+  opacity: 1;
+  margin-bottom: 4px;
+}
+
+footer .ds-footer .ds-tap .ds-tap-line {
+  display: block;
+}
+
+footer .ds-footer .ds-tap em {
+  font-style: italic;
+  opacity: 0.55;
+}
+
+footer .ds-colophon {
+  max-width: var(--container);
+  margin: var(--s-48) auto 0;
+  padding: var(--s-24) var(--s-32) 0;
+  border-top: 1px solid var(--ink-line);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: var(--t-10);
+  color: var(--granite);
+}
+
+@media (width <= 1024px) {
+  footer .ds-footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  footer .ds-footer .ds-tap-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (width <= 640px) {
+  footer .ds-footer-inner {
+    grid-template-columns: 1fr;
+    gap: var(--s-32);
+  }
+
+  footer .ds-colophon {
+    flex-direction: column;
+    gap: 8px;
+    padding: var(--s-24) var(--s-16) 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  footer .ds-footer nav a {
+    transition-duration: 0ms;
   }
 }

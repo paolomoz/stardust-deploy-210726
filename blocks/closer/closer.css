@@ -1,0 +1,93 @@
+/* closer — cinematic atmospheric closing band (prototype .ds-closer-band).
+   Full-bleed: release the section wrapper's constraint. */
+
+.closer-container .closer-wrapper {
+  max-width: none;
+  padding: 0;
+}
+
+.closer .ds-closer-band {
+  position: relative;
+  color: var(--paper);
+  padding: 180px var(--s-32);
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--ink); /* no-image fallback ground */
+}
+
+.closer .ds-closer-bg {
+  position: absolute;
+  inset: 0;
+  filter: brightness(0.42) contrast(1.05);
+  z-index: -2;
+}
+
+.closer .ds-closer-bg picture,
+.closer .ds-closer-bg img {
+  width: 100%;
+  height: 100%;
+}
+
+.closer .ds-closer-bg img {
+  object-fit: cover;
+  object-position: center 70%;
+}
+
+.closer .ds-closer-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(198 58 46 / 16%) 0%, rgb(26 22 18 / 68%) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.closer .ds-closer-band .ds-eyebrow {
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-size: var(--t-12);
+  color: var(--goldspike);
+  letter-spacing: 0.32em;
+  display: inline-block;
+  padding: var(--s-12) var(--s-24);
+  border-top: 1px solid rgb(232 184 48 / 55%);
+  border-bottom: 1px solid rgb(232 184 48 / 55%);
+}
+
+.closer .ds-closer-band h2 {
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-size: clamp(56px, 10vw, 156px);
+  line-height: 0.9;
+  color: var(--paper);
+  max-width: 14ch;
+  margin: var(--s-32) auto 0;
+  text-shadow: 0 8px 40px rgb(0 0 0 / 55%);
+}
+
+.closer .ds-closer-band .ds-closer-sig {
+  display: inline-block;
+  margin-top: var(--s-48);
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.26em;
+  font-size: var(--t-12);
+  color: rgb(245 241 234 / 75%);
+}
+
+@media (width <= 1024px) {
+  .closer .ds-closer-band {
+    padding: 120px var(--s-24);
+  }
+}
+
+@media (width <= 640px) {
+  .closer .ds-closer-band {
+    padding: 80px var(--s-16);
+  }
+
+  .closer .ds-closer-band h2 {
+    font-size: clamp(40px, 13vw, 80px);
+  }
+}

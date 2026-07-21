@@ -1,37 +1,222 @@
+/* hero — cinematic full-bleed founding hero. CSS lifted from the prototype's
+   .ds-hero-cinematic rules, scoped under .hero. The prototype section is
+   full-bleed (no inner max-width on the section itself), so the section
+   wrapper's constraint is released on the hero's own wrapper; the inner grid
+   keeps the --container wrap (#13). */
+
 .hero-container .hero-wrapper {
-  max-width: unset;
+  max-width: none;
   padding: 0;
 }
 
-.hero {
+.hero .ds-hero-cinematic {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  min-height: 96vh;
+  color: var(--paper);
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--ink); /* no-image fallback ground */
 }
 
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
-
-.hero picture {
+.hero .ds-hero-bg {
   position: absolute;
-  z-index: -1;
   inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+  z-index: -2;
 }
 
-.hero img {
-  object-fit: cover;
+.hero .ds-hero-bg picture,
+.hero .ds-hero-bg img {
   width: 100%;
   height: 100%;
 }
 
-@media (width >= 900px) {
-  .hero {
-    padding: 40px 32px;
+.hero .ds-hero-bg img {
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+.hero .ds-hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgb(26 22 18 / 18%) 0%, rgb(26 22 18 / 32%) 45%, rgb(26 22 18 / 72%) 80%, rgb(26 22 18 / 78%) 94%, var(--paper) 100%),
+    linear-gradient(90deg, rgb(26 22 18 / 72%) 0%, rgb(26 22 18 / 32%) 40%, rgb(26 22 18 / 5%) 64%, transparent 100%);
+}
+
+.hero .ds-hero-inner {
+  position: relative;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 200px var(--s-32) 160px;
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  gap: var(--s-64);
+  align-items: end;
+  min-height: 96vh;
+}
+
+.hero .ds-hero-bug-col {
+  position: relative;
+  align-self: end;
+}
+
+.hero .ds-bug {
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-size: clamp(220px, 28vw, 420px);
+  line-height: 0.74;
+  letter-spacing: -0.03em;
+  color: var(--paper);
+  margin: 0;
+  text-shadow: 0 12px 60px rgb(0 0 0 / 55%);
+}
+
+/* grid escape: goldspike rule extends past the column edge into the right column */
+.hero .ds-bug-rule {
+  position: relative;
+  margin-top: var(--s-24);
+  height: 2px;
+  background: var(--goldspike);
+  width: 140%;
+  max-width: none;
+  box-shadow: 0 0 24px rgb(232 184 48 / 35%);
+}
+
+.hero .ds-bug-meta {
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: var(--t-12);
+  color: var(--goldspike);
+  margin-top: var(--s-16);
+  max-width: 320px;
+}
+
+.hero .ds-hero-copy {
+  align-self: end;
+  padding-bottom: var(--s-24);
+}
+
+.hero .ds-hero-eyebrow {
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: var(--t-12);
+  color: var(--goldspike);
+  margin-bottom: var(--s-24);
+}
+
+.hero .ds-hero-copy h1 {
+  font-family: var(--display);
+  font-size: clamp(44px, 5.6vw, 92px);
+  color: var(--paper);
+  text-shadow: 0 6px 28px rgb(0 0 0 / 55%);
+  margin-bottom: var(--s-24);
+  max-width: 16ch;
+  line-height: 0.94;
+}
+
+.hero .ds-hero-lede {
+  font-family: var(--serif);
+  font-size: var(--t-21);
+  line-height: 1.45;
+  color: rgb(245 241 234 / 88%);
+  max-width: 48ch;
+  margin-bottom: var(--s-32);
+}
+
+.hero .ds-hero-meta {
+  display: flex;
+  gap: var(--s-32);
+  flex-wrap: wrap;
+  padding-top: var(--s-24);
+  border-top: 1px solid rgb(245 241 234 / 22%);
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: var(--t-12);
+  color: rgb(245 241 234 / 65%);
+}
+
+.hero .ds-hero-meta strong {
+  color: var(--paper);
+  font-weight: 400;
+}
+
+.hero .ds-hero-scroll {
+  position: absolute;
+  bottom: var(--s-48);
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(245 241 234 / 55%);
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-size: var(--t-10);
+  letter-spacing: 0.36em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero .ds-hero-scroll::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(to bottom, rgb(245 241 234 / 55%), transparent);
+}
+
+@media (width <= 1024px) {
+  .hero .ds-hero-inner {
+    grid-template-columns: 1fr;
+    padding: 160px var(--s-24) 120px;
+    gap: var(--s-32);
+    align-items: start;
+    min-height: 88vh;
+  }
+
+  .hero .ds-bug {
+    font-size: clamp(160px, 32vw, 280px);
+  }
+
+  .hero .ds-bug-rule {
+    width: 100%;
+  }
+}
+
+@media (width <= 640px) {
+  .hero .ds-hero-cinematic {
+    min-height: 92vh;
+  }
+
+  .hero .ds-hero-inner {
+    padding: 120px var(--s-16) 60px;
+    min-height: 92vh;
+    gap: var(--s-24);
+  }
+
+  .hero .ds-bug {
+    font-size: clamp(140px, 44vw, 220px);
+    line-height: 0.85;
+  }
+
+  .hero .ds-bug-meta {
+    font-size: var(--t-10);
+  }
+
+  .hero .ds-hero-copy h1 {
+    font-size: clamp(34px, 9vw, 56px);
+    max-width: 100%;
+  }
+
+  .hero .ds-hero-lede {
+    font-size: var(--t-16);
+  }
+
+  .hero .ds-hero-meta {
+    gap: var(--s-12);
+    font-size: var(--t-10);
   }
 }

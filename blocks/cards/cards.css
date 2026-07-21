@@ -1,27 +1,210 @@
-.cards > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* cards — repeating card grid; `beers` variant carries the six-beer substrate
+   grid from the prototype (`.ds-beer-grid`). Constrained to --container via
+   the stock section wrapper (the prototype section is NOT full-bleed). */
+
+/* section head: DEFAULT CONTENT before the block (D1), styled in place —
+   eyebrow + h2 left, the "See all six" text link right-aligned at baseline */
+.section.cards-container .default-content-wrapper {
+  position: relative;
+  padding-top: var(--s-96);
+  margin-bottom: var(--s-48);
+  padding-bottom: var(--s-16);
+  border-bottom: 1px solid var(--ink);
+}
+
+.section.cards-container .default-content-wrapper > p:first-of-type {
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-size: var(--t-12);
+  letter-spacing: 0.2em;
+  color: var(--ink);
+}
+
+.section.cards-container .default-content-wrapper h2 {
+  font-size: var(--t-49);
+  color: var(--ink);
+}
+
+.section.cards-container .default-content-wrapper > p:last-of-type:not(:first-of-type) {
+  position: absolute;
+  right: var(--s-24);
+  bottom: var(--s-16);
+}
+
+.section.cards-container .default-content-wrapper > p:last-of-type a {
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-size: var(--t-13);
+  letter-spacing: 0.12em;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 2px solid var(--goldspike);
+  padding-bottom: 2px;
+}
+
+@media (width >= 900px) {
+  .section.cards-container .default-content-wrapper > p:last-of-type:not(:first-of-type) {
+    right: var(--s-32);
+  }
+}
+
+.cards.beers {
+  padding-bottom: var(--s-96);
+}
+
+.cards .ds-beer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px;
+  background: var(--ink);
+  border: 1px solid var(--ink);
 }
 
-.cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+.cards .ds-beer {
+  overflow-wrap: normal; /* undo the global link break-word — names wrap on words */
+  background: var(--substrate, var(--ink-soft));
+  color: var(--paper);
+  padding: var(--s-32);
+  display: grid;
+  grid-template-rows: 1fr auto auto auto;
+  min-height: 320px;
+  text-decoration: none;
+  transition: transform 280ms var(--ease-out-q);
+  position: relative;
+  overflow: hidden;
 }
 
-.cards .cards-card-body {
-  margin: 16px;
+.cards .ds-beer:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
 }
 
-.cards .cards-card-image {
-  line-height: 0;
+.cards .ds-beer .ds-beer-vernacular {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: var(--t-13);
+  line-height: 1.5;
+  align-self: end;
+  max-width: 32ch;
+  opacity: 0.85;
 }
 
-.cards > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.cards .ds-beer .ds-beer-name {
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  font-size: var(--t-37);
+  line-height: 0.95;
+  margin-top: var(--s-24);
+  color: inherit;
+}
+
+.cards .ds-beer .ds-beer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--s-12);
+  margin-top: var(--s-8);
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: var(--t-13);
+}
+
+.cards .ds-beer .ds-badge {
+  display: inline-block;
+  margin-top: var(--s-12);
+  padding: 4px 8px;
+  border: 1px solid currentcolor;
+  font-family: var(--display);
+  font-size: var(--t-10);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  align-self: flex-start;
+  width: max-content;
+}
+
+.cards .ds-beer .ds-beer-num {
+  position: absolute;
+  top: var(--s-16);
+  right: var(--s-24);
+  font-family: var(--display);
+  font-size: var(--t-12);
+  letter-spacing: 0.18em;
+  opacity: 0.55;
+}
+
+/* per-beer substrates (#90 fingerprint — key derived from the name slug) */
+.cards.beers .ds-beer.beer-tabernacle {
+  --substrate: var(--substrate-tabernacle);
+
+  color: var(--paper);
+}
+
+.cards.beers .ds-beer.beer-cutthroat {
+  --substrate: var(--substrate-cutthroat);
+
+  color: var(--paper);
+}
+
+.cards.beers .ds-beer.beer-goldspike {
+  --substrate: var(--substrate-goldspike);
+
+  color: var(--ink);
+}
+
+.cards.beers .ds-beer.beer-antelope {
+  --substrate: var(--substrate-antelope);
+
+  color: var(--ink);
+}
+
+.cards.beers .ds-beer.beer-powder-day {
+  --substrate: var(--substrate-powder-day);
+
+  color: var(--ink);
+}
+
+.cards.beers .ds-beer.beer-hoarfrost {
+  --substrate: var(--substrate-hoarfrost);
+
+  color: var(--paper);
+}
+
+@media (width <= 1024px) {
+  .section.cards-container .default-content-wrapper {
+    padding-top: var(--s-64);
+  }
+
+  .cards.beers {
+    padding-bottom: var(--s-64);
+  }
+
+  .cards .ds-beer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width <= 640px) {
+  .section.cards-container .default-content-wrapper {
+    padding-top: var(--s-48);
+  }
+
+  .section.cards-container .default-content-wrapper h2 {
+    font-size: var(--t-37);
+  }
+
+  .cards.beers {
+    padding-bottom: var(--s-48);
+  }
+
+  .cards .ds-beer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cards .ds-beer {
+    transition-duration: 0ms;
+  }
 }

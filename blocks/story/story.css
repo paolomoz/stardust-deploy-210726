@@ -1,0 +1,140 @@
+/* story — full-bleed cinematic brewery band (prototype .ds-story-cinematic).
+   Full-bleed: release the section wrapper's constraint on the story wrapper;
+   the inner column keeps its own 1000px wrap. */
+
+.story-container .story-wrapper {
+  max-width: none;
+  padding: 0;
+}
+
+.story .ds-story-cinematic {
+  position: relative;
+  color: var(--paper);
+  padding: 220px 0;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--ink); /* no-image fallback ground */
+}
+
+/* photo layer with filter; scrim on a separate layer so the filter doesn't dim it */
+.story .ds-story-bg {
+  position: absolute;
+  inset: 0;
+  filter: saturate(0.55) brightness(0.32);
+  z-index: -2;
+}
+
+.story .ds-story-bg picture,
+.story .ds-story-bg img {
+  width: 100%;
+  height: 100%;
+}
+
+.story .ds-story-bg img {
+  object-fit: cover;
+  object-position: center 58%;
+}
+
+.story .ds-story-cinematic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 80% 60% at 35% 50%, rgb(26 22 18 / 55%) 0%, rgb(26 22 18 / 78%) 60%, rgb(26 22 18 / 92%) 100%),
+    linear-gradient(180deg,
+      rgb(26 22 18 / 60%) 0%,
+      rgb(26 22 18 / 55%) 22%,
+      rgb(26 22 18 / 78%) 42%,
+      rgb(26 22 18 / 92%) 55%,
+      rgb(26 22 18 / 90%) 75%,
+      rgb(26 22 18 / 88%) 100%);
+  pointer-events: none;
+}
+
+.story .ds-story-inner {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 var(--s-32);
+  display: grid;
+  gap: var(--s-32);
+}
+
+.story .ds-story-inner .ds-eyebrow {
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-size: var(--t-12);
+  color: var(--goldspike);
+  letter-spacing: 0.24em;
+}
+
+.story .ds-story-inner h2 {
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-size: clamp(48px, 7vw, 116px);
+  color: var(--paper);
+  text-shadow: 0 6px 36px rgb(0 0 0 / 55%);
+  max-width: 18ch;
+  line-height: 0.92;
+}
+
+.story .ds-story-body {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-48);
+  margin-top: var(--s-24);
+}
+
+.story .ds-story-body p {
+  font-family: var(--serif);
+  font-size: var(--t-21);
+  line-height: 1.55;
+  color: rgb(245 241 234 / 85%);
+  max-width: 40ch;
+}
+
+.story .ds-story-closer {
+  margin-top: var(--s-48);
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: var(--t-37);
+  color: var(--paper);
+  border-top: 1px solid rgb(232 184 48 / 55%);
+  padding-top: var(--s-24);
+  max-width: 24ch;
+}
+
+@media (width <= 1024px) {
+  .story .ds-story-cinematic {
+    padding: 140px 0;
+  }
+
+  .story .ds-story-body {
+    grid-template-columns: 1fr;
+    gap: var(--s-24);
+  }
+}
+
+@media (width <= 640px) {
+  .story .ds-story-cinematic {
+    padding: 100px 0;
+  }
+
+  .story .ds-story-inner {
+    padding: 0 var(--s-16);
+  }
+
+  .story .ds-story-inner h2 {
+    font-size: clamp(36px, 10vw, 56px);
+  }
+
+  .story .ds-story-body p {
+    font-size: var(--t-16);
+  }
+
+  .story .ds-story-closer {
+    font-size: var(--t-21);
+  }
+}

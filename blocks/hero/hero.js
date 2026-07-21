@@ -15,6 +15,11 @@
 export default function decorate(block) {
   const heading = block.querySelector('h1, h2, h3');
   const media = block.querySelector('picture, img');
+  // LCP image: the page's first section is the metadata-only (empty) one, so the
+  // runtime's waitForFirstImage never eager-izes this img — do it here, and let
+  // the figure's reserved min-height (hero.css) hold the box until it loads.
+  const lcpImg = media && (media.matches('img') ? media : media.querySelector('img'));
+  if (lcpImg) { lcpImg.setAttribute('loading', 'eager'); lcpImg.setAttribute('fetchpriority', 'high'); }
   const paragraphs = [...block.querySelectorAll('p')].filter((p) => !p.closest('picture'));
   const ctaParagraphs = paragraphs.filter((p) => p.querySelector('a'));
   const textParagraphs = paragraphs.filter((p) => !p.querySelector('a') && p.textContent.trim());

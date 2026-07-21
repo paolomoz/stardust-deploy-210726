@@ -163,9 +163,13 @@ function buildMega(navSection) {
   mega.append(cols);
   submenu.replaceWith(mega);
 
-  // caret on the trigger link
-  const trigger = navSection.querySelector(':scope > a');
+  // caret on the trigger link — the pipeline wraps the authored trigger in a
+  // <p> (<li><p><a>…), so match both shapes (#79); unwrap so CSS keyed to
+  // `li > a` applies on live exactly as in the harness
+  const trigger = navSection.querySelector(':scope > a, :scope > p > a');
   if (trigger && !trigger.querySelector('.caret')) {
+    const wrapper = trigger.parentElement;
+    if (wrapper.tagName === 'P') wrapper.replaceWith(trigger);
     trigger.setAttribute('aria-haspopup', 'true');
     const caret = document.createElement('span');
     caret.className = 'caret';
@@ -212,6 +216,11 @@ export default async function decorate(block) {
     const list = navSections.querySelector('.default-content-wrapper > ul');
     if (list) list.classList.add('nav-links');
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
+      // the pipeline wraps each item's trigger link in a <p> (<li><p><a>…) on
+      // live while the raw authored shape is <li><a> (#79) — unwrap so the
+      // `.nav-links > li > a` CSS applies in both environments
+      const pWrapped = navSection.querySelector(':scope > p > a');
+      if (pWrapped) pWrapped.parentElement.replaceWith(pWrapped);
       if (navSection.querySelector('ul')) {
         navSection.classList.add('nav-drop');
         buildMega(navSection);

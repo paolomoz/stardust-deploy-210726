@@ -1,0 +1,688 @@
+{
+ "source": "http://localhost:8791/prototypes/index-proposed.html",
+ "width": 1280,
+ "profile": "eds",
+ "sections": [
+  {
+   "section": "hero",
+   "items": [
+    {
+     "role": "body",
+     "order": 0,
+     "text": "We are an RBI Registered NBFC*"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "We provide funds for all your business needs"
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "Collateral-free business loans for MSMEs and small businesses in India."
+    },
+    {
+     "role": "cta",
+     "order": 3,
+     "text": "Apply Now",
+     "href": "https://loans.flexiloans.com/?nlp=1&utm_source=Website&utm_medium=Web&utm_campaign=organic&utm_term=organic&utm_content=organic"
+    },
+    {
+     "role": "cta",
+     "order": 4,
+     "text": "Check Eligibility",
+     "href": "https://flexiloans.com/loan/term-loan"
+    }
+   ],
+   "imgCount": 1,
+   "repeats": []
+  },
+  {
+   "section": "eligibility-cards",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Check Your Loan Eligibility"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "Term Loan"
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "Loans are necessary for the formation, operation, development, and improvement of all commercial companies."
+    },
+    {
+     "role": "cta",
+     "order": 3,
+     "text": "Check Eligibility →",
+     "href": "https://flexiloans.com/loan/term-loan"
+    },
+    {
+     "role": "heading",
+     "order": 4,
+     "text": "Vendor Financing"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "A vendor is a crucial part of a supply chain network. Vendors supply raw goods that are required for manufacturing products."
+    },
+    {
+     "role": "cta",
+     "order": 6,
+     "text": "Check Eligibility →",
+     "href": "https://flexiloans.com/loan/vendor-finance"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": [
+    {
+     "unitSelector": "ARTICLE.elig-card",
+     "count": 2,
+     "unit": {
+      "headings": 1,
+      "ctas": 1,
+      "imgs": 0,
+      "textRuns": 4
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "live-status",
+   "items": [
+    {
+     "role": "body",
+     "order": 0,
+     "text": "Live status"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "Maharashtra"
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "Currently processing across India"
+    },
+    {
+     "role": "body",
+     "order": 3,
+     "text": "8835 applications"
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "Currently processing loans worth"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "₹ 3,26,63,35,000"
+    }
+   ],
+   "imgCount": 1,
+   "repeats": [
+    {
+     "unitSelector": "P.live-line",
+     "count": 2,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 0,
+      "textRuns": 1
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "why-flexiloans",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Why FlexiLoans"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "FlexiLoans is a trade name of Epimoney Private Limited, a Non-Banking Financial Company (NBFC) registered with the RBI which offers quick and hassle-free business loans without any collateral and minimal paperwork. Whether you're a trader, retailer, service provider, or manufacturer, our loans are designed to help you grow."
+    },
+    {
+     "role": "heading",
+     "order": 2,
+     "text": "Collateral Free"
+    },
+    {
+     "role": "body",
+     "order": 3,
+     "text": "Tension free loans as you do not have to provide any security"
+    },
+    {
+     "role": "heading",
+     "order": 4,
+     "text": "Fast"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "Minimum document and easy process"
+    },
+    {
+     "role": "heading",
+     "order": 6,
+     "text": "Safe & Secure"
+    },
+    {
+     "role": "body",
+     "order": 7,
+     "text": "We follow RBI mandate policies to safeguard and store your data"
+    },
+    {
+     "role": "heading",
+     "order": 8,
+     "text": "Transparent"
+    },
+    {
+     "role": "body",
+     "order": 9,
+     "text": "We mention all the charges up front before disbursement. No surprises later!"
+    },
+    {
+     "role": "body",
+     "order": 10,
+     "text": "₹ 7000+ Cr"
+    },
+    {
+     "role": "body",
+     "order": 11,
+     "text": "Loans disbursed"
+    },
+    {
+     "role": "body",
+     "order": 12,
+     "text": "2100+"
+    },
+    {
+     "role": "body",
+     "order": 13,
+     "text": "Cities served"
+    },
+    {
+     "role": "body",
+     "order": 14,
+     "text": "400+"
+    },
+    {
+     "role": "body",
+     "order": 15,
+     "text": "Partners"
+    },
+    {
+     "role": "body",
+     "order": 16,
+     "text": "600+"
+    },
+    {
+     "role": "body",
+     "order": 17,
+     "text": "Employees & Growing"
+    }
+   ],
+   "imgCount": 1,
+   "repeats": [
+    {
+     "unitSelector": "DIV.chip-row",
+     "count": 4,
+     "unit": {
+      "headings": 1,
+      "ctas": 0,
+      "imgs": 0,
+      "textRuns": 2
+     },
+     "uniform": true
+    },
+    {
+     "unitSelector": "DIV.stat",
+     "count": 3,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 0,
+      "textRuns": 2
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "products",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "People love our products"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "Term Loan"
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "A term loan is a commercial credit that has fixed repayment conditions, such as a predetermined loan period and interest rate. Borrowers must return the loan in regular monthly installments or EMIs until the debt matures. EMIs are composed primarily of two components: the principal amount and the interest, calculated using the effective interest rate."
+    },
+    {
+     "role": "cta",
+     "order": 3,
+     "text": "Apply Now",
+     "href": "https://flexiloans.com/loan/term-loan"
+    },
+    {
+     "role": "heading",
+     "order": 4,
+     "text": "Vendor Financing"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "A vendor is a crucial part of a supply chain network. Vendors supply raw goods that are required for manufacturing products."
+    },
+    {
+     "role": "cta",
+     "order": 6,
+     "text": "Apply Now",
+     "href": "https://flexiloans.com/loan/vendor-finance"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": [
+    {
+     "unitSelector": "ARTICLE.product-card",
+     "count": 2,
+     "unit": {
+      "headings": 1,
+      "ctas": 1,
+      "imgs": 0,
+      "textRuns": 3
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "security",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Security & support you can trust"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "Anti Phishing"
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "FlexiLoans never ask for money to reduce your interest rate or processing your application faster."
+    },
+    {
+     "role": "heading",
+     "order": 3,
+     "text": "Responsibility"
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "We never sell your data with the marketing companies and 3rd party"
+    },
+    {
+     "role": "heading",
+     "order": 5,
+     "text": "Serious security"
+    },
+    {
+     "role": "body",
+     "order": 6,
+     "text": "We follow industry leading security system to keep our data safe on the internet"
+    },
+    {
+     "role": "cta",
+     "order": 7,
+     "text": "Learn more about security & support →",
+     "href": "https://flexiloans.com/loan/phishing"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": [
+    {
+     "unitSelector": "DIV.security-item",
+     "count": 3,
+     "unit": {
+      "headings": 1,
+      "ctas": 0,
+      "imgs": 0,
+      "textRuns": 2
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "testimonials",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Our customers love us..."
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "The disbursement of funds was very fast which helped me plan better. All my queries were answered by their team which made the process easier"
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "S.Sivakumar"
+    },
+    {
+     "role": "body",
+     "order": 3,
+     "text": "Owner of Shrinee Fashions, Tirupur"
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "The service was exceptionally great, very quick & hassle free. I have recommended FlexiLoans to our customers and vendors as well. I would rate the service 10 on 10!"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "Stephan Balakrishnan"
+    },
+    {
+     "role": "body",
+     "order": 6,
+     "text": "Medical shop owner, Mumbai"
+    },
+    {
+     "role": "body",
+     "order": 7,
+     "text": "A BIG thank you to team Flexiloans, to help me for expanding my vision into reality!"
+    },
+    {
+     "role": "body",
+     "order": 8,
+     "text": "Sangeeta Pawar"
+    },
+    {
+     "role": "body",
+     "order": 9,
+     "text": "Grocery Shop Owner, Mumbai"
+    }
+   ],
+   "imgCount": 6,
+   "repeats": [
+    {
+     "unitSelector": "FIGURE.testi-card",
+     "count": 3,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 2,
+      "textRuns": 3
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "achievements",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Our achievements"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "2019"
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "India NBFC Excellence Awards"
+    },
+    {
+     "role": "body",
+     "order": 3,
+     "text": "Digital Lending NBFC of the Year"
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "2019"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "Best Companies for Millennials"
+    },
+    {
+     "role": "body",
+     "order": 6,
+     "text": "Awards 2019"
+    },
+    {
+     "role": "body",
+     "order": 7,
+     "text": "2019"
+    },
+    {
+     "role": "body",
+     "order": 8,
+     "text": "SuperStartups Asia"
+    },
+    {
+     "role": "body",
+     "order": 9,
+     "text": "India Winner in Gold Category"
+    },
+    {
+     "role": "body",
+     "order": 10,
+     "text": "2018–19"
+    },
+    {
+     "role": "body",
+     "order": 11,
+     "text": "Great Place to Work"
+    },
+    {
+     "role": "body",
+     "order": 12,
+     "text": "Certification 2018–2019"
+    }
+   ],
+   "imgCount": 4,
+   "repeats": [
+    {
+     "unitSelector": "DIV.award",
+     "count": 4,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 1,
+      "textRuns": 3
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "blogs",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Recent Blogs/Media coverage"
+    },
+    {
+     "role": "cta",
+     "order": 1,
+     "text": "Business Ideas Small business ideas: low investment, high profit →",
+     "href": "https://flexiloans.com/blog/small-business-ideas-low-investment-high-profit/"
+    },
+    {
+     "role": "cta",
+     "order": 2,
+     "text": "Business Ideas Business ideas for women in India →",
+     "href": "https://flexiloans.com/blog/business-ideas-for-women-in-india/"
+    },
+    {
+     "role": "cta",
+     "order": 3,
+     "text": "Business Ideas Top 10 part-time business ideas →",
+     "href": "https://flexiloans.com/blog/top-10-part-time-business-ideas/"
+    },
+    {
+     "role": "cta",
+     "order": 4,
+     "text": "View all →",
+     "href": "https://flexiloans.com/blog/"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": [
+    {
+     "unitSelector": "A.blog-row",
+     "count": 3,
+     "unit": {
+      "headings": 1,
+      "ctas": 0,
+      "imgs": 0,
+      "textRuns": 3
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "faq",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "FAQ"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "What are the purposes for which I can get a loan via FlexiLoans?"
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "FlexiLoans is here to provide you financial access for your business funding needs. You have to undergo simple and transparent Credit Evaluation, basic documentation before we disburse the loan. You may get loans via FlexiLoans for:"
+    },
+    {
+     "role": "body",
+     "order": 3,
+     "text": "Expanding your business"
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "Servicing regular working capital needs"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "Managing seasonal working capital requirements"
+    },
+    {
+     "role": "body",
+     "order": 6,
+     "text": "Manage short term cash flow gaps"
+    },
+    {
+     "role": "body",
+     "order": 7,
+     "text": "What are the required documents that I might need to upload?"
+    },
+    {
+     "role": "body",
+     "order": 8,
+     "text": "The full answer lives in our FAQ centre."
+    },
+    {
+     "role": "cta",
+     "order": 9,
+     "text": "Read it there →",
+     "href": "https://flexiloans.com/loan/faq"
+    },
+    {
+     "role": "body",
+     "order": 10,
+     "text": "How secure is my personal data and documents?"
+    },
+    {
+     "role": "body",
+     "order": 11,
+     "text": "The full answer lives in our FAQ centre."
+    },
+    {
+     "role": "cta",
+     "order": 12,
+     "text": "Read it there →",
+     "href": "https://flexiloans.com/loan/faq"
+    },
+    {
+     "role": "cta",
+     "order": 13,
+     "text": "View all FAQs",
+     "href": "https://flexiloans.com/loan/faq"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": [
+    {
+     "unitSelector": "DETAILS.",
+     "count": 3,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 0,
+      "textRuns": 6
+     },
+     "uniform": false
+    }
+   ]
+  },
+  {
+   "section": "partner-strip",
+   "items": [
+    {
+     "role": "cta",
+     "order": 0,
+     "text": "View all Partners →",
+     "href": "https://flexiloans.com/loan/partners"
+    }
+   ],
+   "imgCount": 5,
+   "repeats": []
+  }
+ ]
+}

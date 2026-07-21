@@ -1,0 +1,59 @@
+/* live-status — split proof band on the ice wash */
+
+main .section:has(> .live-status-wrapper) {
+  background: var(--ice-wash);
+}
+
+.live-status .live-grid {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  gap: var(--sp-6);
+  align-items: center;
+}
+
+.live-status .live-map img {
+  border-radius: var(--r-band);
+}
+
+.live-status .live-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--paper);
+  color: var(--navy-trust);
+  border-radius: var(--r-pill);
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.live-status .live-chip::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--tarakki-green);
+}
+
+.live-status .live-copy h2 {
+  font-size: var(--text-headline);
+  margin-top: var(--sp-3);
+}
+
+.live-status .live-line {
+  color: var(--slate);
+  font-size: var(--text-lede);
+  margin-top: var(--sp-2);
+}
+
+.live-status .live-line strong {
+  color: var(--navy-trust);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (width <= 1023px) {
+  .live-status .live-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+}

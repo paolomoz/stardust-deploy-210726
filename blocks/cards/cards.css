@@ -1,27 +1,141 @@
-.cards > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* cards — shared grid + FlexiLoans variants (eligibility / products / security) */
+
+.cards .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
 }
 
-.cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+.cards .card h3 {
+  font-size: var(--text-title);
+  font-weight: 700;
 }
 
-.cards .cards-card-body {
-  margin: 16px;
+.cards .card p {
+  color: var(--slate);
+  margin-top: var(--sp-2);
 }
 
-.cards .cards-card-image {
-  line-height: 0;
+/* icon chip — Feather/Lucide stroke set (prototype .icon-chip) */
+.cards .icon-chip {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--ice-wash);
+  color: var(--navy-trust);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
 }
 
-.cards > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.cards .icon-chip .icon,
+.cards .icon-chip img {
+  width: 24px;
+  height: 24px;
+}
+
+.cards .cards-foot {
+  margin-top: var(--sp-5);
+}
+
+/* --- eligibility: 2-up bordered icon cards ------------------------------- */
+.cards.eligibility .card {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: var(--sp-3);
+  align-items: start;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-card);
+  padding: var(--sp-5);
+  transition: box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.cards.eligibility .card-link {
+  display: inline-block;
+  margin-top: var(--sp-3);
+}
+
+/* --- products: 2-up shadow cards with primary CTA ------------------------ */
+.cards.products .card {
+  background: var(--paper);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--sp-5);
+}
+
+.cards.products .card-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  height: 100%;
+}
+
+.cards.products .card p {
+  margin-top: 0;
+  flex-grow: 1;
+}
+
+.cards.products .card p.button-wrapper {
+  flex-grow: 0;
+  align-self: flex-start;
+}
+
+/* prototype .btn-sm */
+.cards.products a.button {
+  padding: 10px 22px;
+  font-size: 0.9375rem;
+}
+
+.cards.eligibility .card:hover {
+  box-shadow: var(--shadow-card);
+  border-color: transparent;
+}
+
+/* --- security: 3-up borderless icon items on the ice band ---------------- */
+main .section:has(> .cards-wrapper > .cards.security) {
+  background: var(--ice-wash);
+}
+
+.cards.security .cards-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+}
+
+.cards.security .card .icon-chip {
+  width: 56px;
+  height: 56px;
+  background: var(--paper);
+  margin-bottom: var(--sp-3);
+}
+
+.cards.security .icon-chip .icon,
+.cards.security .icon-chip img {
+  width: 26px;
+  height: 26px;
+}
+
+.cards.security .card h3 {
+  font-size: 1.125rem;
+}
+
+.cards.security .card p {
+  max-width: 34ch;
+}
+
+@media (width <= 1023px) {
+  .cards.security .cards-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .cards.security .card p {
+    max-width: 60ch;
+  }
+}
+
+@media (width <= 767px) {
+  .cards .cards-grid {
+    grid-template-columns: 1fr;
+  }
 }

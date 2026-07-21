@@ -1,0 +1,18 @@
+{
+  "runtime": "vanilla-eds",
+  "source": "read from this repo's scripts/scripts.js + scripts/aem.js (adobe/aem-boilerplate current main vintage, commit 6cd6b9a 'Initial commit')",
+  "blockWrapperClass": "block",
+  "sectionShape": "<div class=\"section <name>-container\"><div class=\"default-content-wrapper\">…</div><div class=\"<name>-wrapper\"><div class=\"<name> block\" data-block-name=\"<name>\">…</div></div></div>",
+  "buttonClasses": ".button / .button.primary / .button.secondary / .button.accent, in p.button-wrapper",
+  "buttonization": "formatted-only",
+  "buttonizationNotes": "decorateButtons matches p a[href]; requires <strong>/<em> ancestor; skips links containing <img>, links not alone in their <p>, and URL-display links; replaces the emphasis wrapper with the classed anchor. Runs in decorateMain BEFORE block decorate().",
+  "decorateMainOrder": ["decorateIcons", "buildAutoBlocks", "decorateSections", "decorateBlocks", "decorateButtons"],
+  "autoBlocks": "fragments (a[href*=/fragments/]) and widget links (a[href*=/widgets/]) only — NO hero autoblock in this vintage",
+  "iconDecoration": "decorateIcons(main) fills span.icon.icon-<name> with <img src=\"/icons/<name>.svg\" width=16 height=16 loading=lazy>; runs before blocks",
+  "wrapTextNodes": "decorateBlock runs wrapTextNodes(block): any block cell whose FIRST element child is not P/PRE/UL/OL/PICTURE/TABLE/H1-H6 (e.g. a bare <img>, or a PICTURE followed by more content) gets its ENTIRE cell content wrapped in ONE <p>. Block decodes must unwrap this artifact (see expandWrapper in the collectors) — found empirically: award plaques rendered empty until handled",
+  "fragmentScriptPolicy": "inert-innerHTML",
+  "emptySectionCollapse": true,
+  "emptySectionCollapseNote": "metadata block is consumed by the delivery pipeline leaving an empty section div; foundation adds main .section:empty { display: none }",
+  "fontsLoad": "loadFonts() loads styles/fonts.css eagerly on >=900px viewports or when sessionStorage fonts-loaded is set; always in loadLazy",
+  "chrome": "header/footer blocks loadFragment(getMetadata('nav') || '/nav') and (getMetadata('footer') || '/footer'); this site overrides per page: nav=/flexiloans/nav, footer=/flexiloans/footer"
+}

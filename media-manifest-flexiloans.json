@@ -1,0 +1,115 @@
+{
+  "org": "paolomoz",
+  "repo": "stardust-deploy-210726",
+  "note": "Staged editorial binaries for the /flexiloans/ subfolder conversion. Upload each staged file to its DA destination (PUT https://admin.da.live/source{daPath}, multipart field 'data', correct Content-Type) before previewing content that authors its URL. No DA writes were made in this run.",
+  "assets": [
+    {
+      "staged": "media-staging/flexiloans/sardarji.webp",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/flexiloans/sardarji.webp",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/flexiloans/sardarji.webp",
+      "usedBy": ["content/flexiloans/index.html (hero figure)"]
+    },
+    {
+      "staged": "media-staging/flexiloans/maharashtra.webp",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/flexiloans/maharashtra.webp",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/flexiloans/maharashtra.webp",
+      "usedBy": ["content/flexiloans/index.html (live-status map)"]
+    },
+    {
+      "staged": "media-staging/flexiloans/campaign-tarakki.webp",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/flexiloans/campaign-tarakki.webp",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/flexiloans/campaign-tarakki.webp",
+      "usedBy": ["content/flexiloans/index.html (why-flexiloans campaign figure; source file hero-video.webp)"]
+    },
+    {
+      "staged": "media-staging/flexiloans/s-sivakumar.webp",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/flexiloans/s-sivakumar.webp",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/flexiloans/s-sivakumar.webp",
+      "usedBy": ["content/flexiloans/index.html (testimonial avatar 1)"]
+    },
+    {
+      "staged": "media-staging/flexiloans/stephan.webp",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/flexiloans/stephan.webp",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/flexiloans/stephan.webp",
+      "usedBy": ["content/flexiloans/index.html (testimonial avatar 2)"]
+    },
+    {
+      "staged": "media-staging/flexiloans/sangeeta.webp",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/flexiloans/sangeeta.webp",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/flexiloans/sangeeta.webp",
+      "usedBy": ["content/flexiloans/index.html (testimonial avatar 3)"]
+    },
+    {
+      "staged": "media-staging/flexiloans/india-nbfc-excellence-awards-2019.svg",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/flexiloans/india-nbfc-excellence-awards-2019.svg",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/flexiloans/india-nbfc-excellence-awards-2019.svg",
+      "usedBy": ["content/flexiloans/index.html (achievements award 1)"]
+    },
+    {
+      "staged": "media-staging/flexiloans/best-companies-for-millennials-awards-2019.svg",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/flexiloans/best-companies-for-millennials-awards-2019.svg",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/flexiloans/best-companies-for-millennials-awards-2019.svg",
+      "usedBy": ["content/flexiloans/index.html (achievements award 2)"]
+    },
+    {
+      "staged": "media-staging/flexiloans/superstartups-asia-2019.svg",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/flexiloans/superstartups-asia-2019.svg",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/flexiloans/superstartups-asia-2019.svg",
+      "usedBy": ["content/flexiloans/index.html (achievements award 3)"]
+    },
+    {
+      "staged": "media-staging/flexiloans/great-place-to-work-certification-2018-2019.svg",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/flexiloans/great-place-to-work-certification-2018-2019.svg",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/flexiloans/great-place-to-work-certification-2018-2019.svg",
+      "usedBy": ["content/flexiloans/index.html (achievements award 4)"]
+    },
+    {
+      "staged": "media-staging/flexiloans/smfg.svg",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/flexiloans/smfg.svg",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/flexiloans/smfg.svg",
+      "usedBy": ["content/flexiloans/index.html (partner logo 1; source file SMFG.svg)"]
+    },
+    {
+      "staged": "media-staging/flexiloans/slice-logo.png",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/flexiloans/slice-logo.png",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/flexiloans/slice-logo.png",
+      "usedBy": ["content/flexiloans/index.html (partner logo 2)"]
+    },
+    {
+      "staged": "media-staging/flexiloans/abcf.png",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/flexiloans/abcf.png",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/flexiloans/abcf.png",
+      "usedBy": ["content/flexiloans/index.html (partner logo 3; source file ABCF.png)"]
+    },
+    {
+      "staged": "media-staging/flexiloans/vcl-logo.png",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/flexiloans/vcl-logo.png",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/flexiloans/vcl-logo.png",
+      "usedBy": ["content/flexiloans/index.html (partner logo 4; source file VCL-logo.png)"]
+    },
+    {
+      "staged": "media-staging/flexiloans/lendingkart-logo.png",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/flexiloans/lendingkart-logo.png",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/flexiloans/lendingkart-logo.png",
+      "usedBy": ["content/flexiloans/index.html (partner logo 5; source file lk-logo-png.png)"]
+    },
+    {
+      "staged": "media-staging/flexiloans/logo.svg",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/flexiloans/logo.svg",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/flexiloans/logo.svg",
+      "usedBy": ["content/flexiloans/nav.html (brand logo)"]
+    },
+    {
+      "staged": "media-staging/flexiloans/uff-logo.png",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/flexiloans/uff-logo.png",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/flexiloans/uff-logo.png",
+      "usedBy": ["content/flexiloans/footer.html (Unified Fintech Forum badge)"]
+    },
+    {
+      "staged": "media-staging/flexiloans/google-play-badge.webp",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/flexiloans/google-play-badge.webp",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/flexiloans/google-play-badge.webp",
+      "usedBy": ["content/flexiloans/footer.html (Google Play badge)"]
+    }
+  ]
+}

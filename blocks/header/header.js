@@ -1,3 +1,14 @@
+/**
+ * header — FlexiLoans chrome: fixed transparent bar over the hero that
+ * solidifies on scroll (CSS scroll-driven animation, solid navy fallback),
+ * brand logo, mega-menu nav, language switch + Login + Apply Now CTA.
+ * Template-slotted (anti-pattern 5): consumes the authored nav document's
+ * fixed 3-section contract (brand / sections / tools) from
+ * /flexiloans/nav (per-page `nav` metadata override — subfolder site).
+ * The stock hamburger/aria/escape/focus-out machinery is KEPT and restyled.
+ * Mega groups: inside a top-level item's nested <ul>, an <li> holding only a
+ * <strong> label opens a new group (leading preserved tag, no invented syntax).
+ */
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
@@ -40,7 +51,7 @@ function closeOnFocusLost(e) {
 
 function openOnKeydown(e) {
   const focused = document.activeElement;
-  const isNavDrop = focused.className === 'nav-drop';
+  const isNavDrop = focused.classList.contains('nav-drop');
   if (isNavDrop && (e.code === 'Enter' || e.code === 'Space')) {
     const dropExpanded = focused.getAttribute('aria-expanded') === 'true';
     // eslint-disable-next-line no-use-before-define
@@ -98,9 +109,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 
   // enable menu collapse on escape keypress
   if (!expanded || isDesktop.matches) {
-    // collapse menu on escape press
     window.addEventListener('keydown', closeOnEscape);
-    // collapse menu on focus lost
     nav.addEventListener('focusout', closeOnFocusLost);
   } else {
     window.removeEventListener('keydown', closeOnEscape);
@@ -109,11 +118,68 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 }
 
 /**
+ * Restructure a nav-drop's nested list into the prototype's mega panel:
+ * groups split on <li><strong>Label</strong></li> boundaries.
+ * @param {Element} navSection the top-level <li>
+ */
+function buildMega(navSection) {
+  const submenu = navSection.querySelector(':scope > ul');
+  if (!submenu) return;
+
+  const groups = [];
+  let current = null;
+  [...submenu.children].forEach((li) => {
+    const strong = li.querySelector(':scope > strong');
+    if (strong && !li.querySelector('a')) {
+      current = { label: strong.textContent.trim(), items: [] };
+      groups.push(current);
+    } else {
+      if (!current) {
+        current = { label: '', items: [] };
+        groups.push(current);
+      }
+      current.items.push(li);
+    }
+  });
+
+  const mega = document.createElement('div');
+  mega.className = 'mega';
+  const cols = document.createElement('div');
+  cols.className = 'mega-cols';
+  groups.forEach((g) => {
+    const group = document.createElement('div');
+    group.className = 'mega-group';
+    if (g.label) {
+      const label = document.createElement('p');
+      label.className = 'mega-label';
+      label.textContent = g.label;
+      group.append(label);
+    }
+    const ul = document.createElement('ul');
+    g.items.forEach((li) => ul.append(li));
+    group.append(ul);
+    cols.append(group);
+  });
+  mega.append(cols);
+  submenu.replaceWith(mega);
+
+  // caret on the trigger link
+  const trigger = navSection.querySelector(':scope > a');
+  if (trigger && !trigger.querySelector('.caret')) {
+    trigger.setAttribute('aria-haspopup', 'true');
+    const caret = document.createElement('span');
+    caret.className = 'caret';
+    caret.textContent = '▾';
+    trigger.append(' ', caret);
+  }
+}
+
+/**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-  // load nav as fragment
+  // load nav as fragment (per-page override → /flexiloans/nav on this site)
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   const fragment = await loadFragment(navPath);
@@ -122,6 +188,7 @@ export default async function decorate(block) {
   block.textContent = '';
   const nav = document.createElement('nav');
   nav.id = 'nav';
+  nav.setAttribute('aria-label', 'Main');
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
   const classes = ['brand', 'sections', 'tools'];
@@ -131,16 +198,24 @@ export default async function decorate(block) {
   });
 
   const navBrand = nav.querySelector('.nav-brand');
-  const brandLink = navBrand.querySelector('.button');
-  if (brandLink) {
-    brandLink.className = '';
-    brandLink.closest('.button-container').className = '';
+  if (navBrand) {
+    const brandLink = navBrand.querySelector('a');
+    if (brandLink) {
+      brandLink.className = 'nav-logo';
+      const wrapper = brandLink.closest('p');
+      if (wrapper) wrapper.className = '';
+    }
   }
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
+    const list = navSections.querySelector('.default-content-wrapper > ul');
+    if (list) list.classList.add('nav-links');
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
-      if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
+      if (navSection.querySelector('ul')) {
+        navSection.classList.add('nav-drop');
+        buildMega(navSection);
+      }
       navSection.addEventListener('click', () => {
         if (isDesktop.matches) {
           const expanded = navSection.getAttribute('aria-expanded') === 'true';
@@ -148,6 +223,28 @@ export default async function decorate(block) {
           navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
         }
       });
+    });
+  }
+
+  // tools: language switch (aria-current on the active language), login, Apply CTA
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    const toolParagraphs = [...navTools.querySelectorAll(':scope > .default-content-wrapper > p')];
+    toolParagraphs.forEach((p) => {
+      const links = [...p.querySelectorAll('a')];
+      if (links.length > 1 && links.every((a) => !a.classList.contains('button'))) {
+        p.className = 'lang-switch';
+        const onHindi = window.location.pathname.startsWith('/flexiloans/hi');
+        links.forEach((a) => {
+          const isHindi = new URL(a.href, window.location).pathname.includes('/hi');
+          a.setAttribute('aria-current', String(isHindi === onHindi));
+        });
+      } else if (links.length === 1 && !links[0].classList.contains('button')) {
+        p.className = 'nav-login-wrapper';
+        links[0].className = 'nav-login';
+      } else if (links[0] && links[0].classList.contains('button')) {
+        links[0].classList.add('nav-apply');
+      }
     });
   }
 

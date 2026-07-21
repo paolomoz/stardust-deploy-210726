@@ -1,0 +1,131 @@
+/* why-flexiloans — trust band on the lavender veil: chips + campaign figure + stat ledger */
+
+main .section:has(> .why-flexiloans-wrapper) {
+  background: var(--lavender-veil);
+}
+
+.why-flexiloans .chips-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+}
+
+.why-flexiloans .chip-row {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: var(--sp-3);
+  align-items: start;
+}
+
+.why-flexiloans .icon-chip {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--navy-trust);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.why-flexiloans .icon-chip .icon,
+.why-flexiloans .icon-chip img {
+  width: 24px;
+  height: 24px;
+}
+
+.why-flexiloans .chip-row h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.why-flexiloans .chip-row p {
+  color: var(--slate);
+  margin-top: 2px;
+  font-size: 0.9375rem;
+}
+
+.why-flexiloans .campaign-figure {
+  margin: var(--sp-6) 0 0;
+}
+
+.why-flexiloans .campaign-figure img {
+  border-radius: var(--r-band);
+  width: 100%;
+}
+
+/* stat ledger — asymmetric: one lead figure at display scale, three ruled secondaries */
+.why-flexiloans .stat-band {
+  background: var(--plum-anchor);
+  border-radius: var(--r-band);
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: var(--sp-6);
+  align-items: center;
+  padding: var(--sp-6);
+  margin-top: var(--sp-6);
+}
+
+.why-flexiloans .stat-lead .num,
+.why-flexiloans .stat-rest .num {
+  font-family: var(--font-display);
+  color: #fff;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.why-flexiloans .stat-lead .num {
+  font-size: var(--text-display);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.why-flexiloans .stat-lead .label {
+  color: rgb(255 255 255 / 72%);
+  font-size: 1.0625rem;
+  margin-top: var(--sp-2);
+}
+
+.why-flexiloans .stat-rest {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.why-flexiloans .stat-rest .stat {
+  border-left: 1px solid rgb(255 255 255 / 22%);
+  padding-left: var(--sp-4);
+}
+
+.why-flexiloans .stat-rest .num {
+  font-size: var(--text-title);
+  letter-spacing: -0.01em;
+}
+
+.why-flexiloans .stat-rest .label {
+  color: rgb(255 255 255 / 72%);
+  font-size: 0.875rem;
+  margin-top: 4px;
+}
+
+@media (width <= 1023px) {
+  .why-flexiloans .stat-band {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+    padding: var(--sp-5);
+  }
+
+  .why-flexiloans .stat-rest .stat:first-child {
+    border-left: 0;
+    padding-left: 0;
+  }
+}
+
+@media (width <= 767px) {
+  .why-flexiloans .chips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-flexiloans .stat-band {
+    padding: var(--sp-5) var(--sp-4);
+  }
+}

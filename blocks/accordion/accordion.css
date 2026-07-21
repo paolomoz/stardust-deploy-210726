@@ -1,0 +1,57 @@
+/* accordion — FAQ list, native details/summary, collapsed by default */
+
+.accordion .faq-list {
+  max-width: 820px;
+}
+
+.accordion .faq-list details {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.accordion .faq-list summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-4) 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--navy-trust);
+}
+
+.accordion .faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion .faq-list summary::after {
+  content: "+";
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--slate);
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.accordion .faq-list details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.accordion .faq-answer {
+  padding: 0 0 var(--sp-4);
+  color: var(--slate);
+  max-width: 70ch;
+}
+
+.accordion .faq-answer ul {
+  margin-top: var(--sp-2);
+  padding-left: 22px;
+}
+
+.accordion .faq-answer li {
+  margin-top: var(--sp-1);
+}
+
+.accordion .faq-foot {
+  margin-top: var(--sp-5);
+}

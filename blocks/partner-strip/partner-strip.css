@@ -1,0 +1,25 @@
+/* partner-strip — centered logo row on the lavender veil */
+
+main .section:has(> .partner-strip-wrapper) {
+  background: var(--lavender-veil);
+  padding-block: var(--sp-6);
+}
+
+.partner-strip .partner-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-6);
+}
+
+.partner-strip .partner-row img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+.partner-strip .partner-foot {
+  text-align: center;
+  margin-top: var(--sp-4);
+}

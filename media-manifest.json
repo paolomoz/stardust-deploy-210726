@@ -1,0 +1,37 @@
+{
+  "org": "paolomoz",
+  "repo": "stardust-deploy-210726",
+  "note": "Staged editorial binaries for the home-page conversion. Upload each staged file to its DA destination (PUT https://admin.da.live/source{daPath}, multipart field 'data', Content-Type image/jpeg) before previewing content that authors its URL. No DA writes were made in this run.",
+  "assets": [
+    {
+      "staged": "media-staging/home/home-hero-wide.jpg",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/home/home-hero-wide.jpg",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/home/home-hero-wide.jpg",
+      "usedBy": ["content/index.html (hero background)", "content/index.html (closer background)"]
+    },
+    {
+      "staged": "media-staging/home/taproom-heber-valley.jpg",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/home/taproom-heber-valley.jpg",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/home/taproom-heber-valley.jpg",
+      "usedBy": ["content/index.html (taprooms panel 1 background)"]
+    },
+    {
+      "staged": "media-staging/home/taproom-park-city.jpg",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/home/taproom-park-city.jpg",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/home/taproom-park-city.jpg",
+      "usedBy": ["content/index.html (taprooms panel 2 background)"]
+    },
+    {
+      "staged": "media-staging/home/brewery-mash-tun.jpg",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/home/brewery-mash-tun.jpg",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/home/brewery-mash-tun.jpg",
+      "usedBy": ["content/index.html (story background)"]
+    },
+    {
+      "staged": "media-staging/home/brewery-founder-portrait.jpg",
+      "daPath": "/paolomoz/stardust-deploy-210726/media/home/brewery-founder-portrait.jpg",
+      "authoredUrl": "https://content.da.live/paolomoz/stardust-deploy-210726/media/home/brewery-founder-portrait.jpg",
+      "usedBy": ["content/index.html (columns.founder portrait)"]
+    }
+  ]
+}

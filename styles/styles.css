@@ -1,102 +1,124 @@
 /*
  * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Licensed under the Apache License, Version 2.0.
  */
 
+/* =====================================================================
+   ⚠️  FONT LICENSING REQUIRED BEFORE GOING LIVE
+   The brand faces (parabolica, parabolica-text) are PROPRIETARY — Adobe
+   Fonts / Typekit (riverview.org kit gwk6iao). They are self-hosted for
+   fidelity. Do NOT publish to aem.live until the webfont/embedding license
+   is confirmed. See fonts/LICENSING.md for the remove-and-fall-back path.
+   ===================================================================== */
+
 :root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  /* type */
+  --heading-font-family: parabolica, parabolica-fallback, -apple-system, "Segoe UI", "Helvetica Neue", arial, sans-serif;
+  --body-font-family: "parabolica-text", "parabolica-text-fallback", -apple-system, "Segoe UI", "Helvetica Neue", arial, sans-serif;
+  --heading-xxl: 61px;
+  --heading-xl: 39px;
+  --heading-lg: 31px;
+  --heading-md: 25px;
+  --lede: 20px;
+  --body: 16px;
+  --body-sm: 14px;
+  --line-height-heading: 1.1;
+  --line-height-body: 1.55;
 
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  /* color */
+  --color-bg: #fff;
+  --color-fg: #14162b;
+  --color-accent: #262b62;
+  --color-mint: #84c5b8;
+  --color-mint-wash: #e6f3f1;
+  --color-ink-navy: #1c204d;
+  --color-link: #376ea9;
+  --color-muted: #5a6072;
+  --color-border: #e7e7e7;
+  --color-surface: #f2f2f2;
 
-  /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  /* spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 32px;
+  --spacing-lg: 48px;
+  --spacing-xl: 64px;
+  --spacing-2xl: 96px;
+  --section-padding: 64px;
+  --max-width: 1320px;
+  --radius: 8px;
+  --radius-tile: 16px;
+  --radius-pill: 9999px;
+  --shadow-card: 0 6px 14px rgb(20 22 43 / 15%);
+  --shadow-chip: 0 2px 3px rgb(20 22 43 / 15%);
+  --shadow-plinth: 10px 10px 0 0 #84c5b8;
 
-  /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  /* boilerplate structural aliases */
+  --background-color: var(--color-bg);
+  --text-color: var(--color-fg);
+  --link-color: var(--color-link);
+  --link-hover-color: var(--color-ink-navy);
 
-  /* nav height */
-  --nav-height: 64px;
+  /* nav height — reserved so the late-loading header block does not shift the hero (#81) */
+  --nav-height: 128px;
 }
 
-/* fallback fonts */
+/* metric-matched fallbacks (available at first paint; brand faces swap in from fonts.css) */
 @font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
+  font-family: parabolica-fallback;
   src: local('Arial');
+  size-adjust: 133.44%;
+  ascent-override: 80.86%;
+  descent-override: 18.59%;
+  line-gap-override: 0%;
 }
 
 @font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
+  font-family: parabolica-text-fallback;
   src: local('Arial');
+  size-adjust: 140.91%;
+  ascent-override: 77.14%;
+  descent-override: 17.60%;
+  line-gap-override: 0%;
 }
 
-@media (width >= 900px) {
-  :root {
-    /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
-
-    /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
-  }
+@media (width <= 767px) {
+  :root { --nav-height: 76px; }
 }
+
+/* ---- document reset ---- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { text-size-adjust: 100%; scroll-behavior: smooth; }
 
 body {
   display: none;
   margin: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background: var(--color-bg);
+  color: var(--color-fg);
   font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  font-size: var(--body);
+  line-height: var(--line-height-body);
 }
 
-body.appear {
+body.appear { display: block; }
+
+::selection { background: var(--color-mint); color: var(--color-ink-navy); }
+
+img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-header {
-  height: var(--nav-height);
-}
+button { font: inherit; }
 
-header .header,
-footer .footer {
-  visibility: hidden;
-}
-
-header .header[data-block-status="loaded"],
-footer .footer[data-block-status="loaded"] {
-  visibility: visible;
-}
+input,
+textarea,
+select,
+button { font: inherit; }
 
 h1,
 h2,
@@ -104,222 +126,139 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+  margin: 0;
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
-  scroll-margin: 40px;
-}
-
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
-
-p,
-dl,
-ol,
-ul,
-pre,
-blockquote {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
-}
-
-code,
-pre {
-  font-size: var(--body-font-size-s);
-}
-
-pre {
-  padding: 16px;
-  border-radius: 8px;
-  background-color: var(--light-color);
-  overflow-x: auto;
-  white-space: pre;
-}
-
-main > div {
-  margin: 40px 16px;
-}
-
-input,
-textarea,
-select,
-button {
-  font: inherit;
-}
-
-/* links */
-a:any-link {
-  color: var(--link-color);
-  text-decoration: none;
+  line-height: var(--line-height-heading);
   overflow-wrap: break-word;
 }
 
-a:hover {
-  color: var(--link-hover-color);
-  text-decoration: underline;
+p { margin: 0; }
+
+ul { margin: 0; padding: 0; list-style: none; }
+
+a { color: var(--color-link); }
+
+a:any-link { text-decoration: none; overflow-wrap: break-word; }
+
+:focus-visible {
+  outline: 3px solid var(--color-ink-navy);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px rgb(132 197 184 / 55%);
 }
 
-/* buttons */
-p.button-wrapper {
-  margin: 12px 0;
+/* ---- header height reservation (keep from boilerplate) ---- */
+header {
+  height: var(--nav-height);
+  background: var(--color-bg);
 }
+
+header .header,
+footer .footer { visibility: hidden; }
+
+header .header[data-block-status="loaded"],
+footer .footer[data-block-status="loaded"] { visibility: visible; }
+
+/* ---- sections ---- */
+main > .section { margin: 0; }
+
+main > .section > div {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+
+main .section:empty { display: none; }
+
+@media (width <= 640px) {
+  main > .section > div { padding-inline: 20px; }
+}
+
+/* ---- global button system (author emphasis → decorateButtons classes) ---- */
+p.button-wrapper { margin: 0; }
 
 a.button:any-link,
 button.button {
-  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  max-width: 100%;
-  margin: 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
-  font: inherit;
-  font-weight: 500;
-  line-height: 1.25;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  font-size: var(--body);
+  line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
+  box-shadow: var(--shadow-chip);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+a.button.primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+a.button.primary:hover { background: var(--color-ink-navy); }
+
+a.button.secondary {
+  background: transparent;
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  box-shadow: none;
+  padding: 10px 22px;
+}
+
+a.button.secondary:hover { background: rgb(38 43 98 / 8%); }
+
+a.button.accent {
+  background: var(--color-mint);
+  color: var(--color-ink-navy);
+}
+
+a.button.accent:hover { background: #77bbad; }
+
+/* dark-surface CTA overrides — scope to the BLOCK class, not the section (#41) */
+main .hero a.button.primary,
+main .story a.button.primary {
+  background: var(--color-mint);
+  color: var(--color-ink-navy);
+}
+
+main .hero a.button.primary:hover,
+main .story a.button.primary:hover { background: #77bbad; }
+
+main .hero a.button.secondary,
+main .story a.button.secondary {
+  border-color: #fff;
+  color: #fff;
+}
+
+main .hero a.button.secondary:hover,
+main .story a.button.secondary:hover { background: rgb(255 255 255 / 12%); }
+
+/* ---- section metadata style values (small closed set, default-content sections only) ---- */
+main .section.dark {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+main .section.tinted { background: var(--color-mint-wash); }
+
+.ds-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
-  text-overflow: ellipsis;
+  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
+  border: 0;
 }
 
-a.button[aria-disabled="true"],
-button.button:disabled {
-  cursor: not-allowed;
-  pointer-events: none;
-}
+.icon { display: inline-block; height: 24px; width: 24px; }
 
-a.button.primary,
-button.button.primary {
-  border-color: var(--text-color);
-  background-color: var(--text-color);
-  color: var(--background-color);
-}
-
-a.button.primary:hover,
-a.button.primary:focus-visible,
-button.button.primary:hover,
-button.button.primary:focus-visible {
-  border-color: var(--dark-color);
-  background-color: var(--dark-color);
-  color: var(--light-color);
-}
-
-a.button.primary[aria-disabled="true"],
-a.button.primary[aria-disabled="true"]:hover,
-a.button.primary[aria-disabled="true"]:focus-visible,
-button.button.primary:disabled,
-button.button.primary:disabled:hover,
-button.button.primary:disabled:focus-visible {
-  background-color: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--dark-color);
-}
-
-a.button.secondary,
-button.button.secondary {
-  border-color: var(--text-color);
-  background-color: transparent;
-  color: var(--text-color);
-}
-
-a.button.secondary:hover,
-a.button.secondary:focus-visible,
-button.button.secondary:hover,
-button.button.secondary:focus-visible {
-  border-color: var(--dark-color);
-  background-color: var(--light-color);
-  color: var(--dark-color);
-}
-
-a.button.secondary[aria-disabled="true"],
-a.button.secondary[aria-disabled="true"]:hover,
-a.button.secondary[aria-disabled="true"]:focus-visible,
-button.button.secondary:disabled,
-button.button.secondary:disabled:hover,
-button.button.secondary:disabled:focus-visible {
-  background-color: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--dark-color);
-}
-
-/* high-impact call-to-action */
-a.button.accent,
-button.button.accent {
-  border-color: var(--link-color);
-  background-color: var(--link-color);
-  color: var(--background-color);
-}
-
-a.button.accent:hover,
-a.button.accent:focus-visible,
-button.button.accent:hover,
-button.button.accent:focus-visible {
-  border-color: var(--link-hover-color);
-  background-color: var(--link-hover-color);
-}
-
-a.button.accent[aria-disabled="true"],
-a.button.accent[aria-disabled="true"]:hover,
-a.button.accent[aria-disabled="true"]:focus-visible,
-button.button.accent:disabled,
-button.button.accent:disabled:hover,
-button.button.accent:disabled:focus-visible {
-  background-color: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--dark-color);
-}
-
-main img {
-  max-width: 100%;
-  width: auto;
-  height: auto;
-}
-
-.icon {
-  display: inline-block;
-  height: 24px;
-  width: 24px;
-}
-
-.icon img {
-  height: 100%;
-  width: 100%;
-}
-
-/* sections */
-main > .section {
-  margin: 40px 0;
-}
-
-main > .section > div {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 24px;
-}
-
-main > .section:first-of-type {
-  margin-top: 0;
-}
-
-@media (width >= 900px) {
-  main > .section > div {
-    padding: 0 32px;
-  }
-}
-
-/* section metadata */
-main .section.light,
-main .section.highlight {
-  background-color: var(--light-color);
-  margin: 0;
-  padding: 40px 0;
-}
+.icon img { height: 100%; width: 100%; }

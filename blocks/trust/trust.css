@@ -1,0 +1,55 @@
+main .section.trust-container {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding-block: var(--spacing-md);
+}
+
+.trust .ds-wrap {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.trust .ds-trust-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.trust .ds-trust-label::before,
+.trust .ds-trust-label::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.trust .ds-trust-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sm) var(--spacing-lg);
+}
+
+.trust .ds-trust-logos li { display: flex; align-items: center; }
+
+.trust .ds-trust-logos img { height: 44px; width: auto; max-width: min(180px, 100%); object-fit: contain; }
+
+@media (width <= 640px) {
+  .trust .ds-wrap { padding-inline: 20px; }
+  .trust .ds-trust-logos { column-gap: var(--spacing-md); }
+  .trust .ds-trust-logos img { height: 36px; max-width: 140px; }
+}

@@ -1,27 +1,269 @@
-.cards > ul {
+/* cards — collection pattern; variants: .finance (dark offer cards),
+   .blog (image-overlay whole-card anchors). Section paint + section-head
+   default content styled via the runtime's .cards-container hook. */
+
+.cards-container {
+  padding: var(--sp-section) 0;
+}
+
+/* blog variant sits on the warm-stone band */
+main .section.cards-container:has(.cards.blog) {
+  background: var(--color-warm-stone);
+}
+
+/* section head (eyebrow + h2) is DEFAULT CONTENT before the block (D1) */
+.cards-container .default-content-wrapper {
+  text-align: center;
+  margin-bottom: var(--sp-xxl);
+}
+
+.cards-container .default-content-wrapper p {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-cat-yellow);
+  margin: 0 0 var(--sp-sm);
+}
+
+.cards-container .default-content-wrapper p strong {
+  display: inline-block;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--color-cat-yellow);
+  font-weight: 700;
+}
+
+main .section.cards-container:has(.cards.blog) .default-content-wrapper p {
+  color: var(--color-heading);
+}
+
+.cards-container .default-content-wrapper h2 {
+  margin: var(--sp-md) 0 0;
+  color: var(--color-heading);
+}
+
+.cards ul.cards-grid {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-lg);
 }
 
-.cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+.cards li.cards-card {
+  display: flex;
+  flex-direction: column;
 }
 
-.cards .cards-card-body {
-  margin: 16px;
+/* ── finance variant ─────────────────────────────────────────────── */
+.cards.finance li.cards-card {
+  background: var(--color-surface-dark);
+  color: var(--color-text-on-dark);
+  border-radius: var(--r-primary);
+  box-shadow: var(--shadow-card-strong);
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
 }
 
-.cards .cards-card-image {
-  line-height: 0;
+.cards.finance li.cards-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: var(--color-cat-yellow);
 }
 
-.cards > ul > li img {
+.cards.finance .cards-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+  padding: var(--sp-xl);
+  flex: 1;
+}
+
+.cards.finance .cards-card-eyebrow {
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-cat-yellow);
+  align-self: flex-start;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--color-cat-yellow);
+  margin: 0;
+}
+
+.cards.finance .cards-card-title {
+  color: var(--color-text-on-dark);
+  font-size: var(--fs-156);
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* accent numerals ride <em> (survives DA; target .em too) */
+.cards.finance .cards-card-title em,
+.cards.finance .cards-card-title .em {
+  font-style: normal;
+  color: var(--color-cat-yellow);
+  font-variant-numeric: tabular-nums;
+}
+
+/* stylelint-disable-next-line no-descending-specificity -- different component than the section-head p rules above */
+.cards.finance .cards-card-body > p:not(.cards-card-eyebrow, .cards-card-cta) {
+  color: rgb(255 255 255 / 85%);
+  margin: 0;
+}
+
+.cards.finance .cards-card-cta {
+  margin: auto 0 0;
+}
+
+/* ── blog variant ────────────────────────────────────────────────── */
+.cards.blog ul.cards-grid {
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-md);
+}
+
+.cards.blog li.cards-card {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  border-radius: var(--r-card);
+  overflow: hidden;
+  color: var(--color-text-on-dark);
+  isolation: isolate;
+}
+
+.cards.blog a.cards-card-link {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+  z-index: 2;
+  color: var(--color-text-on-dark);
+}
+
+.cards.blog a.cards-card-link:focus-visible {
+  outline: 2px solid var(--color-cat-yellow);
+  outline-offset: 4px;
+}
+
+.cards.blog .cards-card-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.cards.blog .cards-card-image picture,
+.cards.blog .cards-card-image img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
+  transition: transform 900ms var(--ease-out-expo);
+  will-change: transform;
+}
+
+.cards.blog li.cards-card:hover .cards-card-image img,
+.cards.blog a.cards-card-link:focus-visible .cards-card-image img {
+  transform: scale(1.08);
+}
+
+.cards.blog li.cards-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgb(18 18 18 / 92%) 0%,
+    rgb(18 18 18 / 60%) 40%,
+    rgb(18 18 18 / 5%) 70%,
+    rgb(18 18 18 / 0%) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cards.blog .cards-card-body {
+  position: relative;
+  z-index: 2;
+  padding: var(--sp-xl) var(--sp-lg);
+  width: 100%;
+  margin-top: auto;
+}
+
+.cards.blog .cards-card-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--color-text-on-dark);
+  margin: 0 0 var(--sp-md);
+}
+
+.cards.blog .cards-card-more {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-cat-yellow);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 200ms var(--ease-out);
+}
+
+.cards.blog .cards-card-more::after {
+  content: "›";
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 0.7;
+  transition: transform 200ms var(--ease-out);
+}
+
+.cards.blog li.cards-card:hover .cards-card-more {
+  gap: 10px;
+}
+
+.cards.blog li.cards-card:hover .cards-card-more::after {
+  transform: translateX(2px);
+}
+
+/* ── responsive ──────────────────────────────────────────────────── */
+@media (width <= 1024px) {
+  .cards.blog ul.cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width <= 768px) {
+  .cards ul.cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width <= 640px) {
+  .cards ul.cards-grid,
+  .cards.blog ul.cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards.blog li.cards-card {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cards.blog .cards-card-image img {
+    transition: none;
+  }
 }

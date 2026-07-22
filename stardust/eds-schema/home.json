@@ -1,0 +1,411 @@
+{
+ "source": "http://localhost:8710/prototypes/home-A-rich-proposed.html",
+ "width": 1280,
+ "profile": "eds",
+ "sections": [
+  {
+   "section": "hero",
+   "items": [
+    {
+     "role": "eyebrow",
+     "order": 0,
+     "text": "Wheeler · Services Commitment"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "REDEFINING"
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "COMMITMENT"
+    },
+    {
+     "role": "eyebrow",
+     "order": 3,
+     "text": "FOR YOUR EQUIPMENT MAINTENANCE AND GET"
+    },
+    {
+     "role": "eyebrow",
+     "order": 4,
+     "text": "PARTNER WITH WHEELER"
+    },
+    {
+     "role": "eyebrow",
+     "order": 5,
+     "text": "AND MORE."
+    },
+    {
+     "role": "body",
+     "order": 6,
+     "text": "GUARANTEED PARTS AVAILABILITY, PRIORITIZED SERVICE, FASTER REBUILDS,"
+    },
+    {
+     "role": "cta",
+     "order": 7,
+     "text": "Learn More About Our Services Commitment",
+     "href": "/services-commitment/"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": []
+  },
+  {
+   "section": "finance",
+   "items": [
+    {
+     "role": "eyebrow",
+     "order": 0,
+     "text": "Finance"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "CURRENT FINANCE OFFERS"
+    },
+    {
+     "role": "eyebrow",
+     "order": 2,
+     "text": "Finance"
+    },
+    {
+     "role": "heading",
+     "order": 3,
+     "text": "0% FOR UP TO MONTHS + $ TOWARD CVA"
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "60"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "500"
+    },
+    {
+     "role": "body",
+     "order": 6,
+     "text": "On select Cat compact machines. Cat Vehicle Agreement bonus included."
+    },
+    {
+     "role": "cta",
+     "order": 7,
+     "text": "Learn More",
+     "href": "/specials/"
+    },
+    {
+     "role": "eyebrow",
+     "order": 8,
+     "text": "Finance"
+    },
+    {
+     "role": "heading",
+     "order": 9,
+     "text": "FINANCING & FUEL PAYBACK OFFERS"
+    },
+    {
+     "role": "body",
+     "order": 10,
+     "text": "Combined fuel-payback programs across active Cat machinery."
+    },
+    {
+     "role": "cta",
+     "order": 11,
+     "text": "Learn More",
+     "href": "/specials/"
+    },
+    {
+     "role": "eyebrow",
+     "order": 12,
+     "text": "Finance"
+    },
+    {
+     "role": "heading",
+     "order": 13,
+     "text": "CAT® CARD IS NOW CAT® COMMERCIAL ACCOUNT"
+    },
+    {
+     "role": "body",
+     "order": 14,
+     "text": "Streamlined parts & service purchasing on a single Cat account."
+    },
+    {
+     "role": "cta",
+     "order": 15,
+     "text": "Learn More",
+     "href": "/specials/"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": [
+    {
+     "unitSelector": "ARTICLE.finance-card",
+     "count": 3,
+     "unit": {
+      "headings": 1,
+      "ctas": 1,
+      "imgs": 0,
+      "textRuns": 6
+     },
+     "uniform": false
+    }
+   ]
+  },
+  {
+   "section": "services",
+   "items": [
+    {
+     "role": "eyebrow",
+     "order": 0,
+     "text": "Service & Support"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "YOUR HEAVY MACHINERY EXPERTS"
+    },
+    {
+     "role": "cta",
+     "order": 2,
+     "text": "Field Service",
+     "href": "/service/"
+    },
+    {
+     "role": "cta",
+     "order": 3,
+     "text": "Shop Service",
+     "href": "/service/"
+    },
+    {
+     "role": "cta",
+     "order": 4,
+     "text": "Parts.Cat.com",
+     "href": "https://parts.cat.com/"
+    },
+    {
+     "role": "cta",
+     "order": 5,
+     "text": "Maintenance Service",
+     "href": "/customer-value-agreements/"
+    },
+    {
+     "role": "cta",
+     "order": 6,
+     "text": "Equipment Rebuilds",
+     "href": "/equipment-rebuilds/"
+    },
+    {
+     "role": "cta",
+     "order": 7,
+     "text": "Request Service Online",
+     "href": "/request-service/"
+    },
+    {
+     "role": "cta",
+     "order": 8,
+     "text": "Browse More Services",
+     "href": "/service/"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": [
+    {
+     "unitSelector": "A.service-tile",
+     "count": 6,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 0,
+      "textRuns": 1
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "blog-cards",
+   "items": [
+    {
+     "role": "eyebrow",
+     "order": 0,
+     "text": "Resources"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "FROM THE WHEELER FIELD NOTES"
+    },
+    {
+     "role": "cta",
+     "order": 2,
+     "text": "The Value of Preventative Equipment Maintenance Read More",
+     "href": "/blog/preventative-equipment-maintenance/"
+    },
+    {
+     "role": "cta",
+     "order": 3,
+     "text": "Aerial Lift Maintenance Tips and Checklist Read More",
+     "href": "/blog/aerial-lift-maintenance/"
+    },
+    {
+     "role": "cta",
+     "order": 4,
+     "text": "Landscaping Equipment Guide Read More",
+     "href": "/blog/landscaping-equipment-guide/"
+    },
+    {
+     "role": "cta",
+     "order": 5,
+     "text": "Customer Value Agreements: What's Included Read More",
+     "href": "/customer-value-agreements/"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": [
+    {
+     "unitSelector": "A.blog-card",
+     "count": 4,
+     "unit": {
+      "headings": 1,
+      "ctas": 0,
+      "imgs": 0,
+      "textRuns": 2
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "brand-logos",
+   "items": [
+    {
+     "role": "eyebrow",
+     "order": 0,
+     "text": "Trusted Partners"
+    }
+   ],
+   "imgCount": 5,
+   "repeats": []
+  },
+  {
+   "section": "locations-proof",
+   "items": [
+    {
+     "role": "eyebrow",
+     "order": 0,
+     "text": "FIND YOUR NEAREST BRANCH"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "across Utah, Arizona, Nevada & Wyoming — and since 1951."
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "18 branches"
+    },
+    {
+     "role": "body",
+     "order": 3,
+     "text": "same-day field service"
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "24/7 phone support"
+    },
+    {
+     "role": "eyebrow",
+     "order": 5,
+     "text": "Salt Lake City (HQ)"
+    },
+    {
+     "role": "eyebrow",
+     "order": 6,
+     "text": "Lindon"
+    },
+    {
+     "role": "eyebrow",
+     "order": 7,
+     "text": "Sandy"
+    },
+    {
+     "role": "eyebrow",
+     "order": 8,
+     "text": "Cedar City, UT"
+    },
+    {
+     "role": "eyebrow",
+     "order": 9,
+     "text": "Ely"
+    },
+    {
+     "role": "eyebrow",
+     "order": 10,
+     "text": "Hurricane"
+    },
+    {
+     "role": "eyebrow",
+     "order": 11,
+     "text": "Kaysville"
+    },
+    {
+     "role": "eyebrow",
+     "order": 12,
+     "text": "Logan"
+    },
+    {
+     "role": "eyebrow",
+     "order": 13,
+     "text": "Moab"
+    },
+    {
+     "role": "eyebrow",
+     "order": 14,
+     "text": "Ogden"
+    },
+    {
+     "role": "eyebrow",
+     "order": 15,
+     "text": "Park City"
+    },
+    {
+     "role": "eyebrow",
+     "order": 16,
+     "text": "Salina"
+    },
+    {
+     "role": "eyebrow",
+     "order": 17,
+     "text": "Tooele"
+    },
+    {
+     "role": "eyebrow",
+     "order": 18,
+     "text": "Vernal"
+    },
+    {
+     "role": "eyebrow",
+     "order": 19,
+     "text": "West Valley"
+    },
+    {
+     "role": "body",
+     "order": 20,
+     "text": "Plus 3 additional locations ·"
+    },
+    {
+     "role": "cta",
+     "order": 21,
+     "text": "View all 18 branches",
+     "href": "/about/locations/"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": []
+  }
+ ]
+}

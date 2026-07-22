@@ -1,0 +1,169 @@
+/* services — dark tiles, yellow icons, image-fade-on-hover.
+   Section paint + head/footer default content via .services-container. */
+
+.services-container {
+  padding: var(--sp-section) 0;
+}
+
+/* section head (eyebrow + h2) and trailing CTA are DEFAULT CONTENT (D1) */
+.services-container .default-content-wrapper {
+  text-align: center;
+}
+
+.services-container .default-content-wrapper p:not(.button-wrapper) {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-cat-yellow);
+  margin: 0 0 var(--sp-sm);
+}
+
+.services-container .default-content-wrapper p:not(.button-wrapper) strong {
+  display: inline-block;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--color-cat-yellow);
+  font-weight: 700;
+}
+
+.services-container .default-content-wrapper h2 {
+  margin: var(--sp-md) 0 var(--sp-xxl);
+  color: var(--color-heading);
+}
+
+/* the trailing "Browse More Services" CTA wrapper */
+.services-container .default-content-wrapper p.button-wrapper {
+  margin: var(--sp-xxl) 0 0;
+}
+
+.services .services-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--sp-md);
+}
+
+.services .services-tile {
+  position: relative;
+  background: var(--color-surface-dark);
+  color: var(--color-text-on-dark);
+  border-radius: var(--r-primary);
+  min-height: 240px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.services a.services-tile-link {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+  padding: var(--sp-lg);
+  color: var(--color-text-on-dark);
+  text-decoration: none;
+}
+
+.services a.services-tile-link:hover,
+.services a.services-tile-link:focus-visible {
+  outline: none;
+  color: var(--color-text-on-dark);
+  text-decoration: none;
+}
+
+/* editorial hover photo (authored <img>) — hidden until hover/focus/reveal */
+.services .services-tile-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 400ms var(--ease-out-expo);
+}
+
+.services .services-tile-bg picture,
+.services .services-tile-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* gradient overlay: heavier at the bottom where the title sits (AAA) */
+.services .services-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgb(18 18 18 / 82%) 0%,
+    rgb(18 18 18 / 55%) 50%,
+    rgb(18 18 18 / 30%) 100%
+  );
+  opacity: 0;
+  transition: opacity 400ms var(--ease-out-expo);
+  pointer-events: none;
+}
+
+.services .services-tile:hover .services-tile-bg,
+.services .services-tile:focus-within .services-tile-bg,
+.services .services-tile.is-revealed .services-tile-bg,
+.services .services-tile:hover::after,
+.services .services-tile:focus-within::after,
+.services .services-tile.is-revealed::after {
+  opacity: 1;
+}
+
+.services .services-tile-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--color-cat-yellow);
+  line-height: 1;
+  transition: transform 300ms var(--ease-out);
+}
+
+.services .services-tile-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.services .services-tile:hover .services-tile-icon {
+  transform: scale(1.1);
+}
+
+.services .services-tile-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--color-text-on-dark);
+  margin-top: auto;
+  text-wrap: balance;
+}
+
+@media (width <= 1024px) {
+  .services .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (width <= 640px) {
+  .services .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services .services-tile-bg,
+  .services .services-tile::after {
+    transition: opacity 1ms;
+  }
+
+  .services .services-tile-icon {
+    transition: none;
+  }
+}

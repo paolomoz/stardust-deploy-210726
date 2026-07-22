@@ -1,0 +1,106 @@
+/* locations — full-bleed dark band + yellow eyebrow ribbon (G-version) */
+
+/* full-bleed block: unset the foundation wrapper constraint (#13 — the
+   prototype section has no max-width wrap; inner grids re-constrain below) */
+.locations-container .locations-wrapper {
+  max-width: none;
+  padding: 0;
+}
+
+.locations {
+  background: var(--color-surface-dark);
+  color: var(--color-text-on-dark);
+  padding: 0 0 var(--sp-section);
+}
+
+.locations .locations-band {
+  background: var(--color-cat-yellow);
+  color: var(--color-text-on-yellow);
+  padding: 12px var(--sp-lg);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: var(--sp-xxl);
+}
+
+.locations .locations-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--sp-lg);
+}
+
+.locations .locations-proof {
+  font-size: var(--fs-125);
+  line-height: 1.5;
+  color: rgb(255 255 255 / 85%);
+  text-align: center;
+  max-width: 70ch;
+  margin: 0 auto var(--sp-xxl);
+}
+
+.locations .locations-proof strong {
+  color: var(--color-text-on-dark);
+  font-weight: 700;
+}
+
+.locations ul.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-md) var(--sp-xl);
+  max-width: 900px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+.locations ul.locations-grid li {
+  padding: var(--sp-sm) 0;
+  border-bottom: 1px solid rgb(255 255 255 / 12%);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-text-on-dark);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+}
+
+.locations .locations-pin {
+  width: 0.9rem;
+  height: 0.9rem;
+  color: var(--color-cat-yellow);
+  flex: none;
+}
+
+.locations .locations-pin svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.locations .locations-more {
+  text-align: center;
+  margin: var(--sp-xl) 0 0;
+  font-size: 0.9rem;
+  color: rgb(255 255 255 / 65%);
+}
+
+.locations .locations-more a {
+  color: var(--color-cat-yellow);
+  text-decoration: underline;
+}
+
+.locations .locations-more a:hover {
+  color: var(--color-cat-yellow-hover);
+}
+
+@media (width <= 640px) {
+  .locations ul.locations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

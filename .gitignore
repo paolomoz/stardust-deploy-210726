@@ -11,3 +11,13 @@ helix-importer-ui
 # Ensure these files are tracked
 !CLAUDE.md
 !AGENTS.md
+
+# stardust tooling/staging (never commit)
+media-staging/
+media-manifest*.json
+skills/
+
+# local QA harness + secrets (deploy skill token hygiene, #16)
+qa/
+.env
+.env.*

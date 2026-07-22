@@ -1,20 +1,187 @@
+/* footer — wheelercat mega footer on the dark surface.
+   Box styles live on the footer HOST element (#31 — outside <main>). */
+
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background: var(--color-surface-dark);
+  color: var(--color-text-on-dark);
+  font-size: var(--fs-100);
 }
 
-footer .footer > div {
+footer .footer-inner {
   margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  max-width: var(--container-max);
+  padding: var(--sp-section) var(--sp-lg) var(--sp-xl);
 }
 
-footer .footer p {
+footer .footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--sp-xxl);
+  margin-bottom: var(--sp-xxl);
+}
+
+footer .footer-brand img {
+  max-width: 220px;
+}
+
+footer .footer-brand p {
+  margin: var(--sp-md) 0 0;
+  color: rgb(255 255 255 / 70%);
+  font-size: 0.9rem;
+  max-width: 38ch;
+}
+
+footer .footer-col h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-on-dark);
+  margin: 0 0 var(--sp-md);
+}
+
+footer .footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+}
+
+footer .footer-col a {
+  color: rgb(255 255 255 / 78%);
+  font-size: 0.92rem;
+  transition: color 150ms var(--ease-out);
+  text-decoration: none;
+}
+
+footer .footer-col a:hover {
+  color: var(--color-cat-yellow);
+  text-decoration: none;
+}
+
+footer .footer-contact p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgb(255 255 255 / 78%);
   margin: 0;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+footer a.footer-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  margin-top: var(--sp-md);
+  color: var(--color-cat-yellow);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+}
+
+footer a.footer-phone:hover {
+  color: var(--color-cat-yellow-hover);
+}
+
+footer .footer-phone-icon {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+footer .footer-phone-icon svg,
+footer .footer-social-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+footer .footer-social {
+  display: flex;
+  gap: var(--sp-md);
+  margin-top: var(--sp-sm);
+}
+
+footer .footer-social-col .footer-social a {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(255 255 255 / 30%);
+  border-radius: var(--r-pill);
+  color: var(--color-text-on-dark);
+  transition: background 200ms var(--ease-out), color 200ms var(--ease-out), border-color 200ms var(--ease-out);
+}
+
+footer .footer-social-col .footer-social a:hover,
+footer .footer-social-col .footer-social a:focus-visible {
+  background: var(--color-cat-yellow);
+  color: var(--color-text-on-yellow);
+  border-color: var(--color-cat-yellow);
+}
+
+footer .footer-social-icon {
+  width: 16px;
+  height: 16px;
+}
+
+footer .footer-legal {
+  padding-top: var(--sp-lg);
+  border-top: 1px solid rgb(255 255 255 / 12%);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-md);
+  font-size: 0.8rem;
+  color: rgb(255 255 255 / 55%);
+  flex-wrap: wrap;
+}
+
+footer .footer-legal p {
+  margin: 0;
+}
+
+footer .footer-legal ul {
+  display: flex;
+  gap: var(--sp-lg);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity -- legal links are a different component than column/social links */
+footer .footer-inner .footer-legal a {
+  color: rgb(255 255 255 / 55%);
+  text-decoration: none;
+}
+
+footer .footer-inner .footer-legal a:hover {
+  color: var(--color-cat-yellow);
+  text-decoration: none;
+}
+
+@media (width <= 1024px) {
+  footer .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: var(--sp-xl);
+  }
+}
+
+@media (width <= 768px) {
+  footer .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (width <= 640px) {
+  footer .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-xl);
+  }
+
+  footer .footer-legal {
+    flex-direction: column;
   }
 }

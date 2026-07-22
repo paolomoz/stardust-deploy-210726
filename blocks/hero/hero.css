@@ -1,3 +1,7 @@
+/* hero — full-bleed image band; prototype .hero (home-A-rich) */
+
+/* the hero is full-bleed: unset the foundation wrapper constraint (#13 —
+   full-bleed is correct here, the prototype section has no max-width wrap) */
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -5,33 +9,190 @@
 
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  min-height: 660px;
+  display: flex;
+  align-items: center;
+  background: var(--color-surface-dark);
+  color: var(--color-text-on-dark);
+  padding: calc(var(--sp-section) * 1.5) 0;
+  overflow: hidden;
 }
 
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
-
-.hero picture {
+/* editorial background image layer (reserved by the .hero min-height);
+   the gradient scrim rides ::before OVER it */
+.hero .hero-bg {
   position: absolute;
-  z-index: -1;
   inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+  z-index: 0;
 }
 
-.hero img {
-  object-fit: cover;
+.hero .hero-bg picture,
+.hero .hero-bg img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-@media (width >= 900px) {
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to right,
+    rgb(18 18 18 / 85%) 0%,
+    rgb(18 18 18 / 65%) 40%,
+    rgb(18 18 18 / 30%) 75%,
+    rgb(18 18 18 / 10%) 100%
+  );
+}
+
+/* copy hugs the viewport's left edge (prototype override of .container) */
+.hero .hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1100px;
+  margin-left: 0;
+  padding-left: clamp(var(--sp-lg), 5vw, 96px);
+  padding-right: var(--sp-lg);
+}
+
+.hero .hero-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-cat-yellow);
+  display: inline-block;
+  margin: 0 0 var(--sp-md);
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--color-cat-yellow);
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+}
+
+.hero h1.hero-headline {
+  color: var(--color-text-on-dark);
+  font-family: var(--font-hero);
+  font-weight: 700;
+  font-size: clamp(2.4rem, 7.2vw, 8rem);
+  line-height: 0.9;
+  letter-spacing: 0;
+  margin: 0 0 var(--sp-lg);
+}
+
+/* <em> = the accent line (two-line prototype treatment) */
+.hero .hero-headline em,
+.hero .hero-headline .em {
+  display: block;
+  font-style: normal;
+  color: var(--color-cat-yellow);
+}
+
+.hero .hero-headline .hero-headline-line {
+  display: block;
+}
+
+.hero .hero-supporting {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(0.95rem, 1.4vw, 1.25rem);
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 var(--sp-xl);
+  color: var(--color-text-on-dark);
+  max-width: 64ch;
+}
+
+/* accent → <em> (yellow, upright); italic run → <strong> (weight inherits) */
+.hero .hero-supporting em,
+.hero .hero-supporting .em {
+  font-style: normal;
+  color: var(--color-cat-yellow);
+}
+
+.hero .hero-supporting strong {
+  font-style: italic;
+  font-weight: inherit;
+}
+
+.hero .hero-supporting strong em,
+.hero .hero-supporting em strong {
+  font-style: italic;
+}
+
+.hero .hero-actions {
+  display: inline-flex;
+  gap: var(--sp-md);
+  flex-wrap: wrap;
+  max-width: 56ch;
+}
+
+.hero .hero-actions p.button-wrapper {
+  margin: 0;
+}
+
+/* white pill CTA — the prototype's .btn-pill-light, a legitimate size/skin
+   override of the global primary (#41) */
+.hero .hero-actions a.button.primary {
+  background: var(--color-text-on-dark);
+  color: var(--color-text-on-yellow);
+  border-color: var(--color-text-on-dark);
+  border-radius: var(--r-pill);
+  padding: 14px 28px;
+  letter-spacing: 0.08em;
+  white-space: normal;
+  text-align: center;
+}
+
+.hero .hero-actions a.button.primary:hover,
+.hero .hero-actions a.button.primary:focus-visible {
+  background: var(--color-cat-yellow);
+  color: var(--color-text-on-yellow);
+  border-color: var(--color-cat-yellow);
+}
+
+/* load-only fade-in (pure CSS, kept from prototype; reduced-motion honored) */
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero .hero-inner > * {
+  opacity: 0;
+  animation: hero-fade-in 800ms var(--ease-out-expo) forwards;
+}
+
+.hero .hero-inner > .hero-eyebrow { animation-delay: 100ms; }
+.hero .hero-inner > .hero-headline { animation-delay: 250ms; }
+.hero .hero-inner > .hero-supporting { animation-delay: 450ms; }
+.hero .hero-inner > .hero-actions { animation-delay: 650ms; }
+
+@media (width <= 640px) {
   .hero {
-    padding: 40px 32px;
+    min-height: 540px;
+    padding: var(--sp-xl) 0;
+  }
+
+  .hero .hero-supporting {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero .hero-inner > * {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

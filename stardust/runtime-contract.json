@@ -1,0 +1,18 @@
+{
+  "runtime": "vanilla-eds",
+  "source": "read from scripts/aem.js + scripts/scripts.js of this worktree (adobe/aem-boilerplate main, package 1.3.0)",
+  "blockWrapperClass": "block",
+  "blockWrapping": "decorateBlock adds .block + data-block-name + data-block-status, wraps in div.<name>-wrapper, section gains .<name>-container",
+  "sectionDOM": "main > div -> div.section (data-section-status, inline display:none until loaded); runs of default content wrapped in div.default-content-wrapper",
+  "buttonClasses": ".button / .button.primary / .button.secondary / .button.accent, in p.button-wrapper",
+  "buttonization": "formatted-only (decorateButtons requires a.closest('strong') or a.closest('em'); bare <a> alone in <p> stays a plain link; skips links containing <img>, links with sibling text in the <p>, and URL-display links)",
+  "buttonDecorateOrder": "decorateButtons runs INSIDE decorateMain AFTER decorateBlocks, so blocks see already-classed a.button anchors; emphasis wrapper is REPLACED by the classed anchor",
+  "iconDecoration": "decorateIcons: span.icon.icon-<name> -> <img src=/icons/<name>.svg> (runs before blocks)",
+  "fragmentScriptPolicy": "inert-innerHTML (trustedTypes default policy strips <script> on createContextualFragment/document-write sinks; delivered CSP is script-src nonce + strict-dynamic)",
+  "emptySectionCollapse": true,
+  "emptySectionNote": "pipeline consumes the metadata block server-side leaving an empty first section; foundation adds main .section:empty { display: none }",
+  "fontsMechanism": "loadFonts() loads styles/fonts.css (eager >=900px or fonts-loaded session flag, always in loadLazy); metric fallbacks live in styles.css (roboto-fallback 99.529%, roboto-condensed-fallback 88.82%, both local Arial)",
+  "chrome": "header/footer blocks fetch /nav and /footer via loadFragment(path + '.plain.html'), overridable per page via nav/footer metadata; header stock machinery: nav-brand/nav-sections/nav-tools sections, hamburger toggleMenu, isDesktop = (min-width: 900px)",
+  "autoBlocks": "buildAutoBlocks: a[href*='/fragments/'] -> fragment include; a[href*='/widgets/'] -> widget block",
+  "stockQuirk": "stock header.js references .button-container when unwrapping the brand link but decorateButtons emits .button-wrapper (harmless drift; header.js is replaced by this conversion anyway)"
+}

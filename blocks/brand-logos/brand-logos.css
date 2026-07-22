@@ -1,0 +1,65 @@
+/* brand-logos — bordered logo strip; head eyebrow is default content */
+
+.brand-logos-container {
+  padding: var(--sp-xxl) 0;
+  border-top: 1px solid rgb(39 39 39 / 8%);
+  border-bottom: 1px solid rgb(39 39 39 / 8%);
+}
+
+.brand-logos-container .default-content-wrapper {
+  text-align: center;
+  margin-bottom: var(--sp-xl);
+}
+
+.brand-logos-container .default-content-wrapper p {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-body);
+  margin: 0;
+}
+
+.brand-logos-container .default-content-wrapper p strong {
+  display: inline-block;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--color-cat-yellow);
+  font-weight: 700;
+}
+
+.brand-logos .brand-logos-track {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--sp-xl);
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.brand-logos .brand-logos-item img {
+  max-height: 64px;
+  width: auto;
+  margin: 0 auto;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: opacity 220ms var(--ease-out), filter 220ms var(--ease-out);
+}
+
+.brand-logos .brand-logos-item img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@media (width <= 1024px) {
+  .brand-logos .brand-logos-track {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (width <= 640px) {
+  .brand-logos .brand-logos-track {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-md);
+  }
+}

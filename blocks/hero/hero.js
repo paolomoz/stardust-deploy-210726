@@ -58,34 +58,31 @@ function startCarousel(el) {
 
 /* Live lottie hero (prototype-authorized external module, pinned). The SVG card
    remains the no-JS / reduced-motion / load-failure fallback: the block only
-   gains .lottie-ready once the animation data actually loaded. */
+   gains .lottie-ready once the animation data actually loaded.
+   NOTE: must be lottie-web's pure-JS SVG renderer — the dotlottie web player
+   compiles WebAssembly, which EDS's delivered CSP blocks (no wasm-unsafe-eval),
+   so it silently falls back on every real environment while working locally. */
 function mountLottie(block, media) {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const right = document.createElement('div');
   right.className = 'carousel-right';
   media.prepend(right);
   // eslint-disable-next-line import/no-unresolved
-  import('https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.20/dist/dotlottie-wc.js').then(() => {
-    const wc = document.createElement('dotlottie-wc');
-    wc.setAttribute('src', `${window.hlx?.codeBasePath || ''}/blocks/hero/homepage-animation.json`);
-    wc.setAttribute('speed', '1');
-    wc.setAttribute('mode', 'forward');
-    wc.setAttribute('loop', '');
-    wc.setAttribute('autoplay', '');
-    wc.setAttribute('aria-label', 'Animated Baremetrics dashboard preview');
-    wc.className = 'lottie-animation';
-    right.append(wc);
-    let tries = 0;
-    const poll = setInterval(() => {
-      const dl = wc.dotLottie;
-      const loaded = dl && (dl.isLoaded === true || dl.totalFrames > 0);
-      if (loaded) {
-        block.classList.add('lottie-ready');
-        clearInterval(poll);
-      } else if (tries > 100) clearInterval(poll);
-      tries += 1;
-    }, 200);
-  }).catch(() => { /* CDN failure — SVG card fallback stays visible */ });
+  import('https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/build/player/esm/lottie.min.js').then(({ default: lottie }) => {
+    const host = document.createElement('div');
+    host.className = 'lottie-animation';
+    host.setAttribute('role', 'img');
+    host.setAttribute('aria-label', 'Animated Baremetrics dashboard preview');
+    right.append(host);
+    const anim = lottie.loadAnimation({
+      container: host,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: `${window.hlx?.codeBasePath || ''}/blocks/hero/homepage-animation.json`,
+    });
+    anim.addEventListener('DOMLoaded', () => block.classList.add('lottie-ready'));
+  }).catch(() => { /* CDN/CSP failure — SVG card fallback stays visible */ });
 }
 
 export default async function decorate(block) {

@@ -14,8 +14,10 @@ export default async function decorate(block) {
   const pic = block.querySelector('picture, img');
   const heading = block.querySelector('h1, h2, h3');
   const paras = [...block.querySelectorAll('p')];
-  const ctaP = paras.find((p) => p.querySelector('a'));
-  const deck = paras.find((p) => p !== ctaP && p.textContent.trim());
+  // each CTA is authored in its OWN <p> so decorateButtons() classifies it
+  // (it only buttonizes a link alone in its paragraph); collect them all.
+  const ctaParas = paras.filter((p) => p.querySelector('a'));
+  const deck = paras.find((p) => !p.querySelector('a') && p.textContent.trim());
 
   const bg = document.createElement('div');
   bg.className = 'hero-bg';
@@ -33,7 +35,12 @@ export default async function decorate(block) {
   content.className = 'hero-content';
   if (heading) content.append(heading);
   if (deck) { deck.classList.add('hero-deck'); content.append(deck); }
-  if (ctaP) { ctaP.classList.add('hero-ctas'); content.append(ctaP); }
+  if (ctaParas.length) {
+    const ctas = document.createElement('div');
+    ctas.className = 'hero-ctas';
+    ctaParas.forEach((p) => ctas.append(p));
+    content.append(ctas);
+  }
 
   const wrap = document.createElement('div');
   wrap.className = 'wrap';

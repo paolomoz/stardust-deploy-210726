@@ -1,0 +1,105 @@
+/* risk — colour-coded spectrum strip */
+.risk h2 {
+  max-width: 26ch;
+  margin: 0 0 40px;
+}
+
+.risk .spectrum {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+.risk .spectrum .seg { padding-top: 0; }
+.risk .spectrum .bar { height: 8px; }
+
+.risk .s-one .bar { background: var(--chip-one-ink); }
+.risk .s-env .bar { background: var(--chip-env-ink); }
+.risk .s-health .bar { background: var(--chip-health-ink); }
+.risk .s-safety .bar { background: var(--chip-safety-ink); }
+.risk .s-quality .bar { background: var(--chip-quality-ink); }
+.risk .s-sus .bar { background: var(--chip-sus-ink); }
+
+.risk .spectrum .inner {
+  padding: 22px 18px 26px;
+  border-left: 1px solid var(--border-line);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.risk .spectrum .seg:first-child .inner {
+  border-left: none;
+  padding-left: 0;
+}
+
+.risk .kicker {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 4px 12px;
+  align-self: flex-start;
+}
+
+.risk .k-one {
+  background: var(--chip-one-bg);
+  color: var(--chip-one-ink);
+}
+
+.risk .k-env {
+  background: var(--chip-env-bg);
+  color: var(--chip-env-ink);
+}
+
+.risk .k-health {
+  background: var(--chip-health-bg);
+  color: var(--chip-health-ink);
+}
+
+.risk .k-safety {
+  background: var(--chip-safety-bg);
+  color: var(--chip-safety-ink);
+}
+
+.risk .k-quality {
+  background: var(--chip-quality-bg);
+  color: var(--chip-quality-ink);
+}
+
+.risk .k-sus {
+  background: var(--chip-sus-bg);
+  color: var(--chip-sus-ink);
+}
+
+.risk .spectrum h3 {
+  font-size: 19px;
+  flex: 1;
+  margin: 0;
+}
+
+.risk .spectrum a {
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--color-accent);
+}
+.risk .spectrum a:hover { text-decoration: underline; }
+
+@media (width <= 1024px) {
+  .risk .spectrum { grid-template-columns: repeat(3, 1fr); }
+
+  .risk .spectrum .seg:nth-child(4) .inner {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+@media (width <= 640px) {
+  .risk .spectrum { grid-template-columns: 1fr; }
+
+  .risk .spectrum .inner {
+    border-left: none;
+    padding-left: 0;
+  }
+}

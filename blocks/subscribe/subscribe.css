@@ -1,0 +1,30 @@
+/* subscribe — lead-capture band on navy */
+.subscribe-container {
+  background: var(--navy-field);
+  margin: 0;
+  padding: 36px 0;
+}
+
+.subscribe .wrap {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.subscribe img {
+  height: 36px;
+  width: auto;
+}
+
+.subscribe p {
+  color: var(--navy-text-2);
+  font-size: 16px;
+  flex: 1;
+  min-width: 260px;
+  margin: 0;
+}

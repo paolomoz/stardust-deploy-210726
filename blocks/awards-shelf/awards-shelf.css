@@ -1,0 +1,47 @@
+/* awards-shelf — recognition shelf */
+.awards-shelf .grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 48px;
+  align-items: end;
+}
+.awards-shelf h2 { margin: 0 0 12px; }
+
+.awards-shelf .rating {
+  font-size: 15px;
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+.awards-shelf .stars {
+  color: var(--cority-orange);
+  letter-spacing: 3px;
+  font-size: 18px;
+}
+.awards-shelf .cta-row { margin-top: 36px; }
+
+.awards-shelf .shelf {
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--navy-field);
+  padding-bottom: 0;
+}
+
+.awards-shelf .shelf img {
+  height: 104px;
+  width: auto;
+}
+
+@media (width <= 1024px) {
+  .awards-shelf .grid {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+
+@media (width <= 640px) {
+  .awards-shelf .shelf { gap: 24px; }
+  .awards-shelf .shelf img { height: 80px; }
+}

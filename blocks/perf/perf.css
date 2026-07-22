@@ -1,0 +1,146 @@
+/* perf — performance editorial spread on navy */
+.perf-container {
+  background: var(--navy-field);
+  color: #fff;
+  margin: 0;
+}
+
+.perf .wrap {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.perf .grid {
+  display: grid;
+  grid-template-columns: 6fr 6fr;
+  gap: 64px;
+}
+
+.perf h2 {
+  color: #fff;
+  margin: 0 0 34px;
+  max-width: 18ch;
+}
+
+.perf .entry {
+  border-top: 1px solid var(--rule-on-navy);
+  padding: 24px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.perf .entry h3 {
+  color: #fff;
+  margin: 0;
+}
+
+.perf .entry p {
+  color: var(--navy-text-2);
+  max-width: 52ch;
+  margin: 0;
+}
+.perf .cta-row { margin-top: 30px; }
+
+.perf .collage {
+  position: relative;
+  min-height: 560px;
+}
+
+.perf .collage img {
+  position: absolute;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-stack);
+}
+
+.perf .collage .c1 {
+  width: 72%;
+  top: 0;
+  right: 0;
+}
+
+.perf .collage .c2 {
+  width: 58%;
+  top: 44%;
+  left: 0;
+}
+
+.perf .collage .c3 {
+  width: 44%;
+  top: 74%;
+  right: 6%;
+}
+
+.perf .marginalia {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+}
+
+.perf .marginalia img {
+  position: static;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-inner);
+  object-fit: cover;
+  box-shadow: none;
+}
+
+.perf .marginalia blockquote {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--navy-text-1);
+  margin: 0;
+}
+
+.perf .marginalia blockquote::before {
+  content: "\201C";
+  color: var(--cority-orange);
+  font-size: 30px;
+  font-weight: 500;
+  display: block;
+  line-height: 0.8;
+}
+
+.perf .marginalia cite {
+  font-style: normal;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--navy-text-3);
+}
+
+@media (width <= 1024px) {
+  .perf .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .perf .collage {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    position: static;
+  }
+
+  .perf .collage img {
+    position: static;
+    width: 100%;
+  }
+  .perf .collage .c3 { display: none; }
+
+  .perf .marginalia {
+    position: static;
+    width: auto;
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}

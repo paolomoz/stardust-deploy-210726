@@ -1,0 +1,61 @@
+/* board — industries index board on navy */
+.board-container {
+  background: var(--navy-field);
+  color: #fff;
+  margin: 0;
+}
+
+.board h2 {
+  color: #fff;
+  margin: 0 0 30px;
+}
+
+.board ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.board li { border-top: 1px solid var(--rule-on-navy); }
+.board li:last-child { border-bottom: 1px solid var(--rule-on-navy); }
+
+.board a {
+  display: grid;
+  grid-template-columns: 132px 1fr auto;
+  gap: 28px;
+  align-items: center;
+  padding: 16px 0;
+  text-decoration: none;
+  color: #fff;
+}
+.board a:hover { background: var(--white-a06); }
+
+.board img {
+  width: 132px;
+  height: 76px;
+  object-fit: cover;
+  border-radius: var(--radius-inner);
+}
+
+.board .name {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  font-size: clamp(19px, 1.9vw, 24px);
+}
+
+.board .go {
+  color: var(--link-on-dark);
+  font-weight: 400;
+  font-size: 18px;
+}
+
+@media (width <= 640px) {
+  .board a {
+    grid-template-columns: 96px 1fr auto;
+    gap: 16px;
+  }
+
+  .board img {
+    width: 96px;
+    height: 60px;
+  }
+}

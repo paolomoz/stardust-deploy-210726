@@ -1,0 +1,55 @@
+/* faq — accordion (contained) */
+.faq .wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0;
+}
+.faq h2 { margin: 0 0 36px; }
+
+.faq details { border-bottom: 1px solid var(--border-line); }
+.faq details:first-of-type { border-top: 1px solid var(--border-line); }
+
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  align-items: center;
+  gap: 6px;
+  padding: 20px 4px;
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  font-size: 19px;
+  color: var(--navy-field);
+  min-height: 48px;
+}
+.faq summary::-webkit-details-marker { display: none; }
+
+.faq summary::before {
+  content: "+";
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--color-accent);
+  line-height: 1;
+  transition: transform 0.18s;
+}
+.faq details[open] summary::before { transform: rotate(45deg); }
+
+.faq .answer {
+  padding: 0 4px 26px 44px;
+  color: var(--color-fg);
+  max-width: 70ch;
+}
+.faq .answer p { margin-bottom: 12px; }
+
+.faq .coda {
+  margin-top: 34px;
+  color: var(--ink-muted);
+  font-size: 15px;
+  max-width: 70ch;
+  padding-left: 44px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq summary::before { transition-duration: 0.01ms; }
+}

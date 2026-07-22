@@ -11,3 +11,12 @@ helix-importer-ui
 # Ensure these files are tracked
 !CLAUDE.md
 !AGENTS.md
+
+# stardust e2e conversion — local only
+.env
+.env.*
+qa/
+skills/
+stardust/
+media-src/
+node_modules/

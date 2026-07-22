@@ -1,0 +1,65 @@
+/* cta-band — full-bleed orange band with EHS+ watermark */
+.cta-band-container {
+  background: var(--cority-orange);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+.cta-band-container > div { position: relative; }
+
+.cta-band .plus-glyph {
+  position: absolute;
+  right: -2%;
+  top: 50%;
+  transform: translateY(-52%);
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  font-size: 560px;
+  line-height: 1;
+  color: var(--white-a16);
+  user-select: none;
+  pointer-events: none;
+}
+
+.cta-band .wrap {
+  position: relative;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cta-band h2 {
+  color: #fff;
+  max-width: 20ch;
+  margin: 0 0 14px;
+}
+
+.cta-band p {
+  max-width: 34ch;
+  margin: 0 0 30px;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #fff;
+  font-weight: 300;
+}
+
+/* white-on-orange button (prototype .btn-on-orange) */
+.cta-band a.button.primary {
+  background: #fff;
+  color: var(--on-orange-ink);
+  border-color: #fff;
+}
+
+.cta-band a.button.primary:hover {
+  background: var(--surface-cool);
+  border-color: var(--surface-cool);
+  color: var(--on-orange-ink);
+}
+
+@media (width <= 768px) {
+  .cta-band .plus-glyph {
+    font-size: 340px;
+    right: -14%;
+  }
+}

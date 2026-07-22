@@ -1,0 +1,77 @@
+/* quote-spread — full-bleed photo | navy panel (content is edge-to-edge) */
+.quote-spread-container {
+  padding: 0;
+  margin: 0;
+}
+
+.quote-spread-container > div {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.quote-spread {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 440px;
+}
+
+.quote-spread .photo { position: relative; }
+
+.quote-spread .photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quote-spread .panel {
+  background: var(--navy-field);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px clamp(24px, 6vw, 88px);
+  margin: 0;
+}
+
+.quote-spread blockquote {
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 300;
+  line-height: 1.45;
+  color: #fff;
+  max-width: 44ch;
+  margin: 0;
+}
+
+.quote-spread blockquote::before {
+  content: "\201C";
+  display: block;
+  font-size: 64px;
+  font-weight: 500;
+  color: var(--cority-orange);
+  line-height: 0.6;
+  margin-bottom: 18px;
+}
+
+.quote-spread cite {
+  display: block;
+  font-style: normal;
+  margin-top: 22px;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--navy-text-2);
+}
+
+.quote-spread .q-logo {
+  height: 32px;
+  width: auto;
+  margin-top: 16px;
+  filter: grayscale(1) brightness(2.2);
+}
+
+@media (width <= 768px) {
+  .quote-spread { grid-template-columns: 1fr; }
+  .quote-spread .photo { min-height: 260px; }
+}

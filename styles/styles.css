@@ -92,14 +92,17 @@
   --nav-height: 120px;
 }
 
-/* metric-matched fallback for Fakt Pro (computed from the 400 woff2, src Arial) */
+/* metric-matched fallback for Fakt Pro (src Arial).
+   size-adjust measured EMPIRICALLY from rendered text width (100.77%) — the
+   xAvgCharWidth-derived 125.73% over-estimated width and caused hero CLS from
+   font-swap re-wrapping. ascent/descent recomputed against the corrected em. */
 @font-face {
   font-family: fakt-pro-fallback;
   src: local("Arial");
-  size-adjust: 125.73%;
-  ascent-override: 59.49%;
-  descent-override: 20.04%;
-  line-gap-override: 15.91%;
+  size-adjust: 100.77%;
+  ascent-override: 74.23%;
+  descent-override: 25.01%;
+  line-gap-override: 19.85%;
 }
 
 /* ---- document reset ---- */

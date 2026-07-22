@@ -1,27 +1,125 @@
-.cards > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* cards — prototype .card-grid / .feature-card, scoped under .cards.
+   Variant `proof` = dashboard-proof: mist band, full-width container,
+   compact icon docked left of the title, smaller copy, hover lift. */
+
+/* section head (default content, styled in place — D1) */
+main .section.cards-container > .default-content-wrapper h2 {
+  max-width: none;
+}
+
+.cards .container {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--spacing-lg);
+}
+
+.cards .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: calc(var(--spacing-lg) + 8px);
 }
 
-.cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+.cards .ds-card {
+  background: oklch(100% 0 0deg);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
 }
 
-.cards .cards-card-body {
-  margin: 16px;
+.cards .feature-card {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
 }
 
-.cards .cards-card-image {
-  line-height: 0;
+.cards .feature-card .card-icon {
+  width: 56px;
+  height: 56px;
 }
 
-.cards > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.cards .feature-card h3 {
+  margin: 0;
+}
+
+.cards .feature-card h3 a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-block: -9px; /* 44px target without layout shift */
+}
+
+.cards .feature-card h3 a:hover {
+  color: var(--color-action);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cards .feature-card p {
+  color: var(--color-slate);
+  margin: 0;
+}
+
+.cards .feature-card .card-shot {
+  border-radius: var(--radius);
+  border: 1px solid var(--color-hairline);
+}
+
+.cards .feature-card > picture:last-child,
+.cards .feature-card > img.card-shot {
+  order: 4;
+  margin-top: auto;
+}
+
+/* ---- variant: proof (dashboard-proof band) ---- */
+main .section.cards-container:has(.cards.proof) {
+  background: var(--color-mist);
+}
+
+.cards.proof .container {
+  max-width: none;
+}
+
+.cards.proof .card-head {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.cards.proof .card-head picture,
+.cards.proof .card-icon {
+  flex-shrink: 0;
+}
+
+.cards.proof .card-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.cards.proof .feature-card p {
+  font-size: var(--body-sm);
+}
+
+.cards.proof .feature-card {
+  transition: box-shadow 0.2s var(--ease-state), border-color 0.2s var(--ease-state), transform 0.2s var(--ease-state);
+}
+
+.cards.proof .feature-card:hover {
+  border-color: oklch(58% 0.19 272deg / 45%);
+  box-shadow: 0 16px 48px 12px oklch(32% 0.04 285deg / 10%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cards.proof .feature-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@media (width <= 640px) {
+  .cards .container {
+    padding-inline: var(--spacing-md);
+  }
 }

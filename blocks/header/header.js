@@ -1,8 +1,15 @@
+/**
+ * header — Baremetrics chrome. Template-slotted (#95): fetches the authored
+ * /baremetrics/nav document (3-section contract: brand / links / tools) and
+ * slots it into the prototype's header-bar. Stock hamburger/aria machinery
+ * kept and restyled; collapse breakpoint 1081px (prototype adapt P1: the
+ * inline nav needs ~1130px, so 769–1080px must be collapsed).
+ */
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 // media query match that indicates mobile/tablet width
-const isDesktop = window.matchMedia('(min-width: 900px)');
+const isDesktop = window.matchMedia('(min-width: 1081px)');
 
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
@@ -108,15 +115,34 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   }
 }
 
+/* prototype locale switcher: <details> dropdown built from the authored
+   locale link list (tools section, first <ul>) */
+function buildLocale(list) {
+  const links = [...list.querySelectorAll('a')];
+  if (!links.length) return null;
+  const details = document.createElement('details');
+  details.className = 'locale';
+  const summary = document.createElement('summary');
+  summary.setAttribute('aria-label', 'Change language');
+  const current = links.find((a) => a.hasAttribute('aria-current')) || links[0];
+  summary.textContent = current.textContent.trim();
+  const menu = document.createElement('div');
+  menu.className = 'locale-menu';
+  links.forEach((a) => menu.append(a));
+  details.append(summary, menu);
+  return details;
+}
+
 /**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-  // load nav as fragment
+  // load nav as fragment (subfolder-site default)
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/baremetrics/nav';
   const fragment = await loadFragment(navPath);
+  if (!fragment) return;
 
   // decorate nav DOM
   block.textContent = '';
@@ -131,15 +157,21 @@ export default async function decorate(block) {
   });
 
   const navBrand = nav.querySelector('.nav-brand');
-  const brandLink = navBrand.querySelector('.button');
+  const brandLink = navBrand ? navBrand.querySelector('.button') : null;
   if (brandLink) {
     brandLink.className = '';
-    brandLink.closest('.button-container').className = '';
+    const wrapper = brandLink.closest('.button-wrapper');
+    if (wrapper) wrapper.removeAttribute('class');
   }
+  const brandAnchor = navBrand ? navBrand.querySelector('a') : null;
+  if (brandAnchor) brandAnchor.classList.add('brand-link');
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
+      // the pipeline may wrap the trigger link in a <p> on live (#98) — unwrap
+      const wrapped = navSection.querySelector(':scope > p > a');
+      if (wrapped) wrapped.closest('p').replaceWith(wrapped);
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
       navSection.addEventListener('click', () => {
         if (isDesktop.matches) {
@@ -151,14 +183,63 @@ export default async function decorate(block) {
     });
   }
 
+  // tools: locale dropdown + sign-in + trial CTA (prototype header-utility)
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    const utility = document.createElement('div');
+    utility.className = 'header-utility';
+    const localeList = navTools.querySelector('ul');
+    let localeLinks = [];
+    if (localeList) {
+      localeLinks = [...localeList.querySelectorAll('a')].map((a) => a.cloneNode(true));
+      const details = buildLocale(localeList);
+      localeList.remove();
+      if (details) utility.append(details);
+    }
+    let signIn = null;
+    let cta = null;
+    [...navTools.querySelectorAll('a')].forEach((a) => {
+      if (a.classList.contains('button')) {
+        a.className = 'button secondary nav-cta';
+        cta = a;
+      } else {
+        a.classList.add('nav-signin');
+        signIn = a;
+      }
+    });
+    if (signIn) utility.append(signIn);
+    if (cta) utility.append(cta);
+    navTools.replaceChildren(utility);
+
+    // collapsed panel gets sign-in + locale entries (prototype ≤1080 behavior)
+    const panelList = navSections ? navSections.querySelector('.default-content-wrapper > ul') : null;
+    if (panelList) {
+      if (signIn) {
+        const li = document.createElement('li');
+        li.className = 'nav-signin-mobile';
+        const clone = signIn.cloneNode(true);
+        clone.className = '';
+        li.append(clone);
+        panelList.append(li);
+      }
+      localeLinks.forEach((a) => {
+        const li = document.createElement('li');
+        li.className = 'nav-locale';
+        a.className = '';
+        li.append(a);
+        panelList.append(li);
+      });
+    }
+  }
+
   // hamburger for mobile
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
   hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
-      <span class="nav-hamburger-icon"></span>
+      <span class="nav-hamburger-icon"></span><span class="nav-hamburger-label">Menu</span>
     </button>`;
   hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
-  nav.prepend(hamburger);
+  nav.append(hamburger);
   nav.setAttribute('aria-expanded', 'false');
   // prevent mobile nav behavior on window resize
   toggleMenu(nav, navSections, isDesktop.matches);

@@ -1,0 +1,16 @@
+{
+  "runtime": "vanilla-eds",
+  "blockWrapperClass": "block",
+  "buttonClasses": ".button / .button.primary / .button.secondary / .button.accent, in p.button-wrapper",
+  "buttonization": "formatted-only",
+  "fragmentScriptPolicy": "inert-innerHTML",
+  "emptySectionCollapse": true,
+  "notes": {
+    "verifiedFrom": "scripts/scripts.js decorateButtons + scripts/aem.js decorateBlock, read 2026-07-22",
+    "buttonDetail": "decorateButtons requires a.closest('strong')||a.closest('em'); anchor must be the whole <p> text; strong+em => .accent; p gets className='button-wrapper' (replaces classes); a.title is set from textContent on ALL p a[href]",
+    "blockDetail": "decorateBlock adds .block + data-block-name, wraps in div.<name>-wrapper, section gains .<name>-container; wrapTextNodes wraps bare-text cells in <p>",
+    "sectionDetail": "decorateSections wraps default-content runs in div.default-content-wrapper; sections hidden via inline display:none until loadSection",
+    "csp": "head.html ships script-src 'nonce-aem' 'strict-dynamic' + require-trusted-types-for 'script'; scripts.js defines a 'default' trustedTypes policy so block innerHTML works; dynamic import() from block JS is trusted via strict-dynamic",
+    "extras": "this clone adds buildWidgetAutoBlocks (links containing /widgets/ become widget blocks) - no /widgets/ links authored on this site"
+  }
+}

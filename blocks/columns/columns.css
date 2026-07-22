@@ -1,33 +1,93 @@
-.columns > div {
-  display: flex;
-  flex-direction: column;
+/* columns — prototype .split layout, scoped under .columns.
+   Variants: open-startups (rounded image), closing (gradient tint panel + card shot). */
+
+main .section.columns-container:has(.columns.closing) {
+  background: linear-gradient(135deg, oklch(97% 0.012 270deg), oklch(94% 0.03 270deg));
 }
 
-.columns img {
+.columns > div.container {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--spacing-lg);
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.columns .columns-copy-col {
+  max-width: 54ch;
+}
+
+.columns .columns-copy-col p {
+  color: var(--color-slate);
+  margin-top: var(--spacing-md);
+}
+
+.columns.closing .columns-copy-col p {
+  color: var(--color-fg);
+}
+
+.columns .columns-copy-col .eyebrow {
+  font: 600 var(--eyebrow) / 1.4 var(--body-font-family);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+  margin: 0 0 var(--spacing-md);
+}
+
+.columns .columns-copy-col p.button-wrapper {
+  margin-top: var(--spacing-lg);
+}
+
+/* styled text link (View Open Startups) — not a button */
+.columns .columns-copy-col a:not(.button) {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--color-action);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+}
+
+.columns .columns-copy-col a:not(.button):hover {
+  color: var(--color-action-hover);
+}
+
+.columns .columns-img-col img {
   width: 100%;
 }
 
-.columns > div > div {
-  order: 1;
+.columns.open-startups .columns-img-col img {
+  border-radius: var(--radius-card);
 }
 
-.columns > div > .columns-img-col {
-  order: 0;
+.columns.closing .columns-img-col img {
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-hairline);
+  box-shadow: var(--shadow-card);
 }
 
-.columns > div > .columns-img-col img {
-  display: block;
+@media (width <= 1024px) {
+  .columns > div.container {
+    gap: var(--spacing-lg);
+  }
 }
 
-@media (width >= 900px) {
-  .columns > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+@media (width <= 900px) {
+  .columns > div.container {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .columns > div > div {
-    flex: 1;
-    order: unset;
+  .columns .columns-img-col {
+    order: 2;
+  }
+}
+
+@media (width <= 640px) {
+  .columns > div.container {
+    padding-inline: var(--spacing-md);
   }
 }

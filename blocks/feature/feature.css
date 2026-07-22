@@ -1,0 +1,155 @@
+/* feature — prototype split feature bands, scoped under .feature.
+   Variants: cancellation (signal-orange badge), recover (signal-magenta badge,
+   mist band, media on the left at desktop). */
+
+main .section.feature-container:has(.feature.recover) {
+  background: var(--color-mist);
+}
+
+.feature .container {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--spacing-lg);
+}
+
+.feature .split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.feature .split-copy {
+  max-width: 54ch;
+}
+
+.feature .eyebrow {
+  font: 600 var(--eyebrow) / 1.4 var(--body-font-family);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+  margin: 0 0 var(--spacing-md);
+}
+
+.feature .ds-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 4px 14px;
+  border-radius: var(--radius-chip);
+  font: 600 var(--eyebrow) / 1 var(--body-font-family);
+  letter-spacing: 0.04em;
+  background: oklch(94% 0.03 270deg);
+  color: oklch(45% 0.19 270deg);
+}
+
+.feature .ds-badge[data-feature='cancellation'] {
+  background: oklch(94% 0.05 60deg);
+  color: oklch(46% 0.13 55deg);
+}
+
+.feature .ds-badge[data-feature='recover'] {
+  background: oklch(92% 0.06 330deg);
+  color: oklch(44% 0.16 340deg);
+}
+
+.feature .section-lede {
+  color: var(--color-slate);
+  max-width: 62ch;
+  margin-top: var(--spacing-md);
+}
+
+.feature .feature-ctas {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+  margin-top: var(--spacing-lg);
+}
+
+.feature .feature-ctas a:not(.button) {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--color-action);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+}
+
+.feature .feature-ctas a:not(.button):hover {
+  color: var(--color-action-hover);
+}
+
+.feature .feature-quote {
+  margin: var(--spacing-lg) 0 0;
+}
+
+.feature .feature-quote blockquote {
+  margin: 0;
+  color: var(--color-fg);
+  font-weight: 600;
+}
+
+.feature .feature-quote blockquote p {
+  margin: 0;
+  color: inherit;
+}
+
+.feature .feature-quote .quote-attrib {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.feature .feature-quote .quote-attrib img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.feature .feature-quote cite {
+  font-style: normal;
+  font-size: var(--body-sm);
+  color: var(--color-slate);
+}
+
+.feature .split-shot {
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-hairline);
+  box-shadow: var(--shadow-card);
+}
+
+/* recover: media docks left at desktop (prototype DOM order) */
+.feature.recover .split > picture,
+.feature.recover .split > img {
+  order: -1;
+}
+
+@media (width <= 1024px) {
+  .feature .split {
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (width <= 900px) {
+  .feature .split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .feature .split > picture,
+  .feature .split > img,
+  .feature.recover .split > picture,
+  .feature.recover .split > img {
+    order: 2;
+  }
+}
+
+@media (width <= 640px) {
+  .feature .container {
+    padding-inline: var(--spacing-md);
+  }
+}

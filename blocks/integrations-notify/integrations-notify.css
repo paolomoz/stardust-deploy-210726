@@ -1,0 +1,125 @@
+/* integrations-notify — prototype split + notify form + logo strip,
+   scoped under .integrations-notify (mist band) */
+
+main .section.integrations-notify-container {
+  background: var(--color-mist);
+}
+
+.integrations-notify .container {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--spacing-lg);
+}
+
+.integrations-notify .split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.integrations-notify .split-copy {
+  max-width: 54ch;
+}
+
+.integrations-notify .split p {
+  color: var(--color-slate);
+}
+
+.integrations-notify .ds-label {
+  display: block;
+  font: 600 var(--body-sm) / 1.4 var(--body-font-family);
+  color: var(--color-fg);
+  margin-top: var(--spacing-lg);
+}
+
+.integrations-notify .inline-form {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-top: var(--spacing-sm);
+}
+
+.integrations-notify .ds-input {
+  flex: 1 1 220px;
+  min-height: 48px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  border: 1.5px solid oklch(62% 0.03 285deg); /* ≥3:1 — the border is the field's only boundary */
+  font: 400 var(--body) / 1.4 var(--body-font-family);
+  color: var(--color-fg);
+  background: oklch(100% 0 0deg);
+  width: 100%;
+}
+
+.integrations-notify .ds-input::placeholder {
+  color: var(--color-slate);
+}
+
+.integrations-notify .ds-input:focus-visible {
+  outline: 3px solid oklch(51% 0.21 270deg);
+  outline-offset: 1px;
+  border-color: var(--color-action);
+}
+
+.integrations-notify .form-note {
+  color: var(--color-fg);
+  font-weight: 600;
+  margin-top: var(--spacing-sm);
+}
+
+.integrations-notify .logo-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--spacing-sm) var(--spacing-lg);
+  margin: var(--spacing-lg) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.integrations-notify .logo-strip li {
+  display: flex;
+}
+
+.integrations-notify .logo-strip a,
+.integrations-notify .logo-strip .logo-cell {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+}
+
+.integrations-notify .logo-strip a:hover {
+  background: var(--color-tint);
+}
+
+.integrations-notify .logo-strip img {
+  opacity: 0.85;
+  width: auto;
+}
+
+@media (width <= 1024px) {
+  .integrations-notify .split {
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (width <= 900px) {
+  .integrations-notify .split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (width <= 640px) {
+  .integrations-notify .container {
+    padding-inline: var(--spacing-md);
+  }
+
+  .integrations-notify .inline-form button.button {
+    width: 100%;
+  }
+}

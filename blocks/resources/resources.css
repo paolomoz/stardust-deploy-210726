@@ -1,0 +1,36 @@
+/* resources — white section with a faint housing watermark; dusk-tint icon+title cards */
+main .section.resources-container { position: relative; background: #fff; overflow: hidden; }
+main .section.resources-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/blocks/resources/watermark.png") center / cover no-repeat;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+}
+main .section.resources-container > div { position: relative; z-index: 1; }
+
+main .section.resources-container .default-content-wrapper h2 {
+  font-size: var(--heading-lg);
+  font-weight: 900;
+  color: var(--harbor);
+}
+main .section.resources-container .default-content-wrapper p { margin-top: var(--spacing-md); max-width: 70ch; }
+main .section.resources-container .default-content-wrapper p.button-wrapper { margin-top: var(--spacing-lg); }
+
+.resources .resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-lg);
+  margin-block: var(--spacing-xl);
+}
+.resources .resource-col { background: var(--dusk-tint); padding: var(--spacing-lg); text-align: center; }
+.resources .resource-col picture,
+.resources .resource-col img { height: 88px; width: auto; margin-inline: auto; margin-bottom: var(--spacing-md); }
+.resources .resource-col h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-fg);
+}

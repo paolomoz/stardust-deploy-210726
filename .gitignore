@@ -11,3 +11,13 @@ helix-importer-ui
 # Ensure these files are tracked
 !CLAUDE.md
 !AGENTS.md
+
+# stardust:deploy working artifacts (never pushed)
+.env
+.env.*
+qa/
+samples/
+skills/
+stardust/
+media-src/
+node_modules/

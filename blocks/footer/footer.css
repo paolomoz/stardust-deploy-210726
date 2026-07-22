@@ -1,20 +1,56 @@
-footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+/* The Road Home footer — harbor mega band + teal bottom bar */
+footer { background: var(--harbor); color: #fff; }
+footer .footer { padding: 0; }
+
+footer .footer-grid {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--section-padding) var(--spacing-lg) var(--spacing-xl);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: var(--spacing-xl) var(--spacing-lg);
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+footer .footer-col h2 {
+  font-family: var(--heading-font-family);
+  font-weight: 900;
+  font-size: 1.0625rem;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--spacing-md);
 }
+footer .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--spacing-sm); }
+footer .footer-col a { color: rgb(255 255 255 / 88%); text-decoration: none; font-size: 0.9375rem; }
+footer .footer-col a:hover { color: #fff; text-decoration: underline; }
+footer .footer-col p { margin-top: var(--spacing-md); font-size: 0.9375rem; color: rgb(255 255 255 / 92%); }
+footer .footer-col p a { color: #fff; font-weight: 700; }
 
-footer .footer p {
-  margin: 0;
-}
+footer .footer-brand { display: flex; flex-direction: column; gap: var(--spacing-md); align-items: flex-start; }
+footer .footer-brand img { height: 110px; width: auto; }
+footer .footer-brand address { font-style: normal; font-size: 0.9375rem; color: rgb(255 255 255 / 88%); }
+footer .footer-brand address a { color: #fff; }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
-  }
+/* bottom bar — teal full-bleed, constrained inner row */
+footer .footer-bottom { background: var(--color-accent); color: #fff; }
+footer .footer-bottom-inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-md);
 }
+footer .footer-bottom img { height: 44px; width: auto; }
+
+footer .social { display: flex; gap: var(--spacing-md); margin-left: auto; }
+footer .social a {
+  color: #fff;
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(255 255 255 / 50%);
+}
+footer .social a:hover { background: rgb(255 255 255 / 15%); }
+footer .social svg { width: 16px; height: 16px; fill: currentcolor; }

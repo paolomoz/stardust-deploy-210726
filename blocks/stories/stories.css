@@ -1,0 +1,48 @@
+/* stories — 6 testimony cards, initial-avatar tiles */
+main .section.stories-container { background: #fff; }
+main .section.stories-container .default-content-wrapper h2 { font-size: var(--heading-lg); font-weight: 900; color: var(--color-fg); }
+main .section.stories-container .default-content-wrapper p { margin-top: var(--spacing-md); max-width: 70ch; }
+main .section.stories-container .default-content-wrapper p.button-wrapper { margin-top: var(--spacing-xl); }
+
+.stories .stories-grid-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.stories .story-card {
+  border-top: 4px solid var(--dusk);
+  background: var(--mist);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.stories .story-head { display: flex; align-items: center; gap: var(--spacing-md); }
+.stories .story-portrait {
+  width: 72px;
+  height: 72px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(200 188 214 / 70%);
+  color: var(--dusk);
+  font-family: var(--heading-font-family);
+  font-weight: 900;
+  font-size: 1.75rem;
+}
+.stories .story-card h3 { font-size: 1.25rem; font-weight: 900; letter-spacing: 0.04em; }
+.stories .story-card p { font-size: var(--body); }
+.stories .story-more {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  font-size: var(--body-sm);
+  letter-spacing: 0.04em;
+  color: var(--harbor);
+  margin-top: auto;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}

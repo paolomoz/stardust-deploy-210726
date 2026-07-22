@@ -1,37 +1,61 @@
-.hero-container .hero-wrapper {
-  max-width: unset;
-  padding: 0;
-}
+/* hero — full-bleed photo + teal-harbor scrim, left-aligned content */
+main .section.hero-container { padding: 0; margin: 0; }
+main .section.hero-container > div { max-width: none; margin: 0; padding: 0; }
 
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  min-height: 76vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero .hero-bg { position: absolute; inset: 0; }
+.hero .hero-bg picture,
+.hero .hero-bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  min-height: 76vh; /* reserve the media slot so a late-loading LCP image can't shift the page (#100) */
+}
+
+.hero .hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgb(0 47 56 / 88%) 0%, rgb(0 47 56 / 62%) 46%, rgb(0 47 56 / 18%) 100%);
+}
+
+.hero .wrap {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--spacing-lg);
+}
+
+.hero .hero-content {
+  color: #fff;
+  max-width: 640px;
+  padding-block: var(--spacing-2xl);
 }
 
 .hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+  font-size: var(--heading-xxl);
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  line-height: 1.02;
 }
 
-.hero picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
-}
+.hero .hero-deck { margin-top: var(--spacing-lg); font-size: 1.125rem; color: #fff; }
+.hero .hero-ctas { display: flex; flex-wrap: wrap; gap: var(--spacing-md); margin-top: var(--spacing-xl); }
 
-.hero img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-@media (width >= 900px) {
-  .hero {
-    padding: 40px 32px;
-  }
+@media (width <= 1024px) { .hero { min-height: 64vh; } .hero .hero-bg picture, .hero .hero-bg img { min-height: 64vh; } }
+@media (width <= 640px) {
+  .hero { min-height: auto; }
+  .hero .hero-bg picture, .hero .hero-bg img { position: absolute; min-height: 100%; }
+  .hero .hero-content { padding-block: var(--spacing-xl); }
+  .hero .hero-ctas a.button { width: 100%; }
 }

@@ -1,0 +1,70 @@
+/* videos — facade grid on a white band (prototype .videos) */
+
+main .section.videos-container {
+  background: var(--color-surface);
+}
+
+.videos .videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.videos figure {
+  margin: 0;
+}
+
+.videos .facade {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+  text-decoration: none;
+  overflow: hidden;
+  transition: box-shadow 0.2s var(--ease), transform 0.2s var(--ease);
+  margin-bottom: var(--spacing-md);
+}
+
+.videos .facade:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+.videos .facade-play {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 14%);
+  border: 2px solid var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s var(--ease);
+}
+
+.videos .facade:hover .facade-play {
+  transform: scale(1.08);
+}
+
+.videos .facade-play svg {
+  fill: var(--color-surface);
+  margin-left: 4px;
+}
+
+.videos .facade:focus-visible {
+  outline-color: var(--color-gold);
+}
+
+.videos figcaption .title {
+  margin: 0 0 var(--spacing-sm);
+  font-size: var(--heading-sm);
+}
+
+.videos figcaption p {
+  margin: 0;
+  font-size: var(--body-sm);
+  color: #333;
+}

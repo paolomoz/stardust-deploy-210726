@@ -1,27 +1,175 @@
+/* cards — default grid skin + `talks` and `webinars` variants */
+
 .cards > ul {
   list-style: none;
-  margin: 0;
+  margin: 0 0 var(--spacing-xl);
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
 }
 
-.cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+.cards li.card {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s var(--ease), transform 0.2s var(--ease);
 }
 
-.cards .cards-card-body {
-  margin: 16px;
+.cards li.card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
 }
 
-.cards .cards-card-image {
-  line-height: 0;
-}
-
-.cards > ul > li img {
+.cards .card-media img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 400 / 250;
   object-fit: cover;
+}
+
+.cards .card-body {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  flex: 1;
+}
+
+.cards .card-body .label {
+  margin: 0;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-sandal);
+}
+
+.cards .card-body .label strong {
+  font-weight: 600;
+}
+
+.cards .card-body h3 {
+  margin: 0;
+  font-size: var(--heading-sm);
+}
+
+.cards .card-body p {
+  margin: 0;
+}
+
+.cards .card-body a.card-link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* excerpt clamps (prototype .clamp-3 / .clamp-4) */
+.cards:not(.talks, .webinars) .card-body h3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cards:not(.talks, .webinars) .card-body p:not(.label) {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== talks variant — white section band, 2-up cream cards ===== */
+
+main .section.cards-container:has(.cards.talks) {
+  background: var(--color-surface);
+}
+
+.cards.talks > ul {
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+}
+
+.cards.talks li.card {
+  background: var(--color-bg);
+}
+
+.cards.talks .card-media img {
+  aspect-ratio: 1080 / 675;
+}
+
+.cards.talks .card-body p:not(.label) {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (width <= 900px) {
+  .cards.talks > ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== webinars variant — circular whole-tile anchors ===== */
+
+.cards.webinars > ul {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-2xl);
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+.cards.webinars a.tile {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  max-width: 240px;
+}
+
+.cards.webinars a.tile img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto var(--spacing-md);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.cards.webinars a.tile:hover img {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+.cards.webinars a.tile .label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-sandal);
+}
+
+.cards.webinars a.tile .title {
+  display: block;
+  font-family: var(--body-font-family);
+  font-weight: 600;
+  font-size: var(--heading-sm);
+  color: var(--color-accent);
+}
+
+@media (width <= 640px) {
+  .cards.webinars > ul {
+    gap: var(--spacing-xl);
+  }
 }

@@ -1,0 +1,138 @@
+/* insights — pull-quote + featured card + thumbnail list rail
+   (prototype .insights). Block paints its own white section band. */
+
+main .section.insights-container {
+  background: var(--color-surface);
+}
+
+.insights .insights-grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: var(--spacing-2xl);
+  align-items: start;
+}
+
+.insights blockquote {
+  margin: 0 0 var(--spacing-xl);
+  border-top: 3px solid var(--color-gold);
+  padding-top: var(--spacing-lg);
+}
+
+.insights blockquote p {
+  font-family: var(--heading-font-family);
+  font-style: italic;
+  font-size: var(--heading-md);
+  line-height: 1.4;
+  color: var(--color-accent);
+  margin: 0 0 var(--spacing-md);
+}
+
+.insights blockquote cite {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-sandal);
+}
+
+.insights .card {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.insights .card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+.insights .card-media img {
+  width: 100%;
+  aspect-ratio: 714 / 417;
+  object-fit: cover;
+}
+
+.insights .card-body {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.insights .card-body .title {
+  margin: 0;
+  font-size: var(--heading-sm);
+}
+
+.insights .card-body .byline {
+  margin: 0;
+  color: var(--color-sandal);
+}
+
+.insights .card-body .card-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.insights .insight-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 3px solid var(--color-gold);
+}
+
+.insights .insight-list li {
+  border-bottom: 1px solid rgb(109 95 43 / 25%);
+  margin: 0;
+}
+
+.insights .insight-list a {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+  padding-block: var(--spacing-md);
+  text-decoration: none;
+}
+
+.insights .insight-list .title {
+  display: block;
+  font-weight: 600;
+  font-size: var(--body);
+  color: var(--color-accent);
+}
+
+.insights .insight-list a:hover .title {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.insights .insight-list img {
+  width: 96px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.insights .insight-list .byline {
+  display: block;
+  font-size: var(--body-sm);
+  color: var(--color-sandal);
+}
+
+@media (width <= 1024px) {
+  .insights .insights-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+}

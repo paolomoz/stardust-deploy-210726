@@ -74,6 +74,24 @@ function buildWidgetAutoBlocks(main) {
 }
 
 /**
+ * Turns a video URL (Vimeo/YouTube) authored as a plain link alone in its
+ * paragraph into a `video` block (D1 — video URLs are auto-blocked, never
+ * authored as block tables). Links inside block tables are left alone.
+ * @param {Element} main The container element
+ */
+function buildVideoAutoBlocks(main) {
+  const isVideoUrl = (href) => /(?:player\.)?vimeo\.com\/|youtube\.com\/watch|youtu\.be\//.test(href);
+  [...main.querySelectorAll('a[href]')].forEach((link) => {
+    if (!isVideoUrl(link.href)) return;
+    if (link.closest('div[class]')) return; // inside a block (or already built)
+    const p = link.closest('p');
+    if (!p || p.textContent.trim() !== link.textContent.trim()) return;
+    const block = buildBlock('video', { elems: [link.cloneNode(true)] });
+    p.replaceWith(block);
+  });
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
@@ -97,6 +115,7 @@ function buildAutoBlocks(main) {
       });
     }
     buildWidgetAutoBlocks(main);
+    buildVideoAutoBlocks(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);

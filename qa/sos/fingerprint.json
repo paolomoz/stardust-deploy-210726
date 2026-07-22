@@ -1,0 +1,75 @@
+[
+ {
+  "section": "event-promo",
+  "bg": "rgb(249, 244, 237)",
+  "color": "rgb(0, 0, 0)",
+  "variationGroups": []
+ },
+ {
+  "section": "recent-talks",
+  "bg": "rgb(255, 255, 255)",
+  "color": "rgb(0, 0, 0)",
+  "variationGroups": []
+ },
+ {
+  "section": "webinars",
+  "bg": "rgb(249, 244, 237)",
+  "color": "rgb(0, 0, 0)",
+  "variationGroups": []
+ },
+ {
+  "section": "spiritual-insights",
+  "bg": "rgb(255, 255, 255)",
+  "color": "rgb(0, 0, 0)",
+  "variationGroups": []
+ },
+ {
+  "section": "books",
+  "bg": "rgb(249, 244, 237)",
+  "color": "rgb(0, 0, 0)",
+  "variationGroups": []
+ },
+ {
+  "section": "featured-videos",
+  "bg": "rgb(255, 255, 255)",
+  "color": "rgb(0, 0, 0)",
+  "variationGroups": []
+ },
+ {
+  "section": "about",
+  "bg": "rgb(4, 58, 91)",
+  "color": "rgb(249, 244, 237)",
+  "variationGroups": [
+   {
+    "selector": "DIV.",
+    "count": 2,
+    "variants": [
+     {
+      "style": "rgba(0, 0, 0, 0)|rgb(249, 244, 237) 0px|rgb(249, 244, 237)|none|400|start|img:false|svg:false|kids:5",
+      "indices": [
+       0
+      ]
+     },
+     {
+      "style": "rgba(0, 0, 0, 0)|rgb(249, 244, 237) 0px|rgb(249, 244, 237)|none|400|start|img:false|svg:false|kids:3",
+      "indices": [
+       1
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "section": "cta-band",
+  "bg": "rgb(249, 244, 237)",
+  "color": "rgb(0, 0, 0)",
+  "variationGroups": []
+ },
+ {
+  "section": "footer",
+  "bg": "rgb(4, 58, 91)",
+  "color": "rgb(255, 255, 255)",
+  "variationGroups": []
+ }
+]

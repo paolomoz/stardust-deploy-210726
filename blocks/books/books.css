@@ -1,0 +1,26 @@
+/* books — centered book-cover rail (prototype .books-rail) */
+
+.books .books-rail {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.books .books-rail figure {
+  margin: 0;
+}
+
+.books .books-rail img {
+  width: 170px;
+  aspect-ratio: 324 / 499;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: var(--shadow-card);
+}
+
+@media (width <= 640px) {
+  .books .books-rail img {
+    width: 140px;
+  }
+}

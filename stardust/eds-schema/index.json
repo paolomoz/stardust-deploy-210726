@@ -1,0 +1,567 @@
+{
+ "source": "file:///Users/paolo/stardust/semrush/sos/stardust/prototypes/index-proposed.html",
+ "width": 1280,
+ "profile": "eds",
+ "sections": [
+  {
+   "section": "hero",
+   "items": [
+    {
+     "role": "eyebrow",
+     "order": 0,
+     "text": "A global non profit focused on meditation"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "Science of Spirituality — a spiritual organization dedicated to transforming lives through meditation"
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "Find a meditation centre near you offering free meditation classes, workshops, retreats and other no-cost programs associated with healthy living and spiritual upliftment."
+    },
+    {
+     "role": "cta",
+     "order": 3,
+     "text": "Learn to Meditate",
+     "href": "https://www.sos.org/meditation/learn-meditation/"
+    },
+    {
+     "role": "cta",
+     "order": 4,
+     "text": "Find a Center",
+     "href": "https://www.sos.org/find-center/"
+    }
+   ],
+   "imgCount": 1,
+   "repeats": []
+  },
+  {
+   "section": "event-promo",
+   "items": [
+    {
+     "role": "eyebrow",
+     "order": 0,
+     "text": "Public Talks & Schedule"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "SEATTLE 2026 — Evergreen Love & Spirit Tour"
+    },
+    {
+     "role": "cta",
+     "order": 2,
+     "text": "Register Now",
+     "href": "https://www.sos.org/sant-rajinder-singh/events/"
+    }
+   ],
+   "imgCount": 1,
+   "repeats": []
+  },
+  {
+   "section": "quote-band",
+   "items": [
+    {
+     "role": "body",
+     "order": 0,
+     "text": "We are knit together by the silken thread of the Divine."
+    },
+    {
+     "role": "eyebrow",
+     "order": 1,
+     "text": "— Sant Rajinder Singh Ji Maharaj"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": []
+  },
+  {
+   "section": "recent-talks",
+   "items": [
+    {
+     "role": "eyebrow",
+     "order": 0,
+     "text": "Inspirations"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "From Recent Spiritual Talks"
+    },
+    {
+     "role": "eyebrow",
+     "order": 2,
+     "text": "July 12, 2026"
+    },
+    {
+     "role": "heading",
+     "order": 3,
+     "text": "Awaken the Inner Vision Through Meditation"
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "This afternoon, Sant Rajinder Singh Ji Maharaj spoke at the Science of Spirituality International Meditation Center in Lisle, Illinois on the purpose of human life and the need to awaken the inner vision through meditation. He expounded on humanity’s longing for lasting happiness and how we instinctively search for it in the ephemeral outer world. Relationships change, possessions come and go, circumstances fluctuate, and life itself is fleeting. As long as our happiness depends upon what is constantly changing, our peace will also be unstable."
+    },
+    {
+     "role": "cta",
+     "order": 5,
+     "text": "Read the July 12 talk",
+     "href": "https://www.sos.org/sos-global/?post=awaken-the-inner-vision-through-meditation"
+    },
+    {
+     "role": "eyebrow",
+     "order": 6,
+     "text": "June 26, 2026"
+    },
+    {
+     "role": "heading",
+     "order": 7,
+     "text": "Meditation—The Silence That Awakens"
+    },
+    {
+     "role": "body",
+     "order": 8,
+     "text": "This afternoon, several hundred new visitors from across the Chicagoland area gathered at the Science of Spirituality International Meditation Center to hear Sant Rajinder Singh Ji Maharaj’s free public talk, Meditation: The Silence That Awakens. Simultaneously, through a live broadcast reaching more than one hundred SOS locations across North America, South America, and Europe, thousands of new seekers and members of the sangat joined the gathering."
+    },
+    {
+     "role": "cta",
+     "order": 9,
+     "text": "Read the June 26 talk",
+     "href": "https://www.sos.org/sos-global/?post=meditation-the-silence-that-awakens"
+    },
+    {
+     "role": "cta",
+     "order": 10,
+     "text": "View All Posts",
+     "href": "https://www.sos.org/sos-global/"
+    }
+   ],
+   "imgCount": 2,
+   "repeats": [
+    {
+     "unitSelector": "ARTICLE.card",
+     "count": 2,
+     "unit": {
+      "headings": 1,
+      "ctas": 1,
+      "imgs": 1,
+      "textRuns": 4
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "featured-video",
+   "items": [
+    {
+     "role": "cta",
+     "order": 0,
+     "text": "Searching for Happiness",
+     "href": "https://player.vimeo.com/video/1070819635"
+    },
+    {
+     "role": "eyebrow",
+     "order": 1,
+     "text": "Featured video"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": []
+  },
+  {
+   "section": "webinars",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Online Webinars"
+    }
+   ],
+   "imgCount": 3,
+   "repeats": [
+    {
+     "unitSelector": "A.webinar-tile",
+     "count": 3,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 1,
+      "textRuns": 2
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "spiritual-insights",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Spiritual Insights"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "When we meditate, we should pray to God to show us and give us whatever God thinks is best for us. We should sit lovingly as if we were an empty cup that is open so God can pour divine Nectar into us."
+    },
+    {
+     "role": "eyebrow",
+     "order": 2,
+     "text": "by Sant Rajinder Singh Ji Maharaj"
+    },
+    {
+     "role": "heading",
+     "order": 3,
+     "text": "Meditation is an Effortless Effort"
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "by Sant Rajinder Singh Ji Maharaj"
+    },
+    {
+     "role": "cta",
+     "order": 5,
+     "text": "Read this insight",
+     "href": "https://www.sos.org/sant-rajinder-singh/meditation-is-effortless/"
+    }
+   ],
+   "imgCount": 6,
+   "repeats": [
+    {
+     "unitSelector": "LI.",
+     "count": 5,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 1,
+      "textRuns": 2
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "happenings",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Latest Happenings"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "World-Renowned Spiritual Master Draws More Than 900 to Chicagoland Talk Broadcast to Audiences Across Three Continents"
+    },
+    {
+     "role": "cta",
+     "order": 2,
+     "text": "Read this story",
+     "href": "https://www.sos.org/world-renowned-spiritual-master-draws-more-than-900-to-chicagoland-talk-broadcast-to-audiences-across-three-continents/"
+    },
+    {
+     "role": "heading",
+     "order": 3,
+     "text": "Sant Rajinder Singh Ji Maharaj’s New York Tour Draws International Audiences for Public Talks on Meditation and Inner Peace"
+    },
+    {
+     "role": "cta",
+     "order": 4,
+     "text": "Read this story",
+     "href": "https://www.sos.org/sant-rajinder-singh-ji-maharaj-new-york-tour-draws-international-audiences-for-public-talks-on-meditation-and-inner-peace/"
+    },
+    {
+     "role": "heading",
+     "order": 5,
+     "text": "Sant Rajinder Singh Ji Maharaj’s Greece Tour Draws International Audience for Programs on Meditation, Inner Peace, and Spiritual Living"
+    },
+    {
+     "role": "cta",
+     "order": 6,
+     "text": "Read this story",
+     "href": "https://www.sos.org/press-release/sant-rajinder-singh-ji-maharaj-greece-tour-draws-international-audience-for-programs-on-meditation-inner-peace-and-spiritual-living/"
+    },
+    {
+     "role": "cta",
+     "order": 7,
+     "text": "See all happenings",
+     "href": "https://www.sos.org/news/"
+    }
+   ],
+   "imgCount": 3,
+   "repeats": [
+    {
+     "unitSelector": "ARTICLE.card",
+     "count": 3,
+     "unit": {
+      "headings": 1,
+      "ctas": 1,
+      "imgs": 1,
+      "textRuns": 2
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "books",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Featured Books"
+    }
+   ],
+   "imgCount": 5,
+   "repeats": [
+    {
+     "unitSelector": "FIGURE.",
+     "count": 5,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 1,
+      "textRuns": 0
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "articles",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Latest Articles"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "Contentment: The Path to True Happiness"
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "The secret to desires is that it is not the object we desire. It is the mind’s tendency to always be in a state of desire. It leads us into attachment to things of this world. It distracts us from the true purpose of our human life."
+    },
+    {
+     "role": "cta",
+     "order": 3,
+     "text": "Read this article",
+     "href": "https://www.sos.org/articles/contentment-the-path-to-true-happiness/"
+    },
+    {
+     "role": "heading",
+     "order": 4,
+     "text": "Attaining Peace through Forgiveness"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "In these troubled times, humanity is witnessing a growing hunger for peace and human unity. We are realizing that our survival depends upon us recognizing that we are all one family."
+    },
+    {
+     "role": "cta",
+     "order": 6,
+     "text": "Read this article",
+     "href": "https://www.sos.org/articles/spiritual-growth/attaining-peace-through-forgiveness/"
+    },
+    {
+     "role": "heading",
+     "order": 7,
+     "text": "Swim in the Ocean of God’s Love"
+    },
+    {
+     "role": "body",
+     "order": 8,
+     "text": "Just as while swimming in an ocean we are surrounded by water, every second of our lives we are surrounded by the ocean of God’s love. We can become more aware of God’s presence in our daily life through the regular practice of meditation."
+    },
+    {
+     "role": "cta",
+     "order": 9,
+     "text": "Read this article",
+     "href": "https://www.sos.org/articles/spiritual-growth/swim-in-the-ocean-of-gods-love/"
+    }
+   ],
+   "imgCount": 3,
+   "repeats": [
+    {
+     "unitSelector": "ARTICLE.card",
+     "count": 3,
+     "unit": {
+      "headings": 1,
+      "ctas": 1,
+      "imgs": 1,
+      "textRuns": 3
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "featured-videos",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Featured Videos"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "We Each Have a Role to Play"
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "Here, Sant Rajinder Singh Ji Maharaj expresses his appreciation for the health care professionals risking their lives during the Pandemic and explains how we can help."
+    },
+    {
+     "role": "heading",
+     "order": 3,
+     "text": "Enhancing Our Spiritual Capital"
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "Sant Rajinder Singh Ji Maharaj tells us the purpose of our being here is to connect with ourselves and discover who we truly are. This we do when we sit in silence, when we meditate."
+    },
+    {
+     "role": "heading",
+     "order": 5,
+     "text": "Finding God in Challenging Times"
+    },
+    {
+     "role": "body",
+     "order": 6,
+     "text": "Sant Rajinder Singh Ji Maharaj offers suggestions for staying positive when life is difficult. He says we need to remember that these times will pass, and we should make an effort to be focused on God when these periods arise."
+    }
+   ],
+   "imgCount": 0,
+   "repeats": [
+    {
+     "unitSelector": "FIGURE.",
+     "count": 3,
+     "unit": {
+      "headings": 1,
+      "ctas": 0,
+      "imgs": 0,
+      "textRuns": 2
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "about",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "About Science of Spirituality"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "Science of Spirituality is a spiritual organization dedicated to transforming lives through meditation. The organization focuses on meditation, spirituality, healthy living, and service to the community. It offers programs and events, including online and in-person programs focused on meditation and spirituality."
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "The organization has more than 3,500 meditation centers across the world where free meditation classes and meditation retreats are offered."
+    },
+    {
+     "role": "body",
+     "order": 3,
+     "text": "The organization’s global headquarters is situated in an iconic building called the Science of Spirituality International Meditation Center, located in Lisle Illinois USA."
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "Science of Spirituality offers both online and in-person programs run by its meditation centers across the world. Some of the programs offered are:"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "Learn to Meditate Series"
+    },
+    {
+     "role": "body",
+     "order": 6,
+     "text": "Spiritual Awareness Series"
+    },
+    {
+     "role": "body",
+     "order": 7,
+     "text": "Detox the Mind"
+    },
+    {
+     "role": "body",
+     "order": 8,
+     "text": "Personal Transformation through Meditation Series"
+    },
+    {
+     "role": "body",
+     "order": 9,
+     "text": "Workshops on Yoga and Plant based Cooking"
+    },
+    {
+     "role": "body",
+     "order": 10,
+     "text": "The organization is headed by world-renowned spiritual Master and meditation teacher Sant Rajinder Singh Ji Maharaj. He is the author of several best-selling books and a keynote speaker on the topic of spirituality and personal transformation. Travelling extensively throughout the world he teaches a meditation technique focused on the inner Light and Sound. His talks reflect on life’s purpose and how we can overcome life’s challenges. Sant Rajinder Singh Ji offers guidance on finding peace and happiness through the transformative power of meditation."
+    },
+    {
+     "role": "cta",
+     "order": 11,
+     "text": "Sant Rajinder Singh Ji Maharaj",
+     "href": "https://www.sos.org/sant-rajinder-singh/"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": [
+    {
+     "unitSelector": "DIV.",
+     "count": 2,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 0,
+      "textRuns": 9
+     },
+     "uniform": false
+    }
+   ]
+  },
+  {
+   "section": "cta-band",
+   "items": [
+    {
+     "role": "body",
+     "order": 0,
+     "text": "Free meditation classes, workshops, retreats and other no-cost programs"
+    },
+    {
+     "role": "cta",
+     "order": 1,
+     "text": "Learn to Meditate",
+     "href": "https://www.sos.org/meditation/learn-meditation/"
+    },
+    {
+     "role": "cta",
+     "order": 2,
+     "text": "Find a Center",
+     "href": "https://www.sos.org/find-center/"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": []
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+  "runtime": "vanilla-eds",
+  "blockWrapperClass": "block",
+  "buttonClasses": ".button / .button.primary / .button.secondary / .button.accent, in p.button-wrapper",
+  "buttonization": "formatted-only",
+  "fragmentScriptPolicy": "inert-innerHTML",
+  "emptySectionCollapse": true,
+  "notes": {
+    "probedFrom": "scripts/scripts.js decorateButtons (requires a.closest('strong')/('em'); p.className='button-wrapper'; classes button+primary/secondary/accent) and scripts/aem.js decorateBlock (adds .block + data-block-name, wraps in .<name>-wrapper, section gains .<name>-container)",
+    "wrapTextNodes": "this vintage wraps bare-text block cells in <p> at decorateBlock time (validWrappers list in aem.js)",
+    "autoBlocks": "project buildAutoBlocks ships a widget auto-block for /widgets/ links; video auto-block added for this conversion",
+    "sectionDom": "<div class='section <name>-container'><div class='default-content-wrapper'>…</div><div class='<name>-wrapper'><div class='<name> block'>…</div></div></div>"
+  }
+}

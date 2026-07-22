@@ -1,0 +1,37 @@
+/* quote — centered serif quote band (prototype .quote-band) */
+
+.quote {
+  text-align: center;
+}
+
+.quote blockquote {
+  margin: 0 auto;
+  max-width: 760px;
+}
+
+.quote .rule {
+  display: block;
+  width: 72px;
+  height: 3px;
+  background: var(--color-gold);
+  margin: 0 auto var(--spacing-lg);
+  border-radius: 2px;
+}
+
+.quote blockquote p {
+  font-family: var(--heading-font-family);
+  font-style: italic;
+  font-size: var(--heading-md);
+  line-height: 1.4;
+  color: var(--color-accent);
+  margin: 0 0 var(--spacing-md);
+}
+
+.quote blockquote cite {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-sandal);
+}

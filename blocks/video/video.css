@@ -1,0 +1,66 @@
+/* video — single featured facade (auto-blocked, prototype .featured-video) */
+
+.video .facade {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  max-width: 880px;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+  text-decoration: none;
+  overflow: hidden;
+  transition: box-shadow 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.video .facade:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+.video .facade-play {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 14%);
+  border: 2px solid var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s var(--ease);
+}
+
+.video .facade:hover .facade-play {
+  transform: scale(1.08);
+}
+
+.video .facade-play svg {
+  fill: var(--color-surface);
+  margin-left: 4px;
+}
+
+.video .facade-title {
+  position: absolute;
+  left: var(--spacing-lg);
+  bottom: var(--spacing-md);
+  color: var(--color-surface);
+  font-weight: 600;
+  font-size: var(--body);
+}
+
+.video .facade:focus-visible {
+  outline-color: var(--color-gold);
+}
+
+/* the "Featured video" caption line authored as default content below the link */
+main .section.video-container .default-content-wrapper p {
+  margin: var(--spacing-md) 0 0;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-sandal);
+}

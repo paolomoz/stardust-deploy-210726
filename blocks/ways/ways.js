@@ -8,11 +8,14 @@
  */
 export default async function decorate(block) {
   const cards = [...block.children].map((row) => {
-    const imgs = [...row.querySelectorAll('picture, img')];
+    // select ONE media element per cell — querySelector('picture, img') on the whole
+    // row double-counts each pipeline <picture> + its child <img>, so pick per cell.
+    const cells = [...row.children];
+    const mediaIn = (cell) => (cell ? cell.querySelector('picture, img') : null);
     const link = row.querySelector('a');
     if (!link) return null;
-    const photo = imgs[0] || null;
-    const icon = imgs[1] || null;
+    const photo = mediaIn(cells[0]);
+    const icon = mediaIn(cells[1]);
 
     const card = document.createElement('a');
     card.className = 'way-card';
@@ -20,7 +23,7 @@ export default async function decorate(block) {
 
     const photoWrap = document.createElement('span');
     photoWrap.className = 'way-photo';
-    if (photo) photoWrap.append(photo.closest('picture') || photo);
+    if (photo) photoWrap.append(photo);
 
     const scrim = document.createElement('span');
     scrim.className = 'way-scrim';
@@ -29,9 +32,8 @@ export default async function decorate(block) {
     const label = document.createElement('span');
     label.className = 'way-label';
     if (icon) {
-      const ic = icon.closest('picture') || icon;
-      ic.classList.add('way-icon');
-      label.append(ic);
+      icon.classList.add('way-icon');
+      label.append(icon);
     }
     const title = document.createElement('span');
     title.className = 'way-title';

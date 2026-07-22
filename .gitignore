@@ -8,6 +8,14 @@ helix-importer-ui
 *.bak
 .idea
 
+# Local-only: token, QA harness, skill scripts, workspace, media staging
+.env
+.env.*
+qa/
+skills/
+stardust/
+media-src/
+
 # Ensure these files are tracked
 !CLAUDE.md
 !AGENTS.md

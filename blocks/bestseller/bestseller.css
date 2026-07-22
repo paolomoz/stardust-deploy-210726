@@ -1,0 +1,189 @@
+/* bestseller — product card grid */
+
+/* section head (default content above the block) */
+.bestseller-container .default-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--spacing-sm) var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.bestseller-container .default-content-wrapper h2 { order: 1; }
+
+.bestseller-container .default-content-wrapper p:has(a) {
+  order: 2;
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md) var(--spacing-lg);
+}
+
+.bestseller-container .default-content-wrapper a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--color-fg);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--color-accent);
+}
+
+.bestseller-container .default-content-wrapper a:hover { text-decoration-thickness: 3px; }
+
+/* the grid */
+.bestseller .ds-prod-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.bestseller .ds-prod {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-lg);
+}
+
+.bestseller .ds-prod-media {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.bestseller .ds-prod-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.bestseller .ds-chip {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--body-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.bestseller .ds-chip svg {
+  width: 13px;
+  height: 13px;
+}
+
+.bestseller .ds-chip-bestseller {
+  background: var(--color-flame);
+  color: var(--color-ink);
+}
+
+.bestseller .ds-chip-vorbestellen {
+  background: var(--color-preorder);
+  color: var(--color-surface);
+}
+
+.bestseller .ds-prod h3 {
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: none;
+  line-height: 1.35;
+  margin-top: var(--spacing-md);
+  min-height: 2.7em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.bestseller .ds-prod h3 a { text-decoration: none; }
+
+.bestseller .ds-prod h3 a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-accent);
+}
+
+.bestseller .ds-price-old {
+  font-size: var(--body-sm);
+  font-weight: 600;
+  color: var(--color-muted);
+  margin-top: var(--spacing-sm);
+}
+
+.bestseller .ds-price {
+  font-size: 25px;
+  font-weight: 900;
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.bestseller .ds-price-old + .ds-price { margin-top: 2px; }
+
+.bestseller .ds-price .ds-price-ab {
+  font-size: var(--body);
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.bestseller .ds-price-note {
+  color: inherit;
+  text-decoration: none;
+}
+
+.bestseller .ds-price-note:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-accent);
+}
+
+.bestseller .ds-wish {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  color: var(--color-fg);
+  border: 2px solid var(--color-sticker);
+  border-radius: 50%;
+  box-shadow: 0 3px 0 var(--color-sticker);
+}
+
+.bestseller .ds-wish svg {
+  width: 22px;
+  height: 22px;
+}
+
+.bestseller .ds-wish:active {
+  box-shadow: 0 1px 0 var(--color-sticker);
+  transform: translateY(2px);
+}
+
+.bestseller .ds-prod .button {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bestseller .ds-prod { transition: transform 0.15s ease, box-shadow 0.15s ease; }
+
+  .bestseller .ds-prod:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0 var(--color-sticker);
+  }
+}

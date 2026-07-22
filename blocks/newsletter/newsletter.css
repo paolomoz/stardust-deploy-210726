@@ -1,0 +1,93 @@
+/* newsletter — binder-blue signup band */
+main .section.newsletter-container {
+  background: var(--color-fg);
+  color: var(--color-surface);
+  border-top: 2px solid rgb(255 255 255 / 15%);
+}
+
+.newsletter .ds-news-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.newsletter .ds-news-intro {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+}
+
+.newsletter .ds-news-mascot {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 104px;
+  padding: var(--spacing-md);
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-tile-blue);
+}
+
+.newsletter .ds-news-mascot img {
+  width: 56px;
+  height: auto;
+}
+
+/* matches the prototype's rendered size (newsletter sat inside <footer>,
+   where .ds-footer h2 { font-size:16px } won the cascade). Caught by A6 block-roundtrip.
+   Specificity (0,2,1) to beat the foundation `main .section h2` (0,1,2). */
+.newsletter .ds-news-intro h2 { font-size: 16px; }
+
+.newsletter .ds-news-intro h2 em {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+.newsletter .ds-news-consent {
+  font-size: var(--body-sm);
+  margin-top: var(--spacing-md);
+  max-width: 44em;
+}
+
+.newsletter .ds-news-consent a {
+  color: var(--color-surface);
+  text-decoration: underline;
+}
+
+.newsletter .ds-news-form {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.newsletter .ds-input {
+  flex: 1;
+  min-width: min(220px, 100%);
+  min-height: 44px;
+  border: 1px solid var(--color-sticker);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--body-font-family);
+  font-size: var(--body);
+  padding: 12px 18px;
+}
+
+.newsletter .ds-news-status {
+  margin-top: var(--spacing-md);
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+@media (width <= 900px) {
+  .newsletter .ds-news-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (width <= 640px) {
+  .newsletter .ds-news-intro { flex-direction: column; }
+}

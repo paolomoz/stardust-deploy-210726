@@ -1,0 +1,96 @@
+/* community — "Mehr Informationen" link cards on binder-blue */
+main .section.community-container {
+  background: var(--color-fg);
+  color: var(--color-surface);
+}
+
+/* section head (default content above the block) */
+.community-container .default-content-wrapper {
+  margin-bottom: var(--spacing-lg);
+}
+
+.community-container .default-content-wrapper h2 em {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+.community-container .default-content-wrapper p {
+  max-width: 62ch;
+  margin-top: var(--spacing-md);
+}
+
+/* the grid */
+.community .ds-comm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.community .ds-comm-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  text-decoration: none;
+  position: relative;
+  background: var(--color-surface);
+  color: var(--color-fg);
+  box-shadow: var(--shadow-tile-blue);
+  border-radius: var(--radius);
+}
+
+.community .ds-comm-card:active {
+  box-shadow: var(--shadow-tile-blue-pressed);
+  transform: translateY(2px);
+}
+
+.community .ds-comm-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+}
+
+.community .ds-comm-card h3 { font-size: clamp(22px, 2vw, var(--heading-md)); }
+
+.community .ds-comm-top img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.community .ds-comm-card p { max-width: 46em; }
+
+.community .ds-comm-go {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+
+.community .ds-comm-go svg {
+  width: 18px;
+  height: 18px;
+}
+
+.community .ds-comm-card:hover .ds-comm-go {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .community .ds-comm-card { transition: transform 0.12s ease, box-shadow 0.12s ease; }
+}
+
+@media (width <= 900px) {
+  .community .ds-comm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (width <= 640px) {
+  .community .ds-comm-grid { grid-template-columns: minmax(0, 1fr); }
+}

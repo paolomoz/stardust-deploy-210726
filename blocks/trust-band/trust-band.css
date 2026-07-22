@@ -1,0 +1,44 @@
+/* trust-band — booster-yellow reassurance strip */
+main .section.trust-band-container {
+  background: var(--color-accent);
+  color: var(--color-ink);
+  padding-block: var(--spacing-md);
+}
+
+.trust-band ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm) var(--spacing-xl);
+}
+
+.trust-band li {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.trust-band svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.trust-band a {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+
+.trust-band a:hover { text-decoration-thickness: 3px; }
+
+@media (width <= 640px) {
+  .trust-band ul {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 10px;
+  }
+}

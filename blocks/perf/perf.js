@@ -8,7 +8,8 @@ export default function decorate(block) {
   const h2 = block.querySelector('h2');
   const h3s = [...block.querySelectorAll('h3')];
   const ctaP = [...block.querySelectorAll('p')].find((p) => p.querySelector('a'));
-  const imgs = [...block.querySelectorAll('picture, img')];
+  const imgs = [...block.querySelectorAll('picture, img')]
+    .filter((el) => el.tagName === 'PICTURE' || !el.closest('picture')); // top-level media only (#72)
   const blockquote = block.querySelector('blockquote');
   const citeP = blockquote
     ? [...block.querySelectorAll('p, cite')].find((p) => !p.querySelector('a')

@@ -5,7 +5,10 @@
  *   cell 2: <blockquote>, cite <p>, logo image
  */
 export default function decorate(block) {
-  const imgs = [...block.querySelectorAll('picture, img')];
+  // top-level media only — a pipelined <picture> also contains a nested <img>;
+  // selecting both pulls the img out of its picture (#72).
+  const imgs = [...block.querySelectorAll('picture, img')]
+    .filter((el) => el.tagName === 'PICTURE' || !el.closest('picture'));
   const blockquote = block.querySelector('blockquote');
   const citeP = [...block.querySelectorAll('p, cite')]
     .find((p) => p.textContent.trim() && !p.querySelector('a'));

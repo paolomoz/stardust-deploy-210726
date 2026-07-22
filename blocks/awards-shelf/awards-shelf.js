@@ -7,7 +7,8 @@
  */
 export default function decorate(block) {
   const h2 = block.querySelector('h2');
-  const imgs = [...block.querySelectorAll('picture, img')];
+  const imgs = [...block.querySelectorAll('picture, img')]
+    .filter((el) => el.tagName === 'PICTURE' || !el.closest('picture')); // top-level media only (#72)
   const ps = [...block.querySelectorAll('p')];
   const ctaP = ps.find((p) => p.querySelector('a'));
   const ratingP = ps.find((p) => p !== ctaP && !p.querySelector('a') && p.textContent.trim());

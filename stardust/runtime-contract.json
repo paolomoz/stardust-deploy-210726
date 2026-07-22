@@ -1,0 +1,10 @@
+{
+  "runtime": "vanilla-eds",
+  "target": "paolomoz/stardust-deploy-210726 @ theroadhome-e2e (stock adobe/aem-boilerplate + widget auto-block)",
+  "blockWrapperClass": "block",
+  "buttonClasses": "a.button / a.button.primary (strong) / a.button.secondary (em) / a.button.accent (em+strong), inside p.button-wrapper",
+  "buttonization": "formatted-only (current main: requires authored <strong>/<em>; bare <a> alone in a <p> stays a plain link)",
+  "fragmentScriptPolicy": "inert (trustedTypes default policy strips <script> from injected fragments; CSP script-src nonce+strict-dynamic)",
+  "emptySectionCollapse": "unknown — add `main .section:empty { display:none }` defensively",
+  "notes": "decorateMain order: buildAutoBlocks -> decorateSections -> decorateBlocks -> decorateButtons (buttons classed before block decorate() runs). loadEager adds body.appear then loadSection(first section, waitForFirstImage). widget auto-block on /widgets/ links (unused here)."
+}

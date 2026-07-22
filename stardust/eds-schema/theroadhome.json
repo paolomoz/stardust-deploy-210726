@@ -1,0 +1,441 @@
+{
+ "source": "http://localhost:8791/prototypes/home-A-proposed.html",
+ "width": 1280,
+ "profile": "eds",
+ "sections": [
+  {
+   "section": "hero",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "REFUGE. RESOURCES. RELIEF."
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "The Road Home provides emergency shelter, supportive services, and housing assistance that help individuals and families step out of homelessness."
+    },
+    {
+     "role": "cta",
+     "order": 2,
+     "text": "GET HELP",
+     "href": "https://theroadhome.org/get-help/"
+    },
+    {
+     "role": "cta",
+     "order": 3,
+     "text": "DONATE",
+     "href": "https://theroadhome.org/donate"
+    }
+   ],
+   "imgCount": 1,
+   "repeats": []
+  },
+  {
+   "section": "join-team-band",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "JOIN OUR TEAM"
+    },
+    {
+     "role": "cta",
+     "order": 1,
+     "text": "See open positions →",
+     "href": "https://theroadhome.applytojob.com/apply/"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": []
+  },
+  {
+   "section": "ways-3up",
+   "items": [],
+   "imgCount": 6,
+   "repeats": [
+    {
+     "unitSelector": "A.way-card",
+     "count": 3,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 2,
+      "textRuns": 2
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "proof-band",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "IMPACT"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "The Road Home’s Four Star Charity Navigator assures you of the responsible way in which your contributions will be put to work helping the people we serve."
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "1,550+"
+    },
+    {
+     "role": "body",
+     "order": 3,
+     "text": "On any given night, we have over 1,550 people in housing, in the community"
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "60%"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "Of those who shelter with us, 60% receive case management services at some point during their stay"
+    },
+    {
+     "role": "body",
+     "order": 6,
+     "text": "3,491"
+    },
+    {
+     "role": "body",
+     "order": 7,
+     "text": "In the last year we assisted 3,491 people with employment and housing-related services"
+    }
+   ],
+   "imgCount": 5,
+   "repeats": [
+    {
+     "unitSelector": "DIV.stat",
+     "count": 3,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 1,
+      "textRuns": 2
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "housing-resources",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "HOUSING-FOCUSED RESOURCES"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "The Road Home team works with individuals and families, each step of the way to help them overcome their homelessness and move back into a home of their own."
+    },
+    {
+     "role": "heading",
+     "order": 2,
+     "text": "EMERGENCY SHELTER"
+    },
+    {
+     "role": "heading",
+     "order": 3,
+     "text": "SUPPORTIVE SERVICES"
+    },
+    {
+     "role": "heading",
+     "order": 4,
+     "text": "HOUSING ASSISTANCE"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "Everything we do at The Road Home is to help people overcome homelessness and move back home. This includes nationally recognized best practices such as progressive engagement, rapid re-housing, and housing navigation."
+    },
+    {
+     "role": "cta",
+     "order": 6,
+     "text": "PROGRAMS",
+     "href": "http://theroadhome.org/housing-programs/"
+    }
+   ],
+   "imgCount": 4,
+   "repeats": [
+    {
+     "unitSelector": "DIV.resource-col",
+     "count": 3,
+     "unit": {
+      "headings": 1,
+      "ctas": 0,
+      "imgs": 1,
+      "textRuns": 1
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "stories-grid",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "HOUSING STORIES"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "Helping individuals and families move out of shelter and into housing happens every day at The Road Home. You can read some of their stories here."
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "PLACEHOLDER · other"
+    },
+    {
+     "role": "body",
+     "order": 3,
+     "text": "R"
+    },
+    {
+     "role": "heading",
+     "order": 4,
+     "text": "RAY"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "When Ray first came to the Men's Resource Center, he had a difficult time engaging with our various …"
+    },
+    {
+     "role": "cta",
+     "order": 6,
+     "text": "READ RAY'S STORY →",
+     "href": "http://theroadhome.org/housing-stories/"
+    },
+    {
+     "role": "body",
+     "order": 7,
+     "text": "PLACEHOLDER · other"
+    },
+    {
+     "role": "body",
+     "order": 8,
+     "text": "R"
+    },
+    {
+     "role": "heading",
+     "order": 9,
+     "text": "RANDALL"
+    },
+    {
+     "role": "body",
+     "order": 10,
+     "text": "Randall has been experiencing homelessness for over a year. He has 5 children and has been working h…"
+    },
+    {
+     "role": "cta",
+     "order": 11,
+     "text": "READ RANDALL'S STORY →",
+     "href": "http://theroadhome.org/housing-stories/"
+    },
+    {
+     "role": "body",
+     "order": 12,
+     "text": "PLACEHOLDER · other"
+    },
+    {
+     "role": "body",
+     "order": 13,
+     "text": "C"
+    },
+    {
+     "role": "heading",
+     "order": 14,
+     "text": "COLE"
+    },
+    {
+     "role": "body",
+     "order": 15,
+     "text": "Cole spent years in shelter struggling with various ailments and barriers that kept him from moving …"
+    },
+    {
+     "role": "cta",
+     "order": 16,
+     "text": "READ COLE'S STORY →",
+     "href": "http://theroadhome.org/housing-stories/"
+    },
+    {
+     "role": "body",
+     "order": 17,
+     "text": "PLACEHOLDER · other"
+    },
+    {
+     "role": "body",
+     "order": 18,
+     "text": "J"
+    },
+    {
+     "role": "heading",
+     "order": 19,
+     "text": "JAY"
+    },
+    {
+     "role": "body",
+     "order": 20,
+     "text": "After being in shelter on and off, with only a social security card and an expired out of state ID, …"
+    },
+    {
+     "role": "cta",
+     "order": 21,
+     "text": "READ JAY'S STORY →",
+     "href": "http://theroadhome.org/housing-stories/"
+    },
+    {
+     "role": "body",
+     "order": 22,
+     "text": "PLACEHOLDER · other"
+    },
+    {
+     "role": "body",
+     "order": 23,
+     "text": "S"
+    },
+    {
+     "role": "heading",
+     "order": 24,
+     "text": "SUE"
+    },
+    {
+     "role": "body",
+     "order": 25,
+     "text": "Sue and her family were on the brink of becoming homeless; balancing her job as a school teacher whi…"
+    },
+    {
+     "role": "cta",
+     "order": 26,
+     "text": "READ SUE'S STORY →",
+     "href": "http://theroadhome.org/housing-stories/"
+    },
+    {
+     "role": "body",
+     "order": 27,
+     "text": "PLACEHOLDER · other"
+    },
+    {
+     "role": "body",
+     "order": 28,
+     "text": "J"
+    },
+    {
+     "role": "heading",
+     "order": 29,
+     "text": "JORDAN"
+    },
+    {
+     "role": "body",
+     "order": 30,
+     "text": "Jordan was struggling to attend school on a regular basis. Case Managers at the Midvale Family Resou…"
+    },
+    {
+     "role": "cta",
+     "order": 31,
+     "text": "READ JORDAN'S STORY →",
+     "href": "http://theroadhome.org/housing-stories/"
+    },
+    {
+     "role": "cta",
+     "order": 32,
+     "text": "MORE STORIES",
+     "href": "http://theroadhome.org/housing-stories/"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": [
+    {
+     "unitSelector": "ARTICLE.story-card",
+     "count": 6,
+     "unit": {
+      "headings": 1,
+      "ctas": 1,
+      "imgs": 0,
+      "textRuns": 5
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "newsletter",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "STAY UP TO DATE"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "Stay Up to Date on Programs and Events"
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "First Name"
+    },
+    {
+     "role": "body",
+     "order": 3,
+     "text": "Last Name"
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "Email"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "Mobile Phone (Optional)"
+    },
+    {
+     "role": "body",
+     "order": 6,
+     "text": "Sign me up for SMS messages."
+    },
+    {
+     "role": "body",
+     "order": 7,
+     "text": "SUBSCRIBE"
+    },
+    {
+     "role": "body",
+     "order": 8,
+     "text": "By submitting your cell phone number you are agreeing to receive periodic text messages from this organization. Message and data rates may apply. Text HELP for more information. Text STOP to stop receiving messages."
+    }
+   ],
+   "imgCount": 0,
+   "repeats": [
+    {
+     "unitSelector": "DIV.field",
+     "count": 4,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 0,
+      "textRuns": 1
+     },
+     "uniform": true
+    }
+   ]
+  }
+ ]
+}

@@ -207,22 +207,35 @@ main .section.art-head .default-content-wrapper > p:last-child a {
   padding: 4px 0;
 }
 
-/* article body — two-column toc rail (col 1) + stacked prose/author/pager (col 2) */
-main .section.article > div {
+/* article body — two-column toc rail (col 1) + stacked prose/author/pager (col 2).
+   NB: EDS section children ARE the *-wrapper divs directly, so the grid lives on
+   the SECTION and the wrappers are the grid items (their stock max-width/padding
+   centering is reset here). */
+main .section.article {
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(0, 8fr);
   gap: 0 64px;
   align-items: start;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 56px 24px;
 }
 
-main .section.article > div > .toc-wrapper {
+main .section.article > div {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+main .section.article > .toc-wrapper {
   grid-column: 1;
   grid-row: 1 / 100;
   position: sticky;
   top: 24px;
 }
 
-main .section.article > div > :not(.toc-wrapper) { grid-column: 2; min-width: 0; }
+main .section.article > :not(.toc-wrapper) { grid-column: 2; }
 
 main .section.article .default-content-wrapper { max-width: 72ch; }
 
@@ -236,14 +249,14 @@ main .section.article .default-content-wrapper p picture { margin: 34px 0; displ
 main .section.article .default-content-wrapper p picture img { margin: 0 auto; border: 1px solid var(--border-line); border-radius: var(--radius); padding: 18px; }
 
 /* prev / next pager = the last default-content-wrapper in the article column */
-main .section.article > div > .default-content-wrapper:last-child {
+main .section.article > .default-content-wrapper:last-child {
   border-top: 1px solid var(--border-line-strong);
   margin-top: 44px;
   padding-top: 26px;
   max-width: none;
 }
 
-main .section.article > div > .default-content-wrapper:last-child > p {
+main .section.article > .default-content-wrapper:last-child > p {
   display: flex;
   justify-content: space-between;
   gap: 24px;
@@ -251,7 +264,7 @@ main .section.article > div > .default-content-wrapper:last-child > p {
   font-size: 16px;
 }
 
-main .section.article > div > .default-content-wrapper:last-child a {
+main .section.article > .default-content-wrapper:last-child a {
   color: var(--action-on-surface);
   font-weight: 400;
   border-bottom: 1px solid currentcolor;
@@ -259,12 +272,12 @@ main .section.article > div > .default-content-wrapper:last-child a {
   max-width: 40ch;
 }
 
-main .section.article > div > .default-content-wrapper:last-child a:hover { color: var(--action-hover); }
+main .section.article > .default-content-wrapper:last-child a:hover { color: var(--action-hover); }
 
 @media (width <= 1024px) {
-  main .section.article > div { grid-template-columns: 1fr; gap: 32px; }
-  main .section.article > div > .toc-wrapper { grid-column: 1; grid-row: auto; position: static; }
-  main .section.article > div > :not(.toc-wrapper) { grid-column: 1; }
+  main .section.article { grid-template-columns: 1fr; gap: 32px; }
+  main .section.article > .toc-wrapper { grid-column: 1; grid-row: auto; position: static; }
+  main .section.article > :not(.toc-wrapper) { grid-column: 1; }
 }
 
 /* subscribe band — navy full-bleed */

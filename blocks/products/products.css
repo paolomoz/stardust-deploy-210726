@@ -1,0 +1,143 @@
+/* products — catalogue ledger with sticky rail and duotone thumbnails */
+
+.products .products-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+
+.products .products-rail h2 {
+  margin-bottom: var(--spacing-md);
+}
+
+.products .products-rail p {
+  font-size: 17px;
+  color: var(--ink-muted);
+}
+
+.products .ledger {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.products .ledger li {
+  margin: 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.products .ledger-row {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  column-gap: 20px;
+  align-items: center;
+  padding-block: 20px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.products .ledger-row:hover {
+  text-decoration: none;
+}
+
+.products .thumb {
+  position: relative;
+  width: 88px;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--mist);
+  display: block;
+}
+
+.products .thumb img,
+.products .thumb picture {
+  display: block;
+  width: 88px;
+  height: 55px;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+
+.products .thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--meadow);
+  mix-blend-mode: multiply;
+}
+
+.products .ledger-body {
+  display: block;
+  min-width: 0;
+}
+
+.products .ledger-row h3 {
+  margin: 0 0 4px;
+  font-size: var(--heading-lg);
+  letter-spacing: var(--tracking-display);
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.products .ledger-desc {
+  margin: 0;
+  max-width: 52ch;
+  font-size: 16px;
+  color: var(--ink-muted);
+}
+
+.products .ledger-arr {
+  display: none;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--ink-muted);
+  transition: color var(--dur-state) var(--ease-snap), transform var(--dur-state) var(--ease-snap);
+}
+
+.products .ledger-row:hover h3,
+.products .ledger-row:focus-visible h3 {
+  color: var(--pine);
+}
+
+.products .ledger-row:hover .ledger-arr,
+.products .ledger-row:focus-visible .ledger-arr {
+  color: var(--pine);
+  transform: translateX(4px);
+}
+
+@media (width >= 641px) {
+  .products .ledger-arr {
+    display: block;
+  }
+
+  .products .ledger-row {
+    grid-template-columns: 88px minmax(0, 1fr) auto;
+  }
+}
+
+@media (width >= 1025px) {
+  .products .products-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  }
+
+  .products .products-rail {
+    position: sticky;
+    top: calc(var(--nav-height) + 12px);
+  }
+
+  .products .ledger-row {
+    grid-template-columns: 112px minmax(0, 1fr) auto;
+    column-gap: 28px;
+  }
+
+  .products .thumb {
+    width: 112px;
+  }
+
+  .products .thumb img,
+  .products .thumb picture {
+    width: 112px;
+    height: 70px;
+  }
+}

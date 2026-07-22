@@ -1,0 +1,77 @@
+/* decision — closing dark forest chapter with ruled trust facts */
+
+main .section.decision-container {
+  background: var(--forest);
+  color: var(--on-dark);
+}
+
+.decision .decision-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.decision h2 {
+  color: var(--on-dark);
+  max-width: 18ch;
+}
+
+.decision .lede {
+  font-size: var(--heading-md);
+  color: var(--on-dark);
+  font-weight: 300;
+  line-height: 1.5;
+  max-width: 46ch;
+  margin-bottom: 28px;
+}
+
+.decision .trust-rule {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--hairline-dark);
+  font-weight: 600;
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+.decision .trust-rule li {
+  color: var(--on-dark);
+  margin: 0;
+  padding-block: 16px;
+  border-bottom: 1px solid var(--hairline-dark);
+}
+
+.decision .proof-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 40px;
+  margin-top: 12px;
+}
+
+.decision .proof-links a {
+  color: var(--meadow);
+  font-weight: 600;
+  font-size: 15px;
+  display: inline-block;
+  padding-block: 11px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.decision .proof-links a:hover {
+  color: var(--on-dark);
+}
+
+.decision :focus-visible {
+  outline-color: var(--on-dark);
+}
+
+@media (width >= 801px) {
+  .decision .decision-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: clamp(32px, 5vw, 88px);
+  }
+}

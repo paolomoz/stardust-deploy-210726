@@ -1,0 +1,14 @@
+{
+  "runtime": "vanilla-eds",
+  "blockWrapperClass": "block",
+  "buttonClasses": ".button / .button.primary / .button.secondary / .button.accent, in p.button-wrapper",
+  "buttonization": "formatted-only",
+  "fragmentScriptPolicy": "inert-innerHTML",
+  "emptySectionCollapse": true,
+  "notes": {
+    "source": "read from scripts/scripts.js decorateButtons() + scripts/aem.js decorateBlock()/decorateSections() on branch interacoustics-e2e (stock adobe/aem-boilerplate main)",
+    "sectionDom": "main > div -> div.section; default content -> div.default-content-wrapper; block -> div.<name>-wrapper > div.<name>.block[data-block-name]; section gains .<name>-container",
+    "buttonizationDetail": "decorateButtons requires a.closest('strong'|'em'), link alone in its <p>, skips img links and URL-display links; emits p.button-wrapper + a.button.primary|secondary|accent",
+    "emptySectionCollapseDetail": "metadata block is consumed into <head> by the pipeline leaving an empty first section; foundation adds main .section:empty { display: none }"
+  }
+}

@@ -1,0 +1,98 @@
+/* sustainability — dark statement chapter over an editorial photo (full-bleed) */
+
+main .section.sustainability-container {
+  padding-block: 0;
+}
+
+main .section.sustainability-container > div {
+  max-width: none;
+  padding: 0;
+}
+
+.sustainability {
+  position: relative;
+  background: var(--forest);
+  color: var(--on-dark);
+  overflow: clip;
+}
+
+.sustainability .sustainability-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.sustainability .sustainability-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.sustainability .sustainability-bg picture,
+.sustainability .sustainability-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sustainability .sustainability-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--scrim-deep) 0%, var(--scrim-mid) 55%, var(--scrim-soft) 100%);
+}
+
+.sustainability .shell {
+  position: relative;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 20px;
+  padding-block: calc(var(--section-padding) + 32px);
+}
+
+.sustainability h2 {
+  color: var(--on-dark);
+  font-size: clamp(35px, 3.6vw, 44px);
+  max-width: 18ch;
+}
+
+.sustainability p {
+  color: var(--on-dark);
+  max-width: 58ch;
+}
+
+.sustainability .arrow-link {
+  display: inline-block;
+  padding-block: 10px;
+  color: var(--meadow);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.sustainability .arrow-link::after {
+  content: "\00a0\2192";
+  display: inline-block;
+  transition: transform var(--dur-state) var(--ease-snap);
+}
+
+.sustainability .arrow-link:hover {
+  color: var(--on-dark);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.sustainability .arrow-link:hover::after {
+  transform: translateX(3px);
+}
+
+.sustainability :focus-visible {
+  outline-color: var(--on-dark);
+}
+
+@media (width >= 641px) {
+  .sustainability .shell {
+    padding-inline: 32px;
+  }
+}

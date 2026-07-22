@@ -1,0 +1,615 @@
+{
+ "source": "http://localhost:8601/index-B-proposed.html",
+ "width": 1280,
+ "profile": "eds",
+ "sections": [
+  {
+   "section": "hero",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Science smarter"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "made"
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "Interacoustics is a world-leading supplier of equipment for diagnostic audiology and balance testing. For more than 50 years, we have been providing hearing healthcare professionals with precise and fast tools to assess their patients’ hearing and balance."
+    },
+    {
+     "role": "eyebrow",
+     "order": 3,
+     "text": "More than 50 years"
+    },
+    {
+     "role": "eyebrow",
+     "order": 4,
+     "text": "·"
+    },
+    {
+     "role": "eyebrow",
+     "order": 5,
+     "text": "800+ employees"
+    },
+    {
+     "role": "eyebrow",
+     "order": 6,
+     "text": "·"
+    },
+    {
+     "role": "eyebrow",
+     "order": 7,
+     "text": "100 countries"
+    },
+    {
+     "role": "cta",
+     "order": 8,
+     "text": "Find a distributor",
+     "href": "/contact"
+    },
+    {
+     "role": "body",
+     "order": 9,
+     "text": "Play video"
+    },
+    {
+     "role": "eyebrow",
+     "order": 10,
+     "text": "Introducing"
+    },
+    {
+     "role": "heading",
+     "order": 11,
+     "text": "Equinox Evo & Touch Keyboard"
+    },
+    {
+     "role": "body",
+     "order": 12,
+     "text": "A comprehensive audiometric solution for testing of all ages."
+    },
+    {
+     "role": "cta",
+     "order": 13,
+     "text": "Learn more about Equinox Evo →",
+     "href": "/audiometers/equinox-evo"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": [
+    {
+     "unitSelector": "SPAN.fact",
+     "count": 3,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 0,
+      "textRuns": 2
+     },
+     "uniform": false
+    }
+   ]
+  },
+  {
+   "section": "products-ledger",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Products"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "Discover our complete product portfolio by category, including audiometers, hearing aid fitting systems, vestibular testing equipment and much more."
+    }
+   ],
+   "imgCount": 6,
+   "repeats": [
+    {
+     "unitSelector": "LI.",
+     "count": 6,
+     "unit": {
+      "headings": 1,
+      "ctas": 0,
+      "imgs": 1,
+      "textRuns": 3
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "integration",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Get more time with your patients"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "You can integrate your Interacoustics equipment with EMR and EHR systems using the OtoAccess® integration software. Spend less time on data handling and more on your patients."
+    },
+    {
+     "role": "cta",
+     "order": 2,
+     "text": "Learn more about integration software →",
+     "href": "/otoaccess"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": []
+  },
+  {
+   "section": "affinity-fullrange",
+   "items": [
+    {
+     "role": "eyebrow",
+     "order": 0,
+     "text": "Clever made compact"
+    },
+    {
+     "role": "heading",
+     "order": 1,
+     "text": "Affinity Compact"
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "Affinity Compact is a hearing aid fitting system which combines cutting-edge technology with beautiful aesthetics. Choose between four versions and upgrade down the road as your needs change."
+    },
+    {
+     "role": "cta",
+     "order": 3,
+     "text": "Learn more about Affinity Compact →",
+     "href": "/hearing-aid-fitting/affinity-compact"
+    },
+    {
+     "role": "heading",
+     "order": 4,
+     "text": "A full product range for every need"
+    },
+    {
+     "role": "cta",
+     "order": 5,
+     "text": "Browse our solutions",
+     "href": "/solutions"
+    }
+   ],
+   "imgCount": 1,
+   "repeats": []
+  },
+  {
+   "section": "academy",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Expand your knowledge"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "The latest advancements in diagnostic audiology and balance presented by our internationally respected experts and endorsed by the leading professional bodies. Access the Interacoustics Academy and take on-demand courses, watch recorded webinars and more."
+    },
+    {
+     "role": "cta",
+     "order": 2,
+     "text": "See what the Interacoustics Academy has to offer →",
+     "href": "/academy"
+    }
+   ],
+   "imgCount": 1,
+   "repeats": []
+  },
+  {
+   "section": "events",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Virtual, hybrid and physical events"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "Are you looking for new inspiration or ways to upgrade your qualifications in audiology and balance? Discover upcoming in-person courses, conferences, congresses and online training."
+    },
+    {
+     "role": "eyebrow",
+     "order": 2,
+     "text": "Date"
+    },
+    {
+     "role": "eyebrow",
+     "order": 3,
+     "text": "Course or webinar"
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "Jul 14, 2026 - 9:00 am"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "Jul 14"
+    },
+    {
+     "role": "body",
+     "order": 6,
+     "text": "2026 - 9:00 am"
+    },
+    {
+     "role": "heading",
+     "order": 7,
+     "text": "Vestibular Diagnostics: A Clinical and Practical Workshop"
+    },
+    {
+     "role": "cta",
+     "order": 8,
+     "text": "Sign up",
+     "href": "/activities/vestibular-diagnostics-clinical-and-practical-workshop"
+    },
+    {
+     "role": "body",
+     "order": 9,
+     "text": "Jul 22, 2026 - 12:00 pm"
+    },
+    {
+     "role": "body",
+     "order": 10,
+     "text": "Jul 22"
+    },
+    {
+     "role": "body",
+     "order": 11,
+     "text": "2026 - 12:00 pm"
+    },
+    {
+     "role": "heading",
+     "order": 12,
+     "text": "Webinar ACT - Audible Contrast Threshold Test"
+    },
+    {
+     "role": "body",
+     "order": 13,
+     "text": "Die Herausforderung Sprachverständlichkeit im Lärm zu messen."
+    },
+    {
+     "role": "cta",
+     "order": 14,
+     "text": "Sign up",
+     "href": "/activities/webinar-act-audible-contrast-threshold-test-die-herausforderung-sprachverstaendlichkeit-im-laerm-zu-messen"
+    },
+    {
+     "role": "body",
+     "order": 15,
+     "text": "Jul 28, 2026 - 9:00 am"
+    },
+    {
+     "role": "body",
+     "order": 16,
+     "text": "Jul 28"
+    },
+    {
+     "role": "body",
+     "order": 17,
+     "text": "2026 - 9:00 am"
+    },
+    {
+     "role": "heading",
+     "order": 18,
+     "text": "Clinical Principles of Evoked Potentials: Comprehensive 3-day Eclipse workshop"
+    },
+    {
+     "role": "cta",
+     "order": 19,
+     "text": "Sign up",
+     "href": "/activities/clinical-principles-of-evoked-potentials-comprehensive-3-day-eclipse-workshop"
+    },
+    {
+     "role": "cta",
+     "order": 20,
+     "text": "All upcoming events →",
+     "href": "/activities"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": [
+    {
+     "unitSelector": "LI.",
+     "count": 3,
+     "unit": {
+      "headings": 1,
+      "ctas": 1,
+      "imgs": 0,
+      "textRuns": 5
+     },
+     "uniform": false
+    }
+   ]
+  },
+  {
+   "section": "sustainability",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Driving sustainability"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "We create solutions that make a difference for hearing healthcare professionals and their patients. We are not only committed to delivering solutions of the highest quality, but also to improving our impact on the world, be it environment, supply chain ethics or an inclusive working culture"
+    },
+    {
+     "role": "cta",
+     "order": 2,
+     "text": "Learn how we are sustainable →",
+     "href": "/sustainability"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": []
+  },
+  {
+   "section": "blog",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Blog"
+    },
+    {
+     "role": "cta",
+     "order": 1,
+     "text": "View All →",
+     "href": "/blog"
+    },
+    {
+     "role": "eyebrow",
+     "order": 2,
+     "text": "30 June 2026"
+    },
+    {
+     "role": "heading",
+     "order": 3,
+     "text": "Customer story: Getting closer in pediatric audiology with the Equinox Evo"
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "Nottingham University Hospitals NHS Trust has recently introduced six Equinox Evo audiometers across its pediatric…"
+    },
+    {
+     "role": "cta",
+     "order": 5,
+     "text": "Read more →",
+     "href": "/blog/customer-story-getting-closer-in-pediatric-audiology-with-the-equinox-evo"
+    },
+    {
+     "role": "eyebrow",
+     "order": 6,
+     "text": "30 June 2026"
+    },
+    {
+     "role": "heading",
+     "order": 7,
+     "text": "Interacoustics launches free Eclipse online learning resource"
+    },
+    {
+     "role": "body",
+     "order": 8,
+     "text": "Interacoustics is excited to introduce a new, free online onboarding resource designed to help you get the most…"
+    },
+    {
+     "role": "cta",
+     "order": 9,
+     "text": "Read more →",
+     "href": "/blog/interacoustics-launches-free-eclipse-online-learning-resource"
+    },
+    {
+     "role": "eyebrow",
+     "order": 10,
+     "text": "25 June 2026"
+    },
+    {
+     "role": "heading",
+     "order": 11,
+     "text": "10 practical tips to get more reliable VRA results"
+    },
+    {
+     "role": "body",
+     "order": 12,
+     "text": "Visual Reinforcement Audiometry (VRA) is as much an art as it is a science. While technique matters, the real…"
+    },
+    {
+     "role": "cta",
+     "order": 13,
+     "text": "Read more →",
+     "href": "/blog/visual-reinforcement-audiometry-vra-tips"
+    },
+    {
+     "role": "eyebrow",
+     "order": 14,
+     "text": "25 June 2026"
+    },
+    {
+     "role": "heading",
+     "order": 15,
+     "text": "8 reasons why you should include ACT™ in your clinical test battery"
+    },
+    {
+     "role": "body",
+     "order": 16,
+     "text": "Two and half years after its launch, the Audible Contrast Threshold (ACT™) test is moving from novelty to everyday…"
+    },
+    {
+     "role": "cta",
+     "order": 17,
+     "text": "Read more →",
+     "href": "/blog/why-you-should-include-act-in-your-clinical-test-battery"
+    }
+   ],
+   "imgCount": 1,
+   "repeats": [
+    {
+     "unitSelector": "LI.",
+     "count": 3,
+     "unit": {
+      "headings": 1,
+      "ctas": 1,
+      "imgs": 0,
+      "textRuns": 6
+     },
+     "uniform": true
+    }
+   ]
+  },
+  {
+   "section": "decision-band",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Find your local distributor"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "Our worldwide distributors can help you find the best solution for your needs"
+    },
+    {
+     "role": "cta",
+     "order": 2,
+     "text": "Find a distributor",
+     "href": "/contact"
+    },
+    {
+     "role": "body",
+     "order": 3,
+     "text": "More than 50 years of experience"
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "800+ employees worldwide"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "25 sales offices, present in 100 countries"
+    },
+    {
+     "role": "cta",
+     "order": 6,
+     "text": "Certificates",
+     "href": "/certification"
+    },
+    {
+     "role": "cta",
+     "order": 7,
+     "text": "Customer story: Getting closer in pediatric audiology with the Equinox Evo →",
+     "href": "/blog/customer-story-getting-closer-in-pediatric-audiology-with-the-equinox-evo"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": [
+    {
+     "unitSelector": "A.",
+     "count": 2,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 0,
+      "textRuns": 0
+     },
+     "uniform": false
+    }
+   ]
+  },
+  {
+   "section": "newsletter",
+   "items": [
+    {
+     "role": "heading",
+     "order": 0,
+     "text": "Stay up to date!"
+    },
+    {
+     "role": "body",
+     "order": 1,
+     "text": "Subscribe to our newsletter and receive news on new products, seminars and much more."
+    },
+    {
+     "role": "body",
+     "order": 2,
+     "text": "First name"
+    },
+    {
+     "role": "body",
+     "order": 3,
+     "text": "Last name"
+    },
+    {
+     "role": "body",
+     "order": 4,
+     "text": "Email"
+    },
+    {
+     "role": "body",
+     "order": 5,
+     "text": "Sign up"
+    },
+    {
+     "role": "body",
+     "order": 6,
+     "text": "By signing up, I accept to receive newsletter e-mails from Interacoustics. I can withdraw my consent at any time by using the ‘unsubscribe’-function included in each e-mail."
+    },
+    {
+     "role": "body",
+     "order": 7,
+     "text": ", if you want to know more about how we treat and protect your personal data."
+    },
+    {
+     "role": "cta",
+     "order": 8,
+     "text": "Read our privacy notice",
+     "href": "https://www.interacoustics.com/privacy-policy"
+    }
+   ],
+   "imgCount": 0,
+   "repeats": [
+    {
+     "unitSelector": "P.smallprint",
+     "count": 2,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 0,
+      "textRuns": 0
+     },
+     "uniform": false
+    },
+    {
+     "unitSelector": "DIV.field",
+     "count": 3,
+     "unit": {
+      "headings": 0,
+      "ctas": 0,
+      "imgs": 0,
+      "textRuns": 1
+     },
+     "uniform": true
+    }
+   ]
+  }
+ ]
+}

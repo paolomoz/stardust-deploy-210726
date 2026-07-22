@@ -1,0 +1,91 @@
+/* newsletter — quiet mist panel with real labels and consent smallprint */
+
+main .section.newsletter-container {
+  background: var(--mist);
+  border-top: 1px solid var(--hairline);
+}
+
+/* section head authored as default content, styled in place (D1) */
+.newsletter-container .default-content-wrapper {
+  margin-bottom: var(--spacing-lg);
+}
+
+.newsletter-container .default-content-wrapper h2 {
+  max-width: 760px;
+}
+
+.newsletter-container .default-content-wrapper p {
+  font-size: var(--heading-md);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.newsletter .newsletter-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: stretch;
+  margin-bottom: var(--spacing-lg);
+  max-width: 980px;
+}
+
+.newsletter .newsletter-form[hidden] {
+  display: none;
+}
+
+.newsletter .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.newsletter .field label {
+  font-size: var(--body-sm);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.newsletter .field input {
+  height: 44px;
+  border: 1px solid color-mix(in srgb, var(--ink) 55%, var(--ground));
+  border-radius: var(--radius);
+  background: var(--card);
+  padding: 0 14px;
+  font-size: 16px;
+  color: var(--ink);
+}
+
+.newsletter .field input:focus-visible {
+  outline: 2px solid var(--pine);
+  outline-offset: 1px;
+  border-color: var(--pine);
+}
+
+.newsletter .newsletter-confirmation {
+  font-weight: 600;
+  color: var(--pine);
+}
+
+.newsletter .smallprint {
+  font-size: var(--body-sm);
+  color: var(--ink-muted);
+  max-width: 76ch;
+}
+
+.newsletter .smallprint a {
+  color: var(--pine);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.newsletter .smallprint a:hover {
+  color: var(--pine-hover);
+}
+
+@media (width >= 801px) {
+  .newsletter .newsletter-form {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+    align-items: end;
+  }
+}

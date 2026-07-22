@@ -1,0 +1,113 @@
+/* events — record-sheet ledger on the card ground */
+
+main .section.events-container {
+  background: var(--card);
+  border-block: 1px solid var(--hairline);
+}
+
+/* section head authored as default content, styled in place (D1) */
+.events-container .default-content-wrapper h2 {
+  max-width: 760px;
+}
+
+.events-container .default-content-wrapper p {
+  max-width: 760px;
+}
+
+.events-container .default-content-wrapper {
+  margin-bottom: 0;
+}
+
+.events .sheet {
+  margin: 0 0 var(--spacing-md);
+  font-variant-numeric: tabular-nums;
+}
+
+.events .sheet-head,
+.events .sheet-row {
+  display: grid;
+  grid-template-columns: 148px minmax(0, 1fr) auto;
+  column-gap: 32px;
+  align-items: center;
+}
+
+.events .sheet-head {
+  display: none;
+  padding-block: 12px;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.events .sheet-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.events .sheet-list li {
+  margin: 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.events .sheet-row {
+  padding-block: 26px;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 10px;
+}
+
+.events .sheet-list li:first-child .sheet-row {
+  border-top: 1px solid var(--hairline);
+}
+
+.events .sheet-date .dd {
+  display: inline;
+  font-size: var(--heading-md);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.events .sheet-date .dm {
+  display: inline;
+  margin-left: 10px;
+  font-size: var(--body-sm);
+  color: var(--ink-muted);
+}
+
+.events .sheet-row h3 {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.events .sheet-row .button {
+  white-space: nowrap;
+  justify-self: start;
+}
+
+@media (width >= 801px) {
+  .events .sheet-head {
+    display: grid;
+  }
+
+  .events .sheet-row {
+    grid-template-columns: 148px minmax(0, 1fr) auto;
+    row-gap: 0;
+  }
+
+  .events .sheet-list li:first-child .sheet-row {
+    border-top: 0;
+  }
+
+  .events .sheet-date .dd {
+    display: block;
+  }
+
+  .events .sheet-date .dm {
+    display: block;
+    margin-left: 0;
+    margin-top: 2px;
+  }
+}

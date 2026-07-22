@@ -1,0 +1,121 @@
+/* blog — newsroom: feature + dateline list */
+
+/* head authored as default content: h2 left, View All right */
+.blog-container .default-content-wrapper {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.blog-container .default-content-wrapper h2 {
+  margin: 0;
+}
+
+.blog-container .default-content-wrapper p {
+  margin: 0;
+}
+
+.blog .newsroom {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
+}
+
+.blog .feature img,
+.blog .feature picture {
+  width: 100%;
+  border-radius: var(--radius-card);
+  display: block;
+}
+
+.blog .date {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.blog .feature .date {
+  margin-top: 20px;
+}
+
+.blog .feature h3 {
+  font-size: var(--heading-lg);
+  font-weight: 400;
+  margin: 6px 0 10px;
+}
+
+.blog .feature .excerpt {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.blog .dateline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.blog .dateline-list li {
+  margin: 0;
+  border-bottom: 1px solid var(--hairline);
+  padding-block: 20px;
+}
+
+.blog .dateline-list h3 {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 6px 0 4px;
+}
+
+.blog .dateline-list .excerpt {
+  font-size: var(--body-sm);
+  color: var(--ink-muted);
+  margin-bottom: 2px;
+}
+
+.blog .arrow-link {
+  display: inline-block;
+  padding-block: 10px;
+  color: var(--pine);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.blog .dateline-list .arrow-link {
+  font-size: 15px;
+  padding-block: 11px;
+}
+
+.blog .arrow-link::after {
+  content: "\00a0\2192";
+  display: inline-block;
+  transition: transform var(--dur-state) var(--ease-snap);
+}
+
+.blog .arrow-link:hover {
+  color: var(--pine-hover);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.blog .arrow-link:hover::after {
+  transform: translateX(3px);
+}
+
+@media (width >= 1025px) {
+  .blog .newsroom {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  }
+}
